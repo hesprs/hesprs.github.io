@@ -1,81 +1,53 @@
-# Workflow for building and deploying a pnpm-based project to GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
-  # Runs on pushes targeting the 'main' branch.
-  # Change this if your default branch is named something else (e.g., 'master').
   push:
-    branches: ['main']
+    branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Sets the permissions for the GITHUB_TOKEN to allow deployment to GitHub Pages.
-# This is crucial for the action to have the right to publish the site.
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# This prevents race conditions if you push multiple commits in quick succession.
 concurrency:
   group: 'pages'
   cancel-in-progress: true
 
 jobs:
   deploy:
-    # Specifies the environment where the deployment will happen.
-    # 'github-pages' is a standard environment for this purpose.
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    # Use the latest version of Ubuntu for the runner.
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository's code so the workflow can access it.
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
-      # Step 2: Set up pnpm. This action installs pnpm and makes it available.
       - name: Set up pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          # Specify the version of pnpm you are using.
-          version: 8
+        uses: pnpm/action-setup@v4.2.0
 
-      # Step 3: Set up Node.js. This is needed to run pnpm commands and build your project.
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          # Specify the version of Node.js your project requires.
-          node-version: '20'
-          # Use pnpm's lockfile for caching to speed up subsequent builds.
+          node-version: latest
           cache: 'pnpm'
 
-      # Step 4: Install project dependencies.
       - name: Install dependencies
         run: pnpm install
 
-      # Step 5: Build the project. This command should generate the static files in a '/dist' folder.
-      # If your build output is in a different folder, change the path in the next step.
       - name: Build
-        run: pnpm run build
+        run: pnpm build
 
-      # Step 6: Prepare the build artifact for uploading to GitHub Pages.
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
-      # Step 7: Upload the build artifact. The action will look for the folder specified in the 'path'.
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
-          # This should be the directory where your build process outputs the final static files.
           path: './dist'
 
-      # Step 8: Deploy the uploaded artifact to GitHub Pages.
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5

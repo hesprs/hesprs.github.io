@@ -1,23 +1,37 @@
 {
-	"name": "personal-website",
-	"version": "2.7.2",
-	"description": "",
+	"name": "trito",
 	"private": true,
+	"description": "",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
-		"dev": "vite --open",
-		"build": "vite build"
+		"dev": "vitepress dev",
+		"build": "vitepress build",
+		"preview": "vitepress preview",
+		"lint": "biome check --write"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"packageManager": "pnpm@10.14.0",
-	"dependencies": {
-		"json-canvas-viewer": "^3.0.2",
-		"marked": "^16.1.2"
-	},
+	"packageManager": "pnpm@10.23.0",
 	"devDependencies": {
-		"sass": "^1.90.0",
-		"vite": "^7.1.2"
+		"@biomejs/biome": "^2.3.11",
+		"@types/node": "^25.0.8",
+		"sass": "^1.97.2",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@docsearch/css": "^4.4.0",
+		"@docsearch/js": "^4.4.0",
+		"@tabler/icons-vue": "^3.36.1",
+		"@vueuse/core": "^14.1.0",
+		"@vueuse/integrations": "^14.1.0",
+		"json-canvas-viewer": "^3.3.1",
+		"mark.js": "^8.11.1",
+		"minisearch": "^7.2.0",
+		"vitepress": "2.0.0-alpha.15",
+		"vue": "^3.5.26",
+		"vue3-carousel": "^0.17.0"
 	}
 }
