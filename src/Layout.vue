@@ -29,7 +29,7 @@ provide(layoutInfoInjectionKey, { heroImageSlotExists });
 <template>
 	<div v-if="frontmatter.layout !== false" class="Layout" :class="frontmatter.pageClass">
 		<slot name="layout-top" />
-		<!--<ContextMenu />-->
+		<ContextMenu />
 		<LoadingView />
 		<VPBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
 		<VPNav>
