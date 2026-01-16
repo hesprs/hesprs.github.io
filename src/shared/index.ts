@@ -1,12 +1,17 @@
-/** biome-ignore-all lint/suspicious/noExplicitAny: this file is a spaghetti, refactoring needed */
+// biome-ignore-all lint/suspicious/noExplicitAny: this file is a spaghetti, refactoring needed
+
+import type { InjectionKey } from 'vue';
 import type { AdditionalConfig, HeadConfig, PageData, SiteData } from './types';
+
+export const toggleAppearanceKey: InjectionKey<
+	(coords: { clientX: number; clientY: number }) => Promise<void>
+> = Symbol('toggleAppearance');
 
 export type {
 	AdditionalConfig,
 	AdditionalConfigDict,
 	AdditionalConfigLoader,
 	Awaitable,
-	DefaultTheme,
 	HeadConfig,
 	Header,
 	LocaleConfig,
@@ -16,6 +21,7 @@ export type {
 	PageDataPayload,
 	SiteData,
 	SSGContext,
+	TritoTheme,
 } from './types';
 
 export const EXTERNAL_URL_RE = /^(?:[a-z]+:|\/\/)/i;
@@ -36,7 +42,7 @@ export const notFoundPageData: PageData = {
 	title: '404',
 	description: 'Not Found',
 	headers: [],
-	frontmatter: { sidebar: false, layout: 'page' },
+	frontmatter: { layout: 'page' },
 	lastUpdated: 0,
 	isNotFound: true,
 };

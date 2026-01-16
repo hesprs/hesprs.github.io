@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
 import { computed } from 'vue';
+import type { TritoTheme } from '@/shared';
 import VPFeature from './VPFeature.vue';
 
 export interface Feature {
-	icon?: DefaultTheme.FeatureIcon;
+	icon?: TritoTheme.FeatureIcon;
 	title: string;
 	details: string;
 	link?: string;

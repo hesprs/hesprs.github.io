@@ -3,11 +3,11 @@ layout: home
 
 hero:
   name: HESPERI
-  tagline: About Hēsperus
+  tagline: 关于 Hēsperus
   image:
     light: /logo.svg
     dark: /logo-dark.svg
-    alt: Website Logo
+    alt: 网站 Logo
 ---
 
 <script setup>

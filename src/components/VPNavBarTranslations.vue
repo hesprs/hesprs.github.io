@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { IconLanguageHiragana } from '@tabler/icons-vue';
-import { useData } from '@/composables/data';
+import { useI18n } from '@/composables/i18n';
 import { useLangs } from '@/composables/langs';
 import VPFlyout from './VPFlyout.vue';
 import VPMenuLink from './VPMenuLink.vue';
 
-const { theme } = useData();
+const i18n = useI18n();
 const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 </script>
 
@@ -14,7 +14,7 @@ const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 		v-if="localeLinks.length && currentLang.label"
 		class="VPNavBarTranslations nav-btn"
 		:no-chevron="true"
-		:label="theme.langMenuLabel || 'Change language'"
+		:label="i18n.changeLang"
 	>
 		<template #icon>
 			<IconLanguageHiragana class="icon" />

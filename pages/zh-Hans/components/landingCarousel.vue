@@ -1,42 +1,41 @@
 <script lang="ts" setup>
 import 'vue3-carousel/carousel.css';
-import { VPLink } from 'vitepress/theme';
 import { Carousel, type CarouselConfig, Navigation, Slide } from 'vue3-carousel';
+import { VPLink } from '@';
 
 const carouselConfig: Partial<CarouselConfig> = {
 	itemsToShow: 0.5,
 	wrapAround: true,
-    gap: 30,
-    mouseDrag: false,
-    autoplay: 6000,
+	gap: 30,
+	mouseDrag: false,
+	autoplay: 6000,
 };
 
 const projects = [
 	{
 		title: 'JSON Canvas Viewer',
-		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
-		description:
-			'A front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.',
-		descriptionShort: 'View JSON canvas directly in your browser.',
-		link: '/json-canvas-viewer',
+		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg  ',
+		description: '一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。',
+		descriptionShort: '直接在浏览器中查看 JSON 画布。',
+		link: '/zh-Hans/json-canvas-viewer',
 	},
 	{
 		title: 'Pointeract',
-		logo: 'https://pointeract.consensia.cc/logo.svg',
+		logo: 'https://pointeract.consensia.cc/logo.svg  ',
 		description:
-			'A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.',
-		descriptionShort: 'Super extensible human gesture recognizer.',
-		link: '/pointeract',
+			'一个前端库，用于解析用户交互并派发平移缩放事件，是 Hammer.js 的轻量级且可扩展的替代方案。',
+		descriptionShort: '高度可扩展的人类手势识别器。',
+		link: '/zh-Hans/pointeract',
 	},
 ];
 </script>
 
 <template>
-	<h1 class="upper">See My Projects</h1>
+	<h1 class="upper">我的项目</h1>
 	<Carousel class="lower carousel" v-bind="carouselConfig">
 		<Slide v-for="(project, index) in projects" :key="index">
 			<VPLink :href="project.link" class="carousel__item">
-                <img class="logo" :src="project.logo" :alt="`${project.title} Logo`" />
+				<img class="logo" :src="project.logo" :alt="`${project.title} Logo`" />
 				<h2 class="title">{{ project.title }}</h2>
 				<p class="description">{{ project.description }}</p>
 				<p class="description-short">{{ project.descriptionShort }}</p>

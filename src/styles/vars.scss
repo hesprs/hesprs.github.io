@@ -226,9 +226,6 @@
 	--vp-z-index-nav: 30;
 	--vp-z-index-layout-top: 40;
 	--vp-z-index-backdrop: 50;
-	--vp-z-index-sidebar: 60;
-
-    @media (min-width: 960px) { --vp-z-index-sidebar: 25 }
 
     /**
      * Layouts
@@ -387,19 +384,12 @@
 	--vp-nav-logo-height: 24px;
 
     .hide-nav { --vp-nav-height: 0px }
-    .hide-nav .VPSidebar { --vp-nav-height: 22px }
 
     /**
      * Component: Local Nav
      * -------------------------------------------------------------------------- */
 
 	--vp-local-nav-bg-color: var(--vp-c-bg);
-
-    /**
-     * Component: Sidebar
-     * -------------------------------------------------------------------------- */
-	--vp-sidebar-width: 272px;
-	--vp-sidebar-bg-color: var(--vp-c-bg-alt);
 
     /**
      * Colors Backdrop

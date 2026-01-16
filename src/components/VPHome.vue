@@ -9,7 +9,7 @@ const { frontmatter, theme } = useData();
 
 <template>
 	<main
-        class="VPHome"
+		class="VPHome"
 		:class="{
             'external-link-icon-enabled': theme.externalLinkIcon
         }"

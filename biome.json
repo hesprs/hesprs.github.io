@@ -1,7 +1,7 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
 	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-	"files": { "includes": ["**", "!!**/dist", "!!docs/.vitepress/theme", "!package.json"] },
+	"files": { "includes": ["**", "!!**/dist", "!!docs/.vitepress/theme", "!package.json", "!!**/public"] },
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
@@ -17,11 +17,12 @@
 		"rules": {
 			"recommended": true,
 			"complexity": {
-				"noImportantStyles": "off"
+				"noImportantStyles": "off",
+				"noBannedTypes": "off"
 			},
-            "correctness": {
-                "noUnknownPseudoClass": "off"
-            }
+			"correctness": {
+				"noUnknownPseudoClass": "off"
+			}
 		},
 		"domains": {
 			"vue": "recommended"

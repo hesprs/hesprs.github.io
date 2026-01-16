@@ -5,7 +5,7 @@
 				>Hello 👋<br />I am Hēsperus,
 			</span>
 			<span class="text">
-				High school student • Open-source developer
+				High school student • OSS developer
 				<br />
 				Futuristic visionary • Classics enthusiast
 			</span>
@@ -74,7 +74,7 @@
 		</article>
 	</div>
 	<div class="about-content" style="grid-template-columns: 3fr 2fr">
-		<article class="s-card card-enhance architecture img-mask">
+		<article class="s-card card-enhance art img-mask">
 			<span class="tip">Favorite Art Styles</span>
 			<br />
 			<span class="title large">Neo-Classicism</span>
@@ -344,7 +344,7 @@ const perspectives = [
                 > .icon { margin-right: 6px }
             }
         }
-        &.architecture::before {
+        &.art::before {
             background-image: url('https://img1.tucang.cc/api/image/show/e9287e92d561e0a07289663a3076bcbc');
         }
 		&.like {

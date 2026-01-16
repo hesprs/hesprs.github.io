@@ -3,7 +3,6 @@ import { useWindowScroll } from '@vueuse/core';
 import { ref, watchPostEffect } from 'vue';
 import VPLocalNav from '@/components/VPLocalNav.vue';
 import { useLayout } from '@/composables/layout';
-import { useSidebarControl } from '@/composables/sidebar';
 import VPNavBarAppearance from './VPNavBarAppearance.vue';
 import VPNavBarExtra from './VPNavBarExtra.vue';
 import VPNavBarHamburger from './VPNavBarHamburger.vue';
@@ -19,14 +18,12 @@ const props = defineProps<{
 defineEmits<(e: 'toggle-screen') => void>();
 
 const { y } = useWindowScroll();
-const { hasSidebar, showTitle } = useLayout();
-const { isOpen: isSidebarOpen, open: openSidebar } = useSidebarControl();
+const { showTitle } = useLayout();
 
 const classes = ref<Record<string, boolean>>({});
 
 watchPostEffect(() => {
 	classes.value = {
-		'has-sidebar': hasSidebar.value,
 		top: y.value === 0,
 		'screen-open': props.isScreenOpen,
 		'show-title': showTitle.value,
@@ -60,7 +57,7 @@ watchPostEffect(() => {
 				<VPNavBarHamburger :active="isScreenOpen" @click="$emit('toggle-screen')" />
 			</div>
 		</div>
-		<VPLocalNav :open="isSidebarOpen" @open-menu="openSidebar" class="VPLocalNav" />
+		<VPLocalNav class="VPLocalNav" />
 	</div>
 </template>
 
@@ -103,7 +100,6 @@ watchPostEffect(() => {
         .show-title & { transform: translateY(-55px) }
     }
     @media (min-width: 768px) { padding: 0 32px }
-    @media (min-width: 960px) { .VPNavBar.has-sidebar & { padding: 0 } }
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
@@ -123,52 +119,10 @@ watchPostEffect(() => {
     pointer-events: auto;
 }
 
-@media (min-width: 960px) {
-	.VPNavBar.has-sidebar .container {
-		max-width: 100%;
-	}
-}
-
 .title {
 	flex-shrink: 0;
 	height: calc(var(--vp-nav-height) - 1px);
 	transition: background-color 0.5s;
-}
-
-@media (min-width: 960px) {
-	.VPNavBar.has-sidebar .title {
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: 2;
-		padding: 0 32px;
-		width: var(--vp-sidebar-width);
-		height: var(--vp-nav-height);
-		background-color: transparent;
-	}
-}
-
-@media (min-width: 1440px) {
-	.VPNavBar.has-sidebar .title {
-		padding-left: max(32px, calc((100% - (var(--vp-layout-max-width) - 64px)) / 2));
-		width: calc((100% - (var(--vp-layout-max-width) - 64px)) / 2 + var(--vp-sidebar-width) - 32px);
-	}
-}
-
-@media (min-width: 960px) {
-	.VPNavBar.has-sidebar .content {
-		position: relative;
-		z-index: 1;
-		padding-left: var(--vp-sidebar-width);
-		padding-right: 32px;
-	}
-}
-
-@media (min-width: 1440px) {
-	.VPNavBar.has-sidebar .content {
-		padding-left: calc((100% - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
-		padding-right: calc((100% - var(--vp-layout-max-width)) / 2 + 32px);
-	}
 }
 
 .content-body {

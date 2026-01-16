@@ -2,6 +2,7 @@
 import { useNavigatorLanguage } from '@vueuse/core';
 import { computed, onMounted, shallowRef, useTemplateRef, watchEffect } from 'vue';
 import { useData } from '@/composables/data';
+import { useI18n } from '@/composables/i18n';
 
 const { theme, page, lang: pageLang } = useData();
 const { language: browserLang } = useNavigatorLanguage();
@@ -11,16 +12,17 @@ const timeRef = useTemplateRef('timeRef');
 const date = computed(() => new Date(page.value.lastUpdated as number));
 const isoDatetime = computed(() => date.value.toISOString());
 const datetime = shallowRef('');
+const i18n = useI18n();
 
 // set time on mounted hook to avoid hydration mismatch due to
 // potential differences in timezones of the server and clients
 onMounted(() => {
 	watchEffect(() => {
-		const lang = theme.value.lastUpdated?.formatOptions?.forceLocale ? pageLang.value : browserLang.value;
+		const lang = theme.value.lastUpdated?.forceLocale ? pageLang.value : browserLang.value;
 
 		datetime.value = new Intl.DateTimeFormat(
 			lang,
-			theme.value.lastUpdated?.formatOptions ?? {
+			theme.value.lastUpdated ?? {
 				dateStyle: 'medium',
 				timeStyle: 'medium',
 			},
@@ -37,8 +39,7 @@ onMounted(() => {
 
 <template>
 	<p class="VPLastUpdated">
-		{{ theme.lastUpdated?.text || theme.lastUpdatedText || 'Last updated' }}:
-		<time ref="timeRef" :datetime="isoDatetime">{{ datetime }}</time>
+		{{ i18n.lastUpdate }}:<time ref="timeRef" :datetime="isoDatetime">{{ datetime }}</time>
 	</p>
 </template>
 

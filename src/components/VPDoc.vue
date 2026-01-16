@@ -9,13 +9,13 @@ import VPDocFooter from './VPDocFooter.vue';
 const { theme } = useData();
 
 const route = useRoute();
-const { hasSidebar, hasAside, leftAside } = useLayout();
+const { hasAside, leftAside } = useLayout();
 
 const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html$/, ''));
 </script>
 
 <template>
-	<div class="VPDoc" :class="{ 'has-sidebar': hasSidebar, 'has-aside': hasAside }">
+	<div class="VPDoc" :class="{ 'has-aside': hasAside }">
 		<slot name="doc-top" />
 		<div class="container">
 			<div v-if="hasAside" class="aside" :class="{'left-aside': leftAside}">
@@ -71,25 +71,17 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 <style lang="scss" scoped>
 .VPDoc {
 	width: 100%;
-    @media (min-width: 960px) {
-        --container-width: 992px;
-        &.has-sidebar { --container-width: calc(992px - var(--vp-sidebar-width)) }
-    }
-    @media (min-width: 1440px) {
-        --container-width: 1260px;
-        &.has-sidebar { --container-width: calc(1260px - var(--vp-sidebar-width)) }
-    }
+    @media (min-width: 960px) { --container-width: 992px }
+    @media (min-width: 1440px) { --container-width: 1260px }
 }
 
 .container {
 	margin: 0 auto;
 	width: 100%;
     @media (min-width: 960px) {
-	    .VPDoc:not(.has-sidebar) & {
-		    display: flex;
-		    justify-content: center;
-		    width: var(--container-width);
-	    }
+		display: flex;
+		justify-content: center;
+		width: var(--container-width);
     }
     @media (min-width: 1280px) {
 		display: flex;

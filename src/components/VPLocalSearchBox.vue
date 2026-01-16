@@ -506,9 +506,7 @@ function onMouseMove(e: MouseEvent) {
 										<span class="text" v-html="t" />
 										<span class="vpi-chevron-right local-search-icon" />
 									</span>
-									<span class="title main">
-										<span class="text" v-html="p.title" />
-									</span>
+									<span class="title main"> <span class="text" v-html="p.title" /> </span>
 								</div>
 
 								<div v-if="showDetailedList" class="excerpt-wrapper">

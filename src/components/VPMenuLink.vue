@@ -1,7 +1,7 @@
-<script lang="ts" setup generic="T extends DefaultTheme.NavItemWithLink">
-import type { DefaultTheme } from 'vitepress/theme';
+<script lang="ts" setup generic="T extends TritoTheme.NavItemWithLink">
 import { computed } from 'vue';
 import { useData } from '@/composables/data';
+import type { TritoTheme } from '@/shared';
 import { isActive } from '../shared';
 import VPLink from './VPLink.vue';
 
@@ -23,12 +23,12 @@ defineOptions({ inheritAttrs: false });
 		<VPLink
 			v-bind="$attrs"
 			:class="{
-        active: isActive(
-          page.relativePath,
-          item.activeMatch || href,
-          !!item.activeMatch
-        )
-      }"
+                active: isActive(
+                    page.relativePath,
+                    item.activeMatch || href,
+                    !!item.activeMatch
+                )
+            }"
 			:href
 			:target="item.target"
 			:rel="item.rel"

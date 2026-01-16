@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
 import { inject } from 'vue';
 import { type LayoutInfo, layoutInfoInjectionKey } from '@/composables/layout';
+import type { TritoTheme } from '@/shared';
 import VPButton from './VPButton.vue';
 import VPImage from './VPImage.vue';
 
@@ -17,7 +17,7 @@ defineProps<{
 	name?: string;
 	text?: string;
 	tagline?: string;
-	image?: DefaultTheme.ThemeableImage;
+	image?: TritoTheme.ThemeableImage;
 	actions?: HeroAction[];
 }>();
 

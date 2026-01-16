@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
+import type { TritoTheme } from '@/shared';
 import VPImage from './VPImage.vue';
 import VPLink from './VPLink.vue';
 
 defineProps<{
-	icon?: DefaultTheme.FeatureIcon;
+	icon?: TritoTheme.FeatureIcon;
 	title: string;
 	details?: string;
 	link?: string;

@@ -23,7 +23,10 @@ export class LRUCache<K, V> {
 		// refresh key
 		if (this.cache.has(key)) this.cache.delete(key);
 		// evict oldest
-		else if (this.cache.size === this.max) this.cache.delete(this.first()!);
+		else if (this.cache.size === this.max) {
+			const first = this.first();
+			if (first) this.cache.delete(first);
+		}
 		this.cache.set(key, val);
 	}
 

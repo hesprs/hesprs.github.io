@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { useData } from '@/composables/data';
-import { useLayout } from '@/composables/layout';
 import NotFound from '../NotFound.vue';
 import VPDoc from './VPDoc.vue';
 import VPHome from './VPHome.vue';
 import VPPage from './VPPage.vue';
 
 const { page, frontmatter } = useData();
-const { hasSidebar } = useLayout();
 </script>
 
 <template>
-	<div class="VPContent" id="VPContent" :class="{ 'has-sidebar': hasSidebar }">
+	<div class="VPContent" id="VPContent">
 		<slot name="not-found" v-if="page.isNotFound">
 			<NotFound />
 		</slot>
@@ -104,17 +102,6 @@ const { hasSidebar } = useLayout();
 	margin: var(--vp-nav-height) auto 0;
 	width: 100%;
     padding-top: 24px;
-    &.has-sidebar {
-        margin: 0;
-        @media (min-width: 1440px) {
-		    padding-right: calc((100% - var(--vp-layout-max-width)) / 2);
-		    padding-left: calc((100% - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
-        }
-        @media (min-width: 960px) {
-    		margin: var(--vp-nav-height) 0 0;
-	    	padding-left: var(--vp-sidebar-width);
-        }
-    }
     @media (min-width: 960px) { padding-top: 36px }
 }
 </style>

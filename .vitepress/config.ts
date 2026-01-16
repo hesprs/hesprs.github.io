@@ -12,32 +12,59 @@ export default defineConfig({
 	cleanUrls: true,
 	lastUpdated: true,
 	title: 'HESPERI',
-	description: "Hēsperus' (hesprs) portfolio, including information about Hēsperus' personalities, hobbies, and project introductions and demos.",
 	rewrites: { 'en/:rest*': ':rest*' },
 	locales: {
-		root: { label: 'English', lang: 'en' },
-		ja: { label: '日本語', lang: 'ja' },
+		root: {
+			description:
+				"Hēsperus' (hesprs) portfolio, including information about Hēsperus' personalities, hobbies, and project introductions and demos.",
+			label: 'English',
+			lang: 'en',
+			themeConfig: {
+				nav: [
+					{ text: 'Home', link: '/' },
+					{ text: 'Pointeract', link: '/pointeract' },
+					{ text: 'Canvas Viewer', link: '/json-canvas-viewer' },
+				],
+			},
+			head: [
+				[
+					'meta',
+					{
+						name: 'keywords',
+						content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
+					},
+				],
+			],
+		},
+		'zh-Hans': {
+			description: 'Hēsperus（hesprs）的作品集，包含有关 Hēsperus 的个性、爱好以及项目介绍和演示。',
+			label: '简体中文',
+			lang: 'zh-Hans',
+			themeConfig: {
+				nav: [
+					{ text: '首页', link: '/zh-Hans/' },
+					{ text: 'Pointeract', link: '/zh-Hans/pointeract' },
+					{ text: 'Canvas Viewer', link: '/zh-Hans/json-canvas-viewer' },
+				],
+			},
+			head: [
+				[
+					'meta',
+					{
+						name: 'keywords',
+						content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
+					},
+				],
+			],
+		},
 	},
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }],
 		['meta', { name: 'color-scheme', content: 'dark light' }],
-		[
-			'meta',
-			{
-				name: 'keywords',
-				content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
-			},
-		],
 	],
 	sitemap: { hostname: 'https://hesprs.github.io' },
 	themeConfig: {
-		nav: [
-			{ text: 'Home', link: '/' },
-			{ text: 'Pointeract', link: '/pointeract' },
-			{ text: 'Canvas Viewer', link: '/json-canvas-viewer' },
-		],
 		logo: { src: '/logo-flat.svg', alt: 'Website logo' },
-
 		search: { provider: 'local' },
 		socialLinks: [
 			{ icon: 'npm', link: 'https://www.npmjs.com/~hesprs' },

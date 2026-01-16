@@ -2,23 +2,22 @@
 import { IconArrowBarToUp, IconChevronLeft } from '@tabler/icons-vue';
 import { onKeyStroke } from '@vueuse/core';
 import { onContentUpdated } from 'vitepress';
-import type { DefaultTheme } from 'vitepress/theme';
 import { nextTick, ref, watch } from 'vue';
 import { scrollToTop as toTop } from '@/composables/contextMenuActions';
-import { useData } from '@/composables/data';
-import { resolveTitle } from '@/composables/outline';
+import { useI18n } from '@/composables/i18n';
+import type { TritoTheme } from '@/shared';
 import VPDocOutlineItem from './VPDocOutlineItem.vue';
 
 const props = defineProps<{
-	headers: DefaultTheme.OutlineItem[];
+	headers: TritoTheme.OutlineItem[];
 	navHeight: number;
 }>();
 
-const { theme } = useData();
 const open = ref(false);
 const vh = ref(0);
 const main = ref<HTMLDivElement>();
 const items = ref<HTMLDivElement>();
+const i18n = useI18n();
 
 function closeOnClickOutside(e: Event) {
 	if (!main.value?.contains(e.target as Node)) {
@@ -69,18 +68,16 @@ function scrollToTop() {
 	<div class="VPLocalNavOutlineDropdown" :style="{ '--vp-vh': vh + 'px' }" ref="main">
 		<button @click="toggle" :class="{ open }" v-if="headers.length > 0">
 			<IconChevronLeft class="icon" />
-			<span class="menu-text">{{ resolveTitle(theme) }}</span>
+			<span class="menu-text">{{ i18n.onThisPage }}</span>
 		</button>
 		<button @click="scrollToTop" v-else>
 			<IconArrowBarToUp class="icon" />
-			{{ theme.returnToTopLabel || 'Return to top' }}
+			{{ i18n.returnToTop }}
 		</button>
 		<Transition name="flyout">
 			<div v-if="open" ref="items" class="items" @click="onItemClick">
 				<div class="header">
-					<a class="top-link" href="#" @click="scrollToTop">
-						{{ theme.returnToTopLabel || 'Return to top' }}
-					</a>
+					<a class="top-link" href="#" @click="scrollToTop"> {{ i18n.returnToTop }} </a>
 				</div>
 				<div class="outline">
 					<VPDocOutlineItem :headers />
@@ -153,7 +150,7 @@ function scrollToTop() {
 @media (min-width: 960px) {
 	.items {
 		right: auto;
-		left: calc(var(--vp-sidebar-width) + 32px);
+		left: 32px;
 		width: 320px;
 	}
 }

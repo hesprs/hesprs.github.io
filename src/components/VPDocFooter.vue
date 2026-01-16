@@ -2,11 +2,13 @@
 import { computed } from 'vue';
 import { useData } from '@/composables/data';
 import { useEditLink } from '@/composables/edit-link';
+import { useI18n } from '@/composables/i18n';
 import { usePrevNext } from '@/composables/prev-next';
 import VPDocFooterLastUpdated from './VPDocFooterLastUpdated.vue';
 import VPLink from './VPLink.vue';
 
 const { theme, page, frontmatter } = useData();
+const i18n = useI18n();
 
 const editLink = useEditLink();
 const control = usePrevNext();
@@ -38,13 +40,13 @@ const showFooter = computed(
 		<nav v-if="control.prev?.link || control.next?.link" class="prev-next" aria-label="Pager">
 			<div class="pager">
 				<VPLink v-if="control.prev?.link" class="pager-link prev" :href="control.prev.link">
-					<span class="desc" v-html="theme.docFooter?.prev || 'Previous page'"></span>
+					<span class="desc">{{ i18n.prev }}</span>
 					<span class="title" v-html="control.prev.text"></span>
 				</VPLink>
 			</div>
 			<div class="pager">
 				<VPLink v-if="control.next?.link" class="pager-link next" :href="control.next.link">
-					<span class="desc" v-html="theme.docFooter?.next || 'Next page'"></span>
+					<span class="desc">{{ i18n.next }}</span>
 					<span class="title" v-html="control.next.text"></span>
 				</VPLink>
 			</div>

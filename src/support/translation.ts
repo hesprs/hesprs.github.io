@@ -1,3 +1,5 @@
+// biome-ignore-all lint/suspicious/noExplicitAny: spaghetti code, refactor needed
+// biome-ignore-all lint/style/noNonNullAssertion: spaghetti code, refactor needed
 import { useData } from '@/composables/data';
 
 /**

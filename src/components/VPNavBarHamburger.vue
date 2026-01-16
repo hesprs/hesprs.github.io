@@ -55,7 +55,9 @@ defineEmits<(e: 'click') => void>();
 }
 
 .VPNavBarHamburger {
-    @media (min-width: 768px) { display: none }
+	@media (min-width: 768px) {
+		display: none;
+	}
 }
 
 .container {
