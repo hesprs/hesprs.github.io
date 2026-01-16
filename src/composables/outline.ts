@@ -11,7 +11,13 @@ const resolvedHeaders: { element: HTMLHeadElement; link: string }[] = [];
 
 export function getHeaders(range: TritoTheme.Config['outline']): TritoTheme.OutlineItem[] {
 	const headers = [
-		...document.querySelectorAll('.VPDoc h1, .VPDoc h2, .VPDoc h3, .VPDoc h4, .VPDoc h5, .VPDoc h6'),
+		...document.querySelectorAll(`
+.VPDoc :not(.canvas-viewer) > h1,
+.VPDoc :not(.canvas-viewer) > h2,
+.VPDoc :not(.canvas-viewer) > h3,
+.VPDoc :not(.canvas-viewer) > h4,
+.VPDoc :not(.canvas-viewer) > h5,
+.VPDoc :not(.canvas-viewer) > h6`),
 	]
 		.filter(el => el.id && el.hasChildNodes())
 		.map(el => {
@@ -48,7 +54,7 @@ export function resolveHeaders(
 		return [];
 	}
 
-	const levelsRange = (typeof range === 'object' && !Array.isArray(range) ? range.level : range) || 2;
+	const levelsRange = range || 2;
 
 	const [high, low]: [number, number] =
 		typeof levelsRange === 'number'
