@@ -12,7 +12,7 @@ export default defineConfig({
 	cleanUrls: true,
 	lastUpdated: true,
 	title: 'HESPERI',
-	description: 'Modern, lightweight, robust and extensible user interaction resolver.',
+	description: "Hēsperus' (hesprs) portfolio, including information about Hēsperus' personalities, hobbies, and project introductions and demos.",
 	rewrites: { 'en/:rest*': ':rest*' },
 	locales: {
 		root: { label: 'English', lang: 'en' },
@@ -48,7 +48,7 @@ export default defineConfig({
 		image: { lazyLoading: true },
 	},
 	vite: {
-		publicDir: resolve(__dirname, '../pages/public'),
+		publicDir: resolve(__dirname, '../public'),
 		plugins: [jsonCanvasVitePlugin(md.render)],
 		resolve: {
 			alias: [

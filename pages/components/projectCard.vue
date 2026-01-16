@@ -59,9 +59,11 @@ const props = defineProps<{
         margin: auto 0;
 	    padding: 0 0 0 20px;
         @media (max-width: 767px) {
+            width: 80%;
+            max-width: 400px;
             padding: 0;
             order: 1;
-            margin-bottom: 20px;
+            margin: 0 auto 20px auto;
         }
     }
     .card-body {
