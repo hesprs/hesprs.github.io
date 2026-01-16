@@ -50,9 +50,9 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 						<Content
 							class="vp-doc"
 							:class="[
-                pageName,
-                theme.externalLinkIcon && 'external-link-icon-enabled'
-              ]"
+                                pageName,
+                                theme.externalLinkIcon && 'external-link-icon-enabled'
+                            ]"
 						/>
 					</main>
 					<VPDocFooter>

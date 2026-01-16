@@ -29,7 +29,7 @@ export namespace TritoTheme {
 		 *
 		 * @default 2
 		 */
-		outline?: Outline | Outline['level'] | false;
+		outline?: number | [number, number] | 'deep' | false;
 
 		/**
 		 * The nav items.
@@ -223,13 +223,6 @@ export namespace TritoTheme {
 		links?: SocialLink[];
 		sponsor?: string;
 		actionText?: string;
-	}
-
-	// outline -------------------------------------------------------------------
-
-	export interface Outline {
-		level?: number | [number, number] | 'deep';
-		label?: string;
 	}
 
 	export type OutlineItem = Omit<Header, 'slug' | 'children'> & {
