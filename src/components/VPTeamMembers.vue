@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
 import { computed } from 'vue';
+import type { TritoTheme } from '@/shared';
 import VPTeamMembersItem from './VPTeamMembersItem.vue';
 
 interface Props {
 	size?: 'small' | 'medium';
-	members: DefaultTheme.TeamMember[];
+	members: TritoTheme.TeamMember[];
 }
 
 const props = withDefaults(defineProps<Props>(), {

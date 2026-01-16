@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
 import { onMounted, ref, watch } from 'vue';
 import { useAside } from '@/composables/aside';
 import { useData } from '@/composables/data';
+import type { TritoTheme } from '@/shared';
 
 const { page } = useData();
 const props = defineProps<{
-	carbonAds: DefaultTheme.CarbonAdsOptions;
+	carbonAds: TritoTheme.CarbonAdsOptions;
 }>();
 
 const carbonOptions = props.carbonAds;

@@ -21,7 +21,7 @@ export function useFlyout(options: UseFlyoutOptions) {
 		listeners++;
 
 		const unwatch = watch(focusedElement, el => {
-			if (el === options.el.value || options.el.value?.contains(el!)) {
+			if (el === options.el.value || options.el.value?.contains(el as HTMLElement)) {
 				focus.value = true;
 				options.onFocus?.();
 			} else {
@@ -32,12 +32,8 @@ export function useFlyout(options: UseFlyoutOptions) {
 
 		onUnmounted(() => {
 			unwatch();
-
 			listeners--;
-
-			if (!listeners) {
-				deactivateFocusTracking();
-			}
+			if (!listeners) deactivateFocusTracking();
 		});
 	}
 

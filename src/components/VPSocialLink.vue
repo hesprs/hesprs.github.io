@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme';
 import { computed, nextTick, onMounted, ref, useSSRContext } from 'vue';
-import type { SSGContext } from '@/shared';
+import type { SSGContext, TritoTheme } from '@/shared';
 
 const props = defineProps<{
-	icon: DefaultTheme.SocialLinkIcon;
+	icon: TritoTheme.SocialLinkIcon;
 	link: string;
 	ariaLabel?: string;
 	me: boolean;

@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme';
+import type { TritoTheme } from '@/shared';
 import VPSocialLink from './VPSocialLink.vue';
 
 withDefaults(
 	defineProps<{
-		links: DefaultTheme.SocialLink[];
+		links: TritoTheme.SocialLink[];
 		me?: boolean;
 	}>(),
 	{
@@ -23,6 +23,6 @@ withDefaults(
 .VPSocialLinks {
 	display: flex;
 	justify-content: center;
-    gap: 16px;
+	gap: 16px;
 }
 </style>

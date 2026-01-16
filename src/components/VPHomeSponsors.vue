@@ -29,9 +29,7 @@ withDefaults(defineProps<Props>(), {
 	<section class="VPHomeSponsors">
 		<div class="container">
 			<div class="header">
-				<div class="love">
-					<span class="vpi-heart icon" />
-				</div>
+				<div class="love"><span class="vpi-heart icon" /></div>
 				<h2 v-if="message" class="message">{{ message }}</h2>
 			</div>
 

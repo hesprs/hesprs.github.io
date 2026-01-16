@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { withBase } from 'vitepress';
-import type { DefaultTheme } from 'vitepress/theme';
+import type { TritoTheme } from '@/shared';
 
 defineProps<{
-	image: DefaultTheme.ThemeableImage;
+	image: TritoTheme.ThemeableImage;
 	alt?: string;
 }>();
 

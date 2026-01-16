@@ -1,19 +1,13 @@
 <script lang="ts" setup>
-import { useWindowScroll } from '@vueuse/core';
-import { computed, onMounted, ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useData } from '@/composables/data';
 import { useLayout } from '@/composables/layout';
 import VPLocalNavOutlineDropdown from './VPLocalNavOutlineDropdown.vue';
 
-defineProps<{
-	open: boolean;
-}>();
-
 defineEmits<(e: 'open-menu') => void>();
 
-const { theme, page, title } = useData();
-const { hasSidebar, headers, hasLocalNav } = useLayout();
-const { y } = useWindowScroll();
+const { page, title } = useData();
+const { headers } = useLayout();
 
 const navHeight = ref(0);
 
@@ -23,28 +17,12 @@ onMounted(() => {
 		10,
 	);
 });
-
-const classes = computed(() => {
-	return {
-		'has-sidebar': hasSidebar.value,
-	};
-});
 </script>
 
 <template>
-	<div :class="classes" class="VPLocalNav">
+	<div class="VPLocalNav">
 		<div class="container">
-			<button
-				v-if="hasSidebar"
-				class="menu"
-				:aria-expanded="open"
-				aria-controls="VPSidebarNav"
-				@click="$emit('open-menu')"
-			>
-				<span class="vpi-align-left menu-icon"></span>
-				<span class="menu-text"> {{ theme.sidebarMenuLabel || 'Menu' }}</span>
-			</button>
-            <h4 class="title">{{ page.title || title }}</h4>
+			<h4 class="title">{{ page.title || title }}</h4>
 			<VPLocalNavOutlineDropdown :headers :navHeight />
 		</div>
 	</div>
@@ -58,22 +36,8 @@ const classes = computed(() => {
 	padding-top: var(--vp-layout-top-height, 0px);
 	width: 100%;
     &.fixed { position: fixed }
-}
-
-@media (min-width: 960px) {
-	.VPLocalNav {
-		top: var(--vp-nav-height);
-	}
-
-	.VPLocalNav.has-sidebar {
-		padding-left: var(--vp-sidebar-width);
-	}
-}
-
-@media (min-width: 1280px) {
-	.VPLocalNav {
-		display: none;
-	}
+    @media (min-width: 960px) { top: var(--vp-nav-height) }
+    @media (min-width: 1280px) { display: none }
 }
 
 .container {

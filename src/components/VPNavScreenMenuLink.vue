@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme';
 import { computed, inject } from 'vue';
 import { useData } from '@/composables/data';
 import { type NavExposedMethods, navInjectionKey } from '@/composables/nav';
+import type { TritoTheme } from '@/shared';
 import { isActive } from '@/shared';
 import VPLink from './VPLink.vue';
 
 const props = defineProps<{
-	item: DefaultTheme.NavItemWithLink;
+	item: TritoTheme.NavItemWithLink;
 }>();
 
 const { page } = useData();

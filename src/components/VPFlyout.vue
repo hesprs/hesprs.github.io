@@ -1,7 +1,7 @@
-<script lang="ts" setup generic="T extends DefaultTheme.NavItem">
-import type { DefaultTheme } from 'vitepress/theme';
+<script lang="ts" setup generic="T extends TritoTheme.NavItem">
 import { ref } from 'vue';
 import { useFlyout } from '@/composables/flyout';
+import type { TritoTheme } from '@/shared';
 import VPMenu from './VPMenu.vue';
 
 defineProps<{

@@ -1,19 +1,19 @@
 <script lang="ts" setup>
 import { inject, ref, watchPostEffect } from 'vue';
 import { useData } from '@/composables/data';
-import { toggleAppearanceKey } from '@/store';
+import { useI18n } from '@/composables/i18n';
+import { toggleAppearanceKey } from '@/shared';
 import VPSwitch from './VPSwitch.vue';
 
-const { site, theme, isDark } = useData();
+const { site, isDark } = useData();
 const toggleAppearance = inject(toggleAppearanceKey, async () => {
 	isDark.value = !isDark.value;
 });
 const switchTitle = ref('');
+const i18n = useI18n();
 
 watchPostEffect(() => {
-	switchTitle.value = isDark.value
-		? theme.value.lightModeSwitchTitle || 'Switch to light theme'
-		: theme.value.darkModeSwitchTitle || 'Switch to dark theme';
+	switchTitle.value = isDark.value ? i18n.value.switchLight : i18n.value.switchDark;
 });
 </script>
 
@@ -26,7 +26,7 @@ watchPostEffect(() => {
     "
 		class="VPNavScreenAppearance"
 	>
-		<p class="text">{{ theme.darkModeSwitchLabel || 'Appearance' }}</p>
+		<p class="text">{{ i18n.appearance }}</p>
 		<VPSwitch
 			:title="switchTitle"
 			class="VPSwitchAppearance"

@@ -8,11 +8,9 @@ withDefaults(defineProps<Props>(), {
 });
 </script>
 
-<template>
-	<span class="VPBadge" :class="type">
-		<slot>{{ text }}</slot>
-	</span>
-</template>
+<template><span class="VPBadge" :class="type">
+	<slot>{{ text }}</slot>
+</span></template>
 
 <style>
 .VPBadge {

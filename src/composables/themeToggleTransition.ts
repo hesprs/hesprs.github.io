@@ -1,5 +1,5 @@
 import { nextTick, provide, type Ref } from 'vue';
-import { toggleAppearanceKey } from '../store';
+import { toggleAppearanceKey } from '@/shared';
 
 const enableTransitions = () => {
 	return (
@@ -22,8 +22,8 @@ async function toggleAppearance(
 		isDark.value = !isDark.value;
 		return;
 	}
-	document.documentElement.style.setProperty('--darkX', x + 'px');
-	document.documentElement.style.setProperty('--darkY', y + 'px');
+	document.documentElement.style.setProperty('--darkX', `${x}px`);
+	document.documentElement.style.setProperty('--darkY', `${y}px`);
 
 	await document.startViewTransition(async () => {
 		isDark.value = !isDark.value;

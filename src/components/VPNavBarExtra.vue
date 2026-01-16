@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { useData } from '@/composables/data';
+import { useI18n } from '@/composables/i18n';
 import { useLangs } from '@/composables/langs';
 import VPFlyout from './VPFlyout.vue';
 import VPMenuLink from './VPMenuLink.vue';
@@ -9,6 +10,7 @@ import VPSwitchAppearance from './VPSwitchAppearance.vue';
 
 const { site, theme } = useData();
 const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
+const i18n = useI18n();
 
 const hasExtraContent = computed(
 	() =>
@@ -37,7 +39,7 @@ const hasExtraContent = computed(
 			class="group"
 		>
 			<div class="item appearance">
-				<p class="label">{{ theme.darkModeSwitchLabel || 'Appearance' }}</p>
+				<p class="label">{{ i18n.appearance }}</p>
 				<div class="appearance-action">
 					<VPSwitchAppearance />
 				</div>

@@ -59,7 +59,7 @@ export function useSponsorsGrid({ el, size = 'medium' }: UseSponsorsGridOptions)
 	});
 
 	function manage() {
-		adjustSlots(el.value!, size);
+		if (el.value) adjustSlots(el.value, size);
 	}
 }
 
@@ -83,6 +83,7 @@ function setGrid(el: HTMLElement, size: GridSize, items: number) {
 			grid = items < value ? items : value;
 			return true;
 		}
+		return false;
 	});
 
 	setGridData(el, grid);
@@ -121,7 +122,5 @@ function addSlots(el: HTMLElement, count: number) {
 }
 
 function removeSlots(el: HTMLElement, count: number) {
-	for (let i = 0; i < count; i++) {
-		el.removeChild(el.lastElementChild!);
-	}
+	for (let i = 0; i < count; i++) if (el.lastElementChild) el.removeChild(el.lastElementChild);
 }

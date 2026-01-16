@@ -3,19 +3,12 @@ import { computed, provide, useSlots } from 'vue';
 import Background from '@/components/background.vue';
 import ContextMenu from '@/components/contextMenu.vue';
 import LoadingView from '@/components/loadingView.vue';
-import VPBackdrop from '@/components/VPBackdrop.vue';
 import VPContent from '@/components/VPContent.vue';
 import VPFooter from '@/components/VPFooter.vue';
 import VPNav from '@/components/VPNav.vue';
-import VPSidebar from '@/components/VPSidebar.vue';
 import { useData } from '@/composables/data';
 import { layoutInfoInjectionKey, registerWatchers } from '@/composables/layout';
-import { useSidebarControl } from '@/composables/sidebar';
 import setupTransition from '@/composables/themeToggleTransition';
-
-const { isOpen: isSidebarOpen, close: closeSidebar } = useSidebarControl();
-
-registerWatchers({ closeSidebar });
 
 const { frontmatter, isDark } = useData();
 setupTransition(isDark);
@@ -23,6 +16,7 @@ setupTransition(isDark);
 const slots = useSlots();
 const heroImageSlotExists = computed(() => !!slots['home-hero-image']);
 
+registerWatchers();
 provide(layoutInfoInjectionKey, { heroImageSlotExists });
 </script>
 
@@ -31,7 +25,6 @@ provide(layoutInfoInjectionKey, { heroImageSlotExists });
 		<slot name="layout-top" />
 		<ContextMenu />
 		<LoadingView />
-		<VPBackdrop class="backdrop" :show="isSidebarOpen" @click="closeSidebar" />
 		<VPNav>
 			<template #nav-bar-title-before>
 				<slot name="nav-bar-title-before" />
@@ -52,15 +45,6 @@ provide(layoutInfoInjectionKey, { heroImageSlotExists });
 				<slot name="nav-screen-content-after" />
 			</template>
 		</VPNav>
-
-		<VPSidebar :open="isSidebarOpen">
-			<template #sidebar-nav-before>
-				<slot name="sidebar-nav-before" />
-			</template>
-			<template #sidebar-nav-after>
-				<slot name="sidebar-nav-after" />
-			</template>
-		</VPSidebar>
 
 		<VPContent>
 			<template #page-top>

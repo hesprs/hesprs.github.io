@@ -37,16 +37,16 @@
 						@click="openInNewTab(selection.data.href)"
 					>
 						<IconAppWindow />
-						<span class="name">Open in New Tab</span>
+						<span class="name">{{ i18n.newTab }}</span>
 					</div>
 					<div v-if="selection.type === 'link'" class="btn" @click="copyText(selection.data.href)">
 						<IconCopy />
-						<span class="name">Copy Link</span>
+						<span class="name">{{ i18n.copyLink }}</span>
 					</div>
 					<!-- image selection -->
 					<div v-if="selection.type === 'image'" class="btn" @click="copyImage(selection.data.src)">
 						<IconClipboardCopy />
-						<span class="name">Copy Image</span>
+						<span class="name">{{ i18n.copyImage }}</span>
 					</div>
 					<div
 						v-if="selection.type === 'image'"
@@ -54,7 +54,7 @@
 						@click="downloadImage(selection.data.src)"
 					>
 						<IconDownload />
-						<span class="name">Download Image</span>
+						<span class="name">{{ i18n.downloadImage }}</span>
 					</div>
 					<!-- text selection -->
 					<a
@@ -64,22 +64,22 @@
 						target="_blank"
 					>
 						<IconBrandGoogle />
-						<span class="name">Search</span>
+						<span class="name">{{ i18n.search }}</span>
 					</a>
 					<div v-if="selection.type === 'text'" class="btn" @click="copyText(selection.data)">
 						<IconCopy />
-						<span class="name">Copy Selection</span>
+						<span class="name">{{ i18n.copySelection }}</span>
 					</div>
 				</div>
 				<div class="all-menu general">
 					<div class="btn" @click="copyText(router.route.path)"><!-- TODO: Refine URL -->
 						<IconLink />
-						<span class="name">Copy Current URL</span>
+						<span class="name">{{ i18n.copyCurrentURL }}</span>
 					</div>
 					<div class="btn" @click.stop="toggleAppearance">
 						<IconSun v-if="isDark" />
 						<IconMoonStars v-if="!isDark" />
-						<span class="name"> {{ isDark ? "Light" : "Dark" }}</span>
+						<span class="name"> {{ isDark ? i18n.light : i18n.dark }}</span>
 					</div>
 				</div>
 			</div>
@@ -124,7 +124,8 @@ import {
 	scrollToTop,
 } from '@/composables/contextMenuActions';
 import { useData } from '@/composables/data';
-import { toggleAppearanceKey } from '../store';
+import { useI18n } from '@/composables/i18n';
+import { toggleAppearanceKey } from '@/shared';
 
 interface LinkSelection {
 	type: 'link';
@@ -144,7 +145,8 @@ interface NormalSelection {
 }
 type selection = LinkSelection | ImageSelection | TextSelection | NormalSelection;
 
-const { theme, isDark } = useData();
+const { isDark } = useData();
+const i18n = useI18n();
 const router = useRouter();
 const rightMenuX = ref(0);
 const rightMenuY = ref(0);
@@ -163,19 +165,14 @@ const openRightMenu = (e: PointerEvent) => {
 	rightMenuShow.value = false;
 	checkClickType(e.target as HTMLElement);
 	nextTick().then(() => {
-		// 处理菜单位置
 		const calculateMenuPosition = () => {
 			if (!rightMenuRef.value) return;
-			// 获取菜单的宽度和高度
 			const menuWidth = rightMenuRef.value.offsetWidth;
 			const menuHeight = rightMenuRef.value.offsetHeight;
-			// 获取屏幕的宽度和高度
 			const screenWidth = window.innerWidth;
 			const screenHeight = window.innerHeight;
-			// 计算正确的坐标值
 			let correctX = e.clientX;
 			let correctY = e.clientY;
-			// 保留边距
 			const marginWidth = 20;
 			if (correctX + menuWidth > screenWidth - marginWidth) {
 				correctX = screenWidth - menuWidth - marginWidth;

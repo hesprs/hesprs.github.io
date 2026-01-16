@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
+import type { TritoTheme } from '@/shared';
 
 defineProps<{
-	headers: DefaultTheme.OutlineItem[];
+	headers: TritoTheme.OutlineItem[];
 	root?: boolean;
 }>();
 </script>

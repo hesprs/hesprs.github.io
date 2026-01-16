@@ -1,9 +1,9 @@
 <script
 	lang="ts"
 	setup
-	generic="T extends (DefaultTheme.NavItemComponent | DefaultTheme.NavItemChildren | DefaultTheme.NavItemWithLink)"
+	generic="T extends (TritoTheme.NavItemComponent | TritoTheme.NavItemChildren | TritoTheme.NavItemWithLink)"
 >
-import type { DefaultTheme } from 'vitepress/theme';
+import type { TritoTheme } from '@/shared';
 import VPMenuLink from './VPMenuLink.vue';
 
 defineProps<{

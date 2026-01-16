@@ -1,9 +1,10 @@
+// biome-ignore-all lint/suspicious/noExplicitAny: User Config
 import type { Options as _MiniSearchOptions } from 'minisearch';
-import type { DocSearchProps } from './docsearch';
-import type { Header, PageData } from './index';
-import type { LocalSearchTranslations } from './local-search';
+import type { DocSearchProps } from '@/shared/docsearch';
+import type { Header, PageData } from '@/shared/index';
+import type { LocalSearchTranslations } from '@/shared/local-search';
 
-export namespace DefaultTheme {
+export namespace TritoTheme {
 	export interface Config {
 		/**
 		 * The logo file of the site.
@@ -31,21 +32,9 @@ export namespace DefaultTheme {
 		outline?: Outline | Outline['level'] | false;
 
 		/**
-		 * @deprecated Use `outline.label` instead.
-		 *
-		 * @default 'On this page'
-		 */
-		outlineTitle?: string;
-
-		/**
 		 * The nav items.
 		 */
 		nav?: NavItem[];
-
-		/**
-		 * The sidebar items.
-		 */
-		sidebar?: Sidebar;
 
 		/**
 		 * Set to `false` to prevent rendering of aside container.
@@ -59,19 +48,22 @@ export namespace DefaultTheme {
 		/**
 		 * Info for the edit link. If it's undefined, the edit link feature will
 		 * be disabled.
+		 *
+		 * Pattern for edit link:
+		 *
+		 * @example 'https://github.com/vuejs/vitepress/edit/main/docs/:path'
+		 * @example ({ filePath }) => { ... }
 		 */
-		editLink?: EditLink;
+		editLink?: string | ((payload: PageData) => string);
 
 		/**
-		 * @deprecated Use `lastUpdated.text` instead.
+		 * Set options for last updated time formatting.
+		 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat#using_options
 		 *
-		 * Set custom last updated text.
-		 *
-		 * @default 'Last updated'
+		 * @default
+		 * { dateStyle: 'short', timeStyle: 'short' }
 		 */
-		lastUpdatedText?: string;
-
-		lastUpdated?: LastUpdatedOptions;
+		lastUpdated?: Intl.DateTimeFormatOptions & { forceLocale?: boolean };
 
 		/**
 		 * Set custom prev/next labels.
@@ -88,43 +80,6 @@ export namespace DefaultTheme {
 		 * The footer configuration.
 		 */
 		footer?: Footer;
-
-		/**
-		 * @default 'Appearance'
-		 */
-		darkModeSwitchLabel?: string;
-
-		/**
-		 * @default 'Switch to light theme'
-		 */
-		lightModeSwitchTitle?: string;
-
-		/**
-		 * @default 'Switch to dark theme'
-		 */
-		darkModeSwitchTitle?: string;
-
-		/**
-		 * @default 'Menu'
-		 */
-		sidebarMenuLabel?: string;
-
-		/**
-		 * @default 'Return to top'
-		 */
-		returnToTopLabel?: string;
-
-		/**
-		 * Set custom `aria-label` for language menu button.
-		 *
-		 * @default 'Change language'
-		 */
-		langMenuLabel?: string;
-
-		/**
-		 * @default 'Skip to content'
-		 */
-		skipToContentLabel?: string;
 
 		search?:
 			| { provider: 'local'; options?: LocalSearchOptions }
@@ -225,88 +180,18 @@ export namespace DefaultTheme {
 				wrap?: boolean;
 		  };
 
-	// sidebar -------------------------------------------------------------------
-
-	export type Sidebar = SidebarItem[] | SidebarMulti;
-
-	export interface SidebarMulti {
-		[path: string]: SidebarItem[] | { items: SidebarItem[]; base: string };
-	}
-
-	export type SidebarItem = {
-		/**
-		 * The text label of the item.
-		 */
-		text?: string;
-
-		/**
-		 * The link of the item.
-		 */
-		link?: string;
-
-		/**
-		 * The children of the item.
-		 */
-		items?: SidebarItem[];
-
-		/**
-		 * If not specified, group is not collapsible.
-		 *
-		 * If `true`, group is collapsible and collapsed by default
-		 *
-		 * If `false`, group is collapsible but expanded by default
-		 */
-		collapsed?: boolean;
-
-		/**
-		 * Base path for the children items.
-		 */
-		base?: string;
-
-		/**
-		 * Customize text that appears on the footer of previous/next page.
-		 */
-		docFooterText?: string;
-
-		rel?: string;
-		target?: string;
-	};
-
-	// edit link -----------------------------------------------------------------
-
-	export interface EditLink {
-		/**
-		 * Pattern for edit link.
-		 *
-		 * @example 'https://github.com/vuejs/vitepress/edit/main/docs/:path'
-		 * @example ({ filePath }) => { ... }
-		 */
-		pattern: string | ((payload: PageData) => string);
-
-		/**
-		 * Custom text for edit link.
-		 *
-		 * @default 'Edit this page'
-		 */
-		text?: string;
-	}
-
 	// prev-next -----------------------------------------------------------------
 
 	export interface DocFooter {
 		/**
-		 * Custom label for previous page button. Can be set to `false` to disable.
-		 *
-		 * @default 'Previous page'
+		 * Previous page button, set to `false` to disable.
 		 */
-		prev?: string | boolean;
+		prev?: boolean;
 
 		/**
-		 * Custom label for next page button. Can be set to `false` to disable.
-		 *
-		 * @default 'Next page'
+		 * Next page button, set to `false` to disable.
 		 */
-		next?: string | boolean;
+		next?: boolean;
 	}
 
 	// social link ---------------------------------------------------------------
@@ -407,26 +292,6 @@ export namespace DefaultTheme {
 	export interface CarbonAdsOptions {
 		code: string;
 		placement: string;
-	}
-
-	// last updated --------------------------------------------------------------
-
-	export interface LastUpdatedOptions {
-		/**
-		 * Set custom last updated text.
-		 *
-		 * @default 'Last updated'
-		 */
-		text?: string;
-
-		/**
-		 * Set options for last updated time formatting.
-		 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat#using_options
-		 *
-		 * @default
-		 * { dateStyle: 'short', timeStyle: 'short' }
-		 */
-		formatOptions?: Intl.DateTimeFormatOptions & { forceLocale?: boolean };
 	}
 
 	// not found -----------------------------------------------------------------

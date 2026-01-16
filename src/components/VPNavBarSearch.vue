@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import '@docsearch/css';
 import { onKeyStroke } from '@vueuse/core';
-import type { DefaultTheme } from 'vitepress/theme';
 import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue';
 import { useData } from '@/composables/data';
+import type { TritoTheme } from '@/shared';
 import VPNavBarSearchButton from './VPNavBarSearchButton.vue';
 
 const VPLocalSearchBox = __VP_LOCAL_SEARCH__
@@ -31,7 +31,7 @@ const preconnect = () => {
 		preconnect.id = id;
 		preconnect.rel = 'preconnect';
 		preconnect.href = `https://${
-			((theme.value.search?.options as DefaultTheme.AlgoliaSearchOptions) ?? theme.value.search)?.appId
+			((theme.value.search?.options as TritoTheme.AlgoliaSearchOptions) ?? theme.value.search)?.appId
 		}-dsn.algolia.net`;
 		preconnect.crossOrigin = '';
 		document.head.appendChild(preconnect);

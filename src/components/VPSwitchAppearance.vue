@@ -2,10 +2,11 @@
 import { IconMoonStars, IconSun } from '@tabler/icons-vue';
 import { inject, ref, watchPostEffect } from 'vue';
 import { useData } from '@/composables/data';
-import { toggleAppearanceKey } from '@/store';
-import VPSwitch from './VPSwitch.vue';
+import { useI18n } from '@/composables/i18n';
+import { toggleAppearanceKey } from '@/shared';
 
-const { isDark, theme } = useData();
+const { isDark } = useData();
+const i18n = useI18n();
 
 const toggleAppearance = inject(toggleAppearanceKey, async () => {
 	isDark.value = !isDark.value;
@@ -14,9 +15,7 @@ const toggleAppearance = inject(toggleAppearanceKey, async () => {
 const switchTitle = ref('');
 
 watchPostEffect(() => {
-	switchTitle.value = isDark.value
-		? theme.value.lightModeSwitchTitle || 'Switch to light theme'
-		: theme.value.darkModeSwitchTitle || 'Switch to dark theme';
+	switchTitle.value = isDark.value ? i18n.value.switchLight : i18n.value.switchDark;
 });
 </script>
 

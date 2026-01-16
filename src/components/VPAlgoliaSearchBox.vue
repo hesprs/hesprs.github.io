@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import docsearch, { type DocSearchProps } from '@docsearch/js';
 import { useRouter } from 'vitepress';
-import type { DefaultTheme } from 'vitepress/theme';
 import { nextTick, onMounted, watch } from 'vue';
 import { useData } from '@/composables/data';
+import type { TritoTheme } from '@/shared';
 
 const props = defineProps<{
-	algolia: DefaultTheme.AlgoliaSearchOptions;
+	algolia: TritoTheme.AlgoliaSearchOptions;
 }>();
 
 const router = useRouter();
@@ -58,7 +58,7 @@ async function update() {
 	});
 }
 
-function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
+function initialize(userOptions: TritoTheme.AlgoliaSearchOptions) {
 	const options = Object.assign({}, userOptions, {
 		container: '#docsearch',
 

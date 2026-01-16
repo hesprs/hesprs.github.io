@@ -1,22 +1,10 @@
 import { computed } from 'vue';
-import { getFlatSideBarLinks, getSidebar } from '@/support/sidebar';
-import { isActive } from '../shared';
 import { useData } from './data';
 
 export function usePrevNext() {
-	const { page, theme, frontmatter } = useData();
+	const { theme, frontmatter } = useData();
 
 	return computed(() => {
-		const sidebar = getSidebar(theme.value.sidebar, page.value.relativePath);
-		const links = getFlatSideBarLinks(sidebar);
-
-		// ignore inner-page links with hashes
-		const candidates = uniqBy(links, link => link.link.replace(/[?#].*$/, ''));
-
-		const index = candidates.findIndex(link => {
-			return isActive(page.value.relativePath, link.link);
-		});
-
 		const hidePrev =
 			(theme.value.docFooter?.prev === false && !frontmatter.value.prev) ||
 			frontmatter.value.prev === false;
@@ -30,45 +18,33 @@ export function usePrevNext() {
 				? undefined
 				: {
 						text:
-							(typeof frontmatter.value.prev === 'string'
+							typeof frontmatter.value.prev === 'string'
 								? frontmatter.value.prev
 								: typeof frontmatter.value.prev === 'object'
 									? frontmatter.value.prev.text
-									: undefined) ??
-							candidates[index - 1]?.docFooterText ??
-							candidates[index - 1]?.text,
+									: undefined,
 						link:
-							(typeof frontmatter.value.prev === 'object'
+							typeof frontmatter.value.prev === 'object'
 								? frontmatter.value.prev.link
-								: undefined) ?? candidates[index - 1]?.link,
+								: undefined,
 					},
 			next: hideNext
 				? undefined
 				: {
 						text:
-							(typeof frontmatter.value.next === 'string'
+							typeof frontmatter.value.next === 'string'
 								? frontmatter.value.next
 								: typeof frontmatter.value.next === 'object'
 									? frontmatter.value.next.text
-									: undefined) ??
-							candidates[index + 1]?.docFooterText ??
-							candidates[index + 1]?.text,
+									: undefined,
 						link:
-							(typeof frontmatter.value.next === 'object'
+							typeof frontmatter.value.next === 'object'
 								? frontmatter.value.next.link
-								: undefined) ?? candidates[index + 1]?.link,
+								: undefined,
 					},
 		} as {
 			prev?: { text?: string; link?: string };
 			next?: { text?: string; link?: string };
 		};
-	});
-}
-
-function uniqBy<T>(array: T[], keyFn: (item: T) => any): T[] {
-	const seen = new Set();
-	return array.filter(item => {
-		const k = keyFn(item);
-		return seen.has(k) ? false : seen.add(k);
 	});
 }

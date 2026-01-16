@@ -1,6 +1,6 @@
 import { getScrollOffset } from 'vitepress';
-import type { DefaultTheme } from 'vitepress/theme';
 import { onMounted, onUnmounted, onUpdated, type Ref } from 'vue';
+import type { TritoTheme } from '@/shared';
 import { throttleAndDebounce } from '@/support/utils';
 import { useAside } from './aside';
 
@@ -9,14 +9,7 @@ const ignoreRE = /\b(?:VPBadge|header-anchor|footnote-ref|ignore-header)\b/;
 // cached list of anchor elements from resolveHeaders
 const resolvedHeaders: { element: HTMLHeadElement; link: string }[] = [];
 
-export function resolveTitle(theme: DefaultTheme.Config): string {
-	return (
-		(typeof theme.outline === 'object' && !Array.isArray(theme.outline) && theme.outline.label) ||
-		'On this page'
-	);
-}
-
-export function getHeaders(range: DefaultTheme.Config['outline']): DefaultTheme.OutlineItem[] {
+export function getHeaders(range: TritoTheme.Config['outline']): TritoTheme.OutlineItem[] {
 	const headers = [
 		...document.querySelectorAll('.VPDoc h1, .VPDoc h2, .VPDoc h3, .VPDoc h4, .VPDoc h5, .VPDoc h6'),
 	]
@@ -48,9 +41,9 @@ function serializeHeader(h: Element): string {
 }
 
 export function resolveHeaders(
-	headers: DefaultTheme.OutlineItem[],
-	range?: DefaultTheme.Config['outline'],
-): DefaultTheme.OutlineItem[] {
+	headers: TritoTheme.OutlineItem[],
+	range?: TritoTheme.Config['outline'],
+): TritoTheme.OutlineItem[] {
 	if (range === false) {
 		return [];
 	}
@@ -67,7 +60,7 @@ export function resolveHeaders(
 	return buildTree(headers, high, low);
 }
 
-export function useActiveAnchor(container: Ref<HTMLElement>, marker: Ref<HTMLElement>): void {
+export function useActiveAnchor(container: Ref<HTMLElement | null>, marker: Ref<HTMLElement | null>) {
 	const { isAsideEnabled } = useAside();
 
 	const onScroll = throttleAndDebounce(setActiveLink, 100);
@@ -137,13 +130,11 @@ export function useActiveAnchor(container: Ref<HTMLElement>, marker: Ref<HTMLEle
 	}
 
 	function activateLink(hash: string | null) {
-		if (prevActiveLink) {
-			prevActiveLink.classList.remove('active');
-		}
+		if (!container.value || !marker.value) return;
+		if (prevActiveLink) prevActiveLink.classList.remove('active');
 
-		if (hash == null) {
-			prevActiveLink = null;
-		} else {
+		if (hash == null) prevActiveLink = null;
+		else {
 			prevActiveLink = container.value.querySelector(`a[href="${decodeURIComponent(hash)}"]`);
 		}
 
@@ -176,11 +167,11 @@ function getAbsoluteTop(element: HTMLElement): number {
 	return offsetTop;
 }
 
-function buildTree(data: DefaultTheme.OutlineItem[], min: number, max: number): DefaultTheme.OutlineItem[] {
+function buildTree(data: TritoTheme.OutlineItem[], min: number, max: number): TritoTheme.OutlineItem[] {
 	resolvedHeaders.length = 0;
 
-	const result: DefaultTheme.OutlineItem[] = [];
-	const stack: (DefaultTheme.OutlineItem | { level: number; shouldIgnore: true })[] = [];
+	const result: TritoTheme.OutlineItem[] = [];
+	const stack: (TritoTheme.OutlineItem | { level: number; shouldIgnore: true })[] = [];
 
 	data.forEach(item => {
 		const node = { ...item, children: [] };

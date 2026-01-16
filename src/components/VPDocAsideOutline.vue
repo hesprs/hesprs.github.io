@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { IconMenu2 } from '@tabler/icons-vue';
-import { ref } from 'vue';
-import { useData } from '@/composables/data';
+import { useTemplateRef } from 'vue';
+import { useI18n } from '@/composables/i18n';
 import { useLayout } from '@/composables/layout';
-import { resolveTitle, useActiveAnchor } from '@/composables/outline';
+import { useActiveAnchor } from '@/composables/outline';
 import VPDocOutlineItem from './VPDocOutlineItem.vue';
 
-const { theme } = useData();
-
-const container = ref();
-const marker = ref();
+const container = useTemplateRef('container');
+const marker = useTemplateRef('marker');
+const i18n = useI18n();
 
 const { headers, hasLocalNav } = useLayout();
 
@@ -25,7 +24,7 @@ useActiveAnchor(container, marker);
 	>
 		<div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading">
 			<IconMenu2 class="icon-toc" />
-			{{ resolveTitle(theme) }}
+			{{ i18n.onThisPage }}
 		</div>
 		<div class="content">
 			<div class="outline-marker" ref="marker" />

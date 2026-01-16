@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme';
 import { defineAsyncComponent } from 'vue';
+import type { TritoTheme } from '@/shared';
 
 defineProps<{
-	carbonAds: DefaultTheme.CarbonAdsOptions;
+	carbonAds: TritoTheme.CarbonAdsOptions;
 }>();
 
 const VPCarbonAds = __CARBON__ ? defineAsyncComponent(() => import('./VPCarbonAds.vue')) : () => null;

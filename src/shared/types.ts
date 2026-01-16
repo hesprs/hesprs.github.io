@@ -1,8 +1,9 @@
 // types shared between server and client
+// biome-ignore-all lint/suspicious/noExplicitAny: type helpers
 import type { UseDarkOptions } from '@vueuse/core';
 import type { SSRContext } from 'vue/server-renderer';
 
-export type { DefaultTheme } from './theme-config';
+export type { TritoTheme } from '@/theme-config';
 
 export type Awaitable<T> = T | PromiseLike<T>;
 
@@ -175,7 +176,7 @@ export type AdditionalConfigDict<ThemeConfig = any> = Record<string, AdditionalC
 
 export type AdditionalConfigLoader<ThemeConfig = any> = (
 	relativePath: string,
-) => AdditionalConfig<ThemeConfig>[] | void;
+) => AdditionalConfig<ThemeConfig>[] | undefined;
 
 // Manually declaring all properties as rollup-plugin-dts
 // is unable to merge augmented module declarations

@@ -1,17 +1,17 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme';
 import { computed } from 'vue';
 import { useData } from '@/composables/data';
+import type { TritoTheme } from '@/shared';
 import { isActive } from '@/shared';
 import VPFlyout from './VPFlyout.vue';
 
 const props = defineProps<{
-	item: DefaultTheme.NavItemWithChildren;
+	item: TritoTheme.NavItemWithChildren;
 }>();
 
 const { page } = useData();
 
-const isChildActive = (navItem: DefaultTheme.NavItem) => {
+const isChildActive = (navItem: TritoTheme.NavItem) => {
 	if ('component' in navItem) return false;
 
 	if ('link' in navItem) {

@@ -4,7 +4,7 @@
 			<div v-if="show" class="loading" @click="show = false">
 				<!-- TODO: logo -->
 				<VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
-				<span :class="['tip', { show: showTip }]"> 一直显示？点击任意区域即可关闭 </span>
+				<span :class="['tip', { show: showTip }]">{{ i18n.loadingTip }}</span>
 			</div>
 		</Transition>
 	</Teleport>
@@ -14,10 +14,12 @@
 import { useRouter } from 'vitepress';
 import { onBeforeUnmount, ref } from 'vue';
 import { useData } from '@/composables/data';
+import { useI18n } from '@/composables/i18n';
 import VPImage from './VPImage.vue';
 
 const router = useRouter();
 const { theme } = useData();
+const i18n = useI18n();
 
 router.onBeforeRouteChange = () => {
 	show.value = true;

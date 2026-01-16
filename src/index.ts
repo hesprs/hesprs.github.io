@@ -31,6 +31,7 @@ export { default as VPTeamPageSection } from '@/components/VPTeamPageSection.vue
 export { default as VPTeamPageTitle } from '@/components/VPTeamPageTitle.vue';
 
 export { useLayout } from '@/composables/layout';
+export type { TritoTheme } from '@/theme-config';
 
 const theme: Theme = {
 	Layout,

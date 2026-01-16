@@ -1,5 +1,5 @@
-<script lang="ts" setup generic="T extends DefaultTheme.NavItem">
-import type { DefaultTheme } from 'vitepress/theme';
+<script lang="ts" setup generic="T extends TritoTheme.NavItem">
+import type { TritoTheme } from '@/shared';
 import VPMenuGroup from './VPMenuGroup.vue';
 import VPMenuLink from './VPMenuLink.vue';
 

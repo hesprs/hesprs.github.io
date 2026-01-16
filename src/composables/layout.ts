@@ -1,6 +1,5 @@
 import { useWindowScroll } from '@vueuse/core';
-import { inBrowser, onContentUpdated, useRoute } from 'vitepress';
-import type { DefaultTheme, useLayout as expected } from 'vitepress/theme';
+import { onContentUpdated } from 'vitepress';
 import {
 	type ComputedRef,
 	computed,
@@ -8,34 +7,20 @@ import {
 	ref,
 	shallowReadonly,
 	shallowRef,
-	watch,
 	watchPostEffect,
 } from 'vue';
-import { getSidebar, getSidebarGroups } from '@/support/sidebar';
+import type { TritoTheme } from '@/shared';
 import { useData } from './data';
 import { getHeaders } from './outline';
-import { useCloseSidebarOnEscape } from './sidebar';
 
-const headers = shallowRef<DefaultTheme.OutlineItem[]>([]);
-const sidebar = shallowRef<DefaultTheme.SidebarItem[]>([]);
-const is960 = shallowRef(false);
+const headers = shallowRef<TritoTheme.OutlineItem[]>([]);
 const showTitle = ref(false);
 
-export function useLayout(): ReturnType<typeof expected> {
+export function useLayout() {
 	const { frontmatter, theme } = useData();
 
 	const isHome = computed(() => {
 		return !!(frontmatter.value.isHome ?? frontmatter.value.layout === 'home');
-	});
-
-	const hasSidebar = computed(() => {
-		return frontmatter.value.sidebar !== false && sidebar.value.length > 0 && !isHome.value;
-	});
-
-	const isSidebarEnabled = computed(() => hasSidebar.value && is960.value);
-
-	const sidebarGroups = computed(() => {
-		return hasSidebar.value ? getSidebarGroups(sidebar.value) : [];
 	});
 
 	const hasAside = computed(() => {
@@ -56,35 +41,16 @@ export function useLayout(): ReturnType<typeof expected> {
 	});
 
 	return {
-		sidebar: shallowReadonly(sidebar),
-		sidebarGroups,
-		hasSidebar,
-		isSidebarEnabled,
 		hasAside,
 		leftAside,
 		headers: shallowReadonly(headers),
 		hasLocalNav,
-        showTitle
+		showTitle,
 	};
 }
 
-interface RegisterWatchersOptions {
-	closeSidebar: () => void;
-}
-
-export function registerWatchers({ closeSidebar }: RegisterWatchersOptions) {
-	const { frontmatter, page, theme } = useData();
-
-	watch(
-		() => [page.value.relativePath, theme.value.sidebar] as const,
-		([relativePath, sidebarConfig]) => {
-			const newSidebar = sidebarConfig ? getSidebar(sidebarConfig, relativePath) : [];
-			if (JSON.stringify(newSidebar) !== JSON.stringify(sidebar.value)) {
-				sidebar.value = newSidebar;
-			}
-		},
-		{ immediate: true, deep: true, flush: 'sync' },
-	);
+export function registerWatchers() {
+	const { frontmatter, theme } = useData();
 
 	onContentUpdated(() => {
 		headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
@@ -94,22 +60,6 @@ export function registerWatchers({ closeSidebar }: RegisterWatchersOptions) {
 	watchPostEffect(() => {
 		showTitle.value = y.value >= 100;
 	});
-
-	if (inBrowser) {
-		is960.value = window.innerWidth >= 960;
-		window.addEventListener(
-			'resize',
-			() => {
-				is960.value = window.innerWidth >= 960;
-			},
-			{ passive: true },
-		);
-	}
-
-	const route = useRoute();
-	watch(() => route.path, closeSidebar);
-
-	useCloseSidebarOnEscape(closeSidebar);
 }
 
 export interface LayoutInfo {
