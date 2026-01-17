@@ -12,9 +12,7 @@ const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 const i18n = useI18n();
 
 const hasExtraContent = computed(
-	() =>
-		(localeLinks.value.length && currentLang.value.label) ||
-		site.value.appearance
+	() => (localeLinks.value.length && currentLang.value.label) || site.value.appearance,
 );
 </script>
 
