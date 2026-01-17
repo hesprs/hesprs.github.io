@@ -183,10 +183,10 @@ withDefaults(defineProps<Props>(), {
 }
 
 .desc :deep(a) {
-  font-weight: 500;
-  color: var(--vp-c-brand-1);
-  text-decoration-style: dotted;
-  transition: color 0.25s;
+	font-weight: 500;
+	color: var(--vp-c-brand-1);
+	text-decoration-style: dotted;
+	transition: color 0.25s;
 }
 
 .links {

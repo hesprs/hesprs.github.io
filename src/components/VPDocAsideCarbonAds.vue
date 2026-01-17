@@ -6,7 +6,9 @@ defineProps<{
 	carbonAds: TritoTheme.CarbonAdsOptions;
 }>();
 
-const VPCarbonAds = __CARBON__ ? defineAsyncComponent(() => import('./VPCarbonAds.vue')) : () => null;
+const VPCarbonAds = __CARBON__
+	? defineAsyncComponent(() => import('./VPCarbonAds.vue'))
+	: () => null;
 </script>
 
 <template>

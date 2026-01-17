@@ -31,11 +31,10 @@ const childrenActive = computed(() => isChildActive(props.item));
 <template>
 	<VPFlyout
 		:class="{
-      VPNavBarMenuGroup: true,
-      active:
-        isActive(page.relativePath, item.activeMatch, !!item.activeMatch) ||
-        childrenActive
-    }"
+			VPNavBarMenuGroup: true,
+			active:
+				isActive(page.relativePath, item.activeMatch, !!item.activeMatch) || childrenActive,
+		}"
 		:button="item.text"
 		:items="item.items"
 	/>

@@ -24,7 +24,7 @@ async function update() {
 	const rawFacetFilters = options.searchParameters?.facetFilters ?? [];
 	const facetFilters = [
 		...(Array.isArray(rawFacetFilters) ? rawFacetFilters : [rawFacetFilters]).filter(
-			f => !f.startsWith('lang:'),
+			(f) => !f.startsWith('lang:'),
 		),
 		`lang:${lang.value}`,
 	];
@@ -69,7 +69,7 @@ function initialize(userOptions: TritoTheme.AlgoliaSearchOptions) {
 		},
 
 		transformItems(items: { url: string }[]) {
-			return items.map(item => {
+			return items.map((item) => {
 				return Object.assign({}, item, {
 					url: getRelativePath(item.url),
 				});

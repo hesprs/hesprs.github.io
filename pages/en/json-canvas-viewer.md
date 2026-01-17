@@ -2,6 +2,7 @@
 title: JSON Canvas Viewer
 description: A front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.
 ---
+
 <script setup>
 import ProjectCard from '$/components/projectCard.vue';
 import { JSONCanvasViewerVue } from 'json-canvas-viewer/bridges';
@@ -74,10 +75,10 @@ Above illustration of the architecture of JSON Canvas Viewer is an instance of i
 - TypeScript native
 - 🔥 More performant than rendering canvases in Obsidian!
 - 🧩 Out-of-the-box extensibility and tree-shaking, current optional modules include:
-  - [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap) for easy navigation
-  - [`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls) displays zoom in/out and fullscreen buttons
-  - [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer) prevents the canvas from intercepting page scroll.
-  - [`DebugPanel`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#debug-panel) displays scale and position data.
+    - [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap) for easy navigation
+    - [`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls) displays zoom in/out and fullscreen buttons
+    - [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer) prevents the canvas from intercepting page scroll.
+    - [`DebugPanel`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#debug-panel) displays scale and position data.
 
 ## Integration with Existing Paradigms
 

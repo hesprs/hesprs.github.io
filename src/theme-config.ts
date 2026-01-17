@@ -1,5 +1,6 @@
-// biome-ignore-all lint/suspicious/noExplicitAny: User Config
+// oxlint-disable typescript/no-explicit-any
 import type { Options as _MiniSearchOptions } from 'minisearch';
+
 import type { DocSearchProps } from '@/shared/docsearch';
 import type { Header, PageData } from '@/shared/index';
 import type { LocalSearchTranslations } from '@/shared/local-search';

@@ -1,4 +1,5 @@
 import { onMounted, onUnmounted, type Ref } from 'vue';
+
 import { throttleAndDebounce } from '@/support/utils';
 
 export interface GridSetting {
@@ -104,11 +105,9 @@ function manageSlots(el: HTMLElement, grid: number, tsize: number, asize: number
 }
 
 function neutralizeSlots(el: HTMLElement, count: number) {
-	if (count === 0) {
-		return;
-	}
-
-	count > 0 ? addSlots(el, count) : removeSlots(el, count * -1);
+	if (count === 0) return;
+	if (count > 0) addSlots(el, count);
+	else removeSlots(el, count * -1);
 }
 
 function addSlots(el: HTMLElement, count: number) {

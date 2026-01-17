@@ -18,7 +18,7 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 	<div class="VPDoc" :class="{ 'has-aside': hasAside }">
 		<slot name="doc-top" />
 		<div class="container">
-			<div v-if="hasAside" class="aside" :class="{'left-aside': leftAside}">
+			<div v-if="hasAside" class="aside" :class="{ 'left-aside': leftAside }">
 				<div class="aside-container">
 					<VPDocAside>
 						<template #aside-top>
@@ -50,9 +50,9 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 						<Content
 							class="vp-doc"
 							:class="[
-                                pageName,
-                                theme.externalLinkIcon && 'external-link-icon-enabled'
-                            ]"
+								pageName,
+								theme.externalLinkIcon && 'external-link-icon-enabled',
+							]"
 						/>
 					</main>
 					<VPDocFooter>
@@ -71,22 +71,26 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 <style lang="scss" scoped>
 .VPDoc {
 	width: 100%;
-    @media (min-width: 960px) { --container-width: 992px }
-    @media (min-width: 1440px) { --container-width: 1260px }
+	@media (min-width: 960px) {
+		--container-width: 992px;
+	}
+	@media (min-width: 1440px) {
+		--container-width: 1260px;
+	}
 }
 
 .container {
 	margin: 0 auto;
 	width: 100%;
-    @media (min-width: 960px) {
+	@media (min-width: 960px) {
 		display: flex;
 		justify-content: center;
 		width: var(--container-width);
-    }
-    @media (min-width: 1280px) {
+	}
+	@media (min-width: 1280px) {
 		display: flex;
 		justify-content: center;
-    }
+	}
 }
 
 .aside {
@@ -95,18 +99,22 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 	order: 2;
 	width: 30%;
 	padding-left: 32px;
-    @media (min-width: 1280px) { display: block }
+	@media (min-width: 1280px) {
+		display: block;
+	}
 }
 
 .content {
 	position: relative;
-    width: 70%;
+	width: 70%;
 	margin: 0;
-    @media (max-width: 1280px) { width: 100% !important }
-    @media (min-width: 1280px) {
+	@media (max-width: 1280px) {
+		width: 100% !important;
+	}
+	@media (min-width: 1280px) {
 		order: 1;
 		margin: 0;
-    }
+	}
 }
 
 .left-aside {
@@ -118,12 +126,10 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 .aside-container {
 	position: fixed;
 	top: 0;
-    width: calc(var(--container-width) * 0.3 - 32px);
+	width: calc(var(--container-width) * 0.3 - 32px);
 	padding-top: calc(
-		var(--vp-nav-height) +
-		var(--vp-layout-top-height, 0px) +
-		var(--vp-doc-top-height, 0px) +
-		36px
+		var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + var(--vp-doc-top-height, 0px) +
+			36px
 	);
 	height: 100vh;
 	scrollbar-width: none;
@@ -134,14 +140,16 @@ const pageName = computed(() => route.path.replace(/[./]+/g, '_').replace(/_html
 }
 
 .content-container {
-    padding: 24px 24px 8px;
-    @media (min-width: 960px) { padding: 30px 30px 12px }
-    @media (max-width: 768px) {
-        border: 0 solid transparent;
-        border-radius: 0;
-        box-shadow:
-            0 4px 16px 2px var(--main-border-shadow),
-            0 2px 4px var(--main-border-shadow);
-    }
+	padding: 24px 24px 8px;
+	@media (min-width: 960px) {
+		padding: 30px 30px 12px;
+	}
+	@media (max-width: 768px) {
+		border: 0 solid transparent;
+		border-radius: 0;
+		box-shadow:
+			0 4px 16px 2px var(--main-border-shadow),
+			0 2px 4px var(--main-border-shadow);
+	}
 }
 </style>

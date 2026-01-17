@@ -1,4 +1,5 @@
 import { onUnmounted, type Ref, readonly, ref, watch } from 'vue';
+
 import { inBrowser } from '../shared';
 
 interface UseFlyoutOptions {
@@ -16,11 +17,11 @@ export function useFlyout(options: UseFlyoutOptions) {
 	const focus = ref(false);
 
 	if (inBrowser) {
-		!active && activateFocusTracking();
+		if (!active) activateFocusTracking();
 
 		listeners++;
 
-		const unwatch = watch(focusedElement, el => {
+		const unwatch = watch(focusedElement, (el) => {
 			if (el === options.el.value || options.el.value?.contains(el as HTMLElement)) {
 				focus.value = true;
 				options.onFocus?.();

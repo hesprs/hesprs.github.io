@@ -23,13 +23,15 @@ const target = computed(() =>
 </script>
 
 <template>
-	<div class="VPNavBarTitle"><a class="title" :href="link ?? normalizeLink(currentLang.link)" :rel :target>
-		<slot name="nav-bar-title-before" />
-		<VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
-		<span v-if="theme.siteTitle" v-html="theme.siteTitle"></span>
-		<span v-else-if="theme.siteTitle === undefined">{{ site.title }}</span>
-		<slot name="nav-bar-title-after" />
-	</a></div>
+	<div class="VPNavBarTitle">
+		<a class="title" :href="link ?? normalizeLink(currentLang.link)" :rel :target>
+			<slot name="nav-bar-title-before" />
+			<VPImage v-if="theme.logo" class="logo" :image="theme.logo" />
+			<span v-if="theme.siteTitle" v-html="theme.siteTitle"></span>
+			<span v-else-if="theme.siteTitle === undefined">{{ site.title }}</span>
+			<slot name="nav-bar-title-after" />
+		</a>
+	</div>
 </template>
 
 <style lang="scss" scoped>
@@ -43,11 +45,13 @@ const target = computed(() =>
 	font-weight: 600;
 	color: var(--vp-c-text-1);
 	transition: opacity 0.25s;
-    @media (min-width: 960px) { flex-shrink: 0 }
+	@media (min-width: 960px) {
+		flex-shrink: 0;
+	}
 }
 
 :deep(.logo) {
-  margin-right: 8px;
-  height: var(--vp-nav-logo-height);
+	margin-right: 8px;
+	height: var(--vp-nav-logo-height);
 }
 </style>

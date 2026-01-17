@@ -13,8 +13,10 @@ const { currentLang } = useLangs();
 		<h1 class="title">{{ theme.notFound?.title ?? 'PAGE NOT FOUND' }}</h1>
 		<div class="divider" />
 		<blockquote class="quote">
-			{{ theme.notFound?.quote ??
-        "But if you don't change your direction, and if you keep looking, you may end up where you are heading." }}
+			{{
+				theme.notFound?.quote ??
+				"But if you don't change your direction, and if you keep looking, you may end up where you are heading."
+			}}
 		</blockquote>
 
 		<div class="action">

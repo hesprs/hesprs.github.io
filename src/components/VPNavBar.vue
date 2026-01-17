@@ -67,39 +67,49 @@ watchPostEffect(() => {
 	height: var(--vp-nav-height);
 	pointer-events: none;
 	white-space: nowrap;
-    border-bottom: 1px solid var(--vp-c-divider);
-	transition: background-color 0.25s, border 0.25s;
-    background-color: var(--vp-nav-bg-color);
-    &.screen-open {
-	    transition: none;
-	    background-color: var(--vp-nav-bg-color);
-	    border-bottom: 1px solid var(--vp-c-divider);
-    }
-    &.top {
-        border-bottom: 1px solid transparent;
-        background-color: transparent;
-    }
+	border-bottom: 1px solid var(--vp-c-divider);
+	transition:
+		background-color 0.25s,
+		border 0.25s;
+	background-color: var(--vp-nav-bg-color);
+	&.screen-open {
+		transition: none;
+		background-color: var(--vp-nav-bg-color);
+		border-bottom: 1px solid var(--vp-c-divider);
+	}
+	&.top {
+		border-bottom: 1px solid transparent;
+		background-color: transparent;
+	}
 }
 
 .VPLocalNav {
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.2s;
-    @media (max-width: 767px) {
-        .show-title & {
-            pointer-events: auto;
-            opacity: 1;
-            transform: translateY(-55px);
-        }
-    }
+	opacity: 0;
+	transition:
+		transform 0.3s,
+		opacity 0.2s;
+	@media (max-width: 767px) {
+		.show-title & {
+			pointer-events: auto;
+			opacity: 1;
+			transform: translateY(-55px);
+		}
+	}
 }
 
 .container {
-    transition: transform 0.3s, opacity 0.2s;
+	transition:
+		transform 0.3s,
+		opacity 0.2s;
 	padding: 0 8px 0 24px;
-    @media (max-width: 767px) {
-        .show-title & { transform: translateY(-55px) }
-    }
-    @media (min-width: 768px) { padding: 0 32px }
+	@media (max-width: 767px) {
+		.show-title & {
+			transform: translateY(-55px);
+		}
+	}
+	@media (min-width: 768px) {
+		padding: 0 32px;
+	}
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
@@ -111,12 +121,13 @@ watchPostEffect(() => {
 .container > .title,
 .container > .content {
 	pointer-events: none;
-}.container :deep(*) {
-    pointer-events: auto;
+}
+.container :deep(*) {
+	pointer-events: auto;
 }
 
 .container :deep(*) {
-    pointer-events: auto;
+	pointer-events: auto;
 }
 
 .title {

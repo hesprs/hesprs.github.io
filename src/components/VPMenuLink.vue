@@ -23,12 +23,8 @@ defineOptions({ inheritAttrs: false });
 		<VPLink
 			v-bind="$attrs"
 			:class="{
-                active: isActive(
-                    page.relativePath,
-                    item.activeMatch || href,
-                    !!item.activeMatch
-                )
-            }"
+				active: isActive(page.relativePath, item.activeMatch || href, !!item.activeMatch),
+			}"
 			:href
 			:target="item.target"
 			:rel="item.rel"

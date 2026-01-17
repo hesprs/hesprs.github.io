@@ -15,8 +15,8 @@ hr {
 	border: none;
 }
 body {
-	background: url("https://img1.tucang.cc/api/image/show/7f08f5c56dd28ec21b43c9bb1e61b65e") no-repeat center
-		center fixed;
+	background: url('https://img1.tucang.cc/api/image/show/7f08f5c56dd28ec21b43c9bb1e61b65e')
+		no-repeat center center fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 0;

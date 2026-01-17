@@ -20,22 +20,22 @@ const { theme, frontmatter } = useData();
 	position: relative;
 	z-index: var(--vp-z-index-footer);
 	padding: 6px 24px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    @media (min-width: 960px) {
-        margin-top: 40px;
-        margin-bottom: 0;
-    }
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@media (min-width: 960px) {
+		margin-top: 40px;
+		margin-bottom: 0;
+	}
 }
 
 .VPFooter :deep(a) {
-  text-decoration-line: underline;
-  text-underline-offset: 2px;
-  transition: color 0.25s;
+	text-decoration-line: underline;
+	text-underline-offset: 2px;
+	transition: color 0.25s;
 }
 
 .VPFooter :deep(a:hover) {
-  color: var(--vp-c-text-1);
+	color: var(--vp-c-text-1);
 }
 
 @media (min-width: 768px) {

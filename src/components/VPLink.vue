@@ -21,10 +21,10 @@ const isExternal = computed(
 	<component
 		:is="tag"
 		:class="{
-            link: href,
-            'vp-external-link-icon': isExternal,
-            'no-icon': noIcon
-        }"
+			link: href,
+			'vp-external-link-icon': isExternal,
+			'no-icon': noIcon,
+		}"
 		:href="href ? normalizeLink(href) : undefined"
 		:target="target ?? (isExternal ? '_blank' : undefined)"
 		:rel="rel ?? (isExternal ? 'noreferrer' : undefined)"

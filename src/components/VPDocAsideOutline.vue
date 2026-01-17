@@ -35,24 +35,24 @@ useActiveAnchor(container, marker);
 
 <style lang="scss" scoped>
 .VPDocAsideOutline {
-    padding-left: 16px;
-    padding-bottom: 8px;
+	padding-left: 16px;
+	padding-bottom: 8px;
 }
 
 .content {
 	position: relative;
 	padding-left: 16px;
 	font-size: 13px;
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 7px;
-        width: 4px;
-        top: 7px;
-        background-color: var(--vp-c-border);
-        border-radius: 8px;
-  }
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: 7px;
+		width: 4px;
+		top: 7px;
+		background-color: var(--vp-c-border);
+		border-radius: 8px;
+	}
 }
 
 .outline-marker {
@@ -78,6 +78,6 @@ useActiveAnchor(container, marker);
 	display: flex;
 	align-items: center;
 	gap: 8px;
-    margin-bottom: 4px;
+	margin-bottom: 4px;
 }
 </style>

@@ -19,13 +19,9 @@ const href = computed(() =>
 <template>
 	<VPLink
 		:class="{
-      VPNavBarMenuLink: true,
-      active: isActive(
-        page.relativePath,
-        item.activeMatch || href,
-        !!item.activeMatch
-      )
-    }"
+			VPNavBarMenuLink: true,
+			active: isActive(page.relativePath, item.activeMatch || href, !!item.activeMatch),
+		}"
 		:href
 		:target="item.target"
 		:rel="item.rel"
@@ -41,17 +37,20 @@ const href = computed(() =>
 	display: flex;
 	align-items: center;
 	padding: 16px 12px;
-    margin: auto;
-    height: 24px;
-    border-radius: 20px;
+	margin: auto;
+	height: 24px;
+	border-radius: 20px;
 	line-height: var(--vp-nav-height);
 	font-size: 1em;
 	font-weight: 500;
 	color: var(--vp-c-text-1);
-	transition: color 0.25s, background-color 0.25s;
-    &.active, &:hover {
-        color: var(--main-card-background);
-        background-color: var(--vp-c-brand-1);
-    }
+	transition:
+		color 0.25s,
+		background-color 0.25s;
+	&.active,
+	&:hover {
+		color: var(--main-card-background);
+		background-color: var(--vp-c-brand-1);
+	}
 }
 </style>

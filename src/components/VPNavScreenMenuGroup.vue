@@ -5,7 +5,7 @@ import VPNavScreenMenuGroupSection from './VPNavScreenMenuGroupSection.vue';
 
 const props = defineProps<{
 	text: string;
-	// biome-ignore lint/suspicious/noExplicitAny: Generic Type
+	// oxlint-disable-next-line typescript/no-explicit-any
 	items: any[];
 }>();
 
@@ -49,17 +49,23 @@ function toggle() {
 	height: 48px;
 	overflow: hidden;
 	transition: border-color 0.5s;
-    .items { visibility: hidden }
-    &.open {
-        padding-bottom: 10px;
-    	height: auto;
-        .items { visibility: visible }
-        .button {
-    	    padding-bottom: 6px;
-    	    color: var(--vp-c-brand-1);
-        }
-        .button-icon { transform: rotate(45deg) }
-    }
+	.items {
+		visibility: hidden;
+	}
+	&.open {
+		padding-bottom: 10px;
+		height: auto;
+		.items {
+			visibility: visible;
+		}
+		.button {
+			padding-bottom: 6px;
+			color: var(--vp-c-brand-1);
+		}
+		.button-icon {
+			transform: rotate(45deg);
+		}
+	}
 }
 
 .button {
@@ -73,7 +79,9 @@ function toggle() {
 	font-weight: 500;
 	color: var(--vp-c-text-1);
 	transition: color 0.25s;
-    &:hover { color: var(--vp-c-brand-1) }
+	&:hover {
+		color: var(--vp-c-brand-1);
+	}
 }
 
 .button-icon {

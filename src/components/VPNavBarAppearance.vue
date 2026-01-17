@@ -8,10 +8,8 @@ const { site } = useData();
 <template>
 	<div
 		v-if="
-      site.appearance &&
-      site.appearance !== 'force-dark' &&
-      site.appearance !== 'force-auto'
-    "
+			site.appearance && site.appearance !== 'force-dark' && site.appearance !== 'force-auto'
+		"
 		class="VPNavBarAppearance"
 	>
 		<VPSwitchAppearance />
@@ -21,9 +19,9 @@ const { site } = useData();
 <style lang="scss" scoped>
 .VPNavBarAppearance {
 	display: none;
-    @media (min-width: 1280px) {
+	@media (min-width: 1280px) {
 		display: flex;
 		align-items: center;
-    }
+	}
 }
 </style>

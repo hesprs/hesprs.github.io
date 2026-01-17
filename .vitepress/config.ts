@@ -1,9 +1,11 @@
 import { resolve } from 'node:path';
+
 import { jsonCanvasVitePlugin } from 'json-canvas-viewer/bridges';
 import { createMarkdownRenderer, defineConfig } from 'vitepress';
 
 const srcDir = resolve(__dirname, '../pages');
 const md = await createMarkdownRenderer(srcDir);
+const renderMarkdown = (content: string) => md.render(content);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -37,7 +39,8 @@ export default defineConfig({
 			],
 		},
 		'zh-Hans': {
-			description: 'Hēsperus（hesprs）的作品集，包含有关 Hēsperus 的个性、爱好以及项目介绍和演示。',
+			description:
+				'Hēsperus（hesprs）的作品集，包含有关 Hēsperus 的个性、爱好以及项目介绍和演示。',
 			label: '简体中文',
 			lang: 'zh-Hans',
 			themeConfig: {
@@ -76,7 +79,7 @@ export default defineConfig({
 	},
 	vite: {
 		publicDir: resolve(__dirname, '../public'),
-		plugins: [jsonCanvasVitePlugin(md.render)],
+		plugins: [jsonCanvasVitePlugin(renderMarkdown)],
 		resolve: {
 			alias: [
 				{

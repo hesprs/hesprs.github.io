@@ -1,4 +1,5 @@
 import { nextTick, provide, type Ref } from 'vue';
+
 import { toggleAppearanceKey } from '@/shared';
 
 const enableTransitions = () => {

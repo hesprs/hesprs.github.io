@@ -9,7 +9,9 @@ import {
 	shallowRef,
 	watchPostEffect,
 } from 'vue';
+
 import type { TritoTheme } from '@/shared';
+
 import { useData } from './data';
 import { getHeaders } from './outline';
 

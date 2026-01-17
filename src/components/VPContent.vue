@@ -53,7 +53,10 @@ const { page, frontmatter } = useData();
 			</template>
 		</VPHome>
 
-		<component v-else-if="frontmatter.layout && frontmatter.layout !== 'doc'" :is="frontmatter.layout" />
+		<component
+			v-else-if="frontmatter.layout && frontmatter.layout !== 'doc'"
+			:is="frontmatter.layout"
+		/>
 
 		<VPDoc v-else>
 			<template #doc-top>
@@ -101,7 +104,9 @@ const { page, frontmatter } = useData();
 	flex-shrink: 0;
 	margin: var(--vp-nav-height) auto 0;
 	width: 100%;
-    padding-top: 24px;
-    @media (min-width: 960px) { padding-top: 36px }
+	padding-top: 24px;
+	@media (min-width: 960px) {
+		padding-top: 36px;
+	}
 }
 </style>

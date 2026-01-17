@@ -31,7 +31,8 @@ const preconnect = () => {
 		preconnect.id = id;
 		preconnect.rel = 'preconnect';
 		preconnect.href = `https://${
-			((theme.value.search?.options as TritoTheme.AlgoliaSearchOptions) ?? theme.value.search)?.appId
+			((theme.value.search?.options as TritoTheme.AlgoliaSearchOptions) ?? theme.value.search)
+				?.appId
 		}-dsn.algolia.net`;
 		preconnect.crossOrigin = '';
 		document.head.appendChild(preconnect);
@@ -73,7 +74,7 @@ function load() {
 }
 
 function poll() {
-	// biome-ignore lint/suspicious/noExplicitAny: programmatically open the search box after initialize
+	// oxlint-disable-next-line typescript/no-explicit-any
 	const e = new Event('keydown') as any;
 
 	e.key = 'k';
@@ -90,7 +91,12 @@ function isEditingContent(event: KeyboardEvent): boolean {
 	const element = event.target as HTMLElement;
 	const tagName = element.tagName;
 
-	return element.isContentEditable || tagName === 'INPUT' || tagName === 'SELECT' || tagName === 'TEXTAREA';
+	return (
+		element.isContentEditable ||
+		tagName === 'INPUT' ||
+		tagName === 'SELECT' ||
+		tagName === 'TEXTAREA'
+	);
 }
 
 // Local search
@@ -98,14 +104,14 @@ function isEditingContent(event: KeyboardEvent): boolean {
 const showSearch = ref(false);
 
 if (__VP_LOCAL_SEARCH__) {
-	onKeyStroke('k', event => {
+	onKeyStroke('k', (event) => {
 		if (event.ctrlKey || event.metaKey) {
 			event.preventDefault();
 			showSearch.value = true;
 		}
 	});
 
-	onKeyStroke('/', event => {
+	onKeyStroke('/', (event) => {
 		if (!isEditingContent(event)) {
 			event.preventDefault();
 			showSearch.value = true;

@@ -29,10 +29,16 @@ const { theme } = useData();
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-    :deep(.spacer + .VPDocAsideSponsors),
-    :deep(.spacer + .VPDocAsideCarbonAds) { margin-top: 24px }
-    :deep(.VPDocAsideSponsors + .VPDocAsideCarbonAds) { margin-top: 16px }
+	:deep(.spacer + .VPDocAsideSponsors),
+	:deep(.spacer + .VPDocAsideCarbonAds) {
+		margin-top: 24px;
+	}
+	:deep(.VPDocAsideSponsors + .VPDocAsideCarbonAds) {
+		margin-top: 16px;
+	}
 }
 
-.spacer { flex-grow: 1 }
+.spacer {
+	flex-grow: 1;
+}
 </style>

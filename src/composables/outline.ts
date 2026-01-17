@@ -1,7 +1,9 @@
 import { getScrollOffset } from 'vitepress';
 import { onMounted, onUnmounted, onUpdated, type Ref } from 'vue';
+
 import type { TritoTheme } from '@/shared';
 import { throttleAndDebounce } from '@/support/utils';
+
 import { useAside } from './aside';
 
 const ignoreRE = /\b(?:VPBadge|header-anchor|footnote-ref|ignore-header)\b/;
@@ -19,8 +21,8 @@ export function getHeaders(range: TritoTheme.Config['outline']): TritoTheme.Outl
 .VPDoc :not(.canvas-viewer) > h5,
 .VPDoc :not(.canvas-viewer) > h6`),
 	]
-		.filter(el => el.id && el.hasChildNodes())
-		.map(el => {
+		.filter((el) => el.id && el.hasChildNodes())
+		.map((el) => {
 			const level = Number(el.tagName[1]);
 			return {
 				element: el as HTMLHeadElement,
@@ -66,7 +68,10 @@ export function resolveHeaders(
 	return buildTree(headers, high, low);
 }
 
-export function useActiveAnchor(container: Ref<HTMLElement | null>, marker: Ref<HTMLElement | null>) {
+export function useActiveAnchor(
+	container: Ref<HTMLElement | null>,
+	marker: Ref<HTMLElement | null>,
+) {
 	const { isAsideEnabled } = useAside();
 
 	const onScroll = throttleAndDebounce(setActiveLink, 100);
@@ -173,13 +178,17 @@ function getAbsoluteTop(element: HTMLElement): number {
 	return offsetTop;
 }
 
-function buildTree(data: TritoTheme.OutlineItem[], min: number, max: number): TritoTheme.OutlineItem[] {
+function buildTree(
+	data: TritoTheme.OutlineItem[],
+	min: number,
+	max: number,
+): TritoTheme.OutlineItem[] {
 	resolvedHeaders.length = 0;
 
 	const result: TritoTheme.OutlineItem[] = [];
 	const stack: (TritoTheme.OutlineItem | { level: number; shouldIgnore: true })[] = [];
 
-	data.forEach(item => {
+	data.forEach((item) => {
 		const node = { ...item, children: [] };
 		let parent = stack[stack.length - 1];
 
@@ -188,7 +197,10 @@ function buildTree(data: TritoTheme.OutlineItem[], min: number, max: number): Tr
 			parent = stack[stack.length - 1];
 		}
 
-		if (node.element.classList.contains('ignore-header') || (parent && 'shouldIgnore' in parent)) {
+		if (
+			node.element.classList.contains('ignore-header') ||
+			(parent && 'shouldIgnore' in parent)
+		) {
 			stack.push({ level: node.level, shouldIgnore: true });
 			return;
 		}

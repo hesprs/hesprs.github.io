@@ -1,5 +1,5 @@
+// oxlint-disable typescript/no-explicit-any
 // types shared between server and client
-// biome-ignore-all lint/suspicious/noExplicitAny: type helpers
 import type { UseDarkOptions } from '@vueuse/core';
 import type { SSRContext } from 'vue/server-renderer';
 
@@ -9,7 +9,13 @@ export type Awaitable<T> = T | PromiseLike<T>;
 
 type DeepPartial<T> =
 	T extends Record<string, any>
-		? T extends Date | RegExp | Function | ReadonlyMap<any, any> | ReadonlySet<any> | ReadonlyArray<any>
+		? T extends
+				| Date
+				| RegExp
+				| Function
+				| ReadonlyMap<any, any>
+				| ReadonlySet<any>
+				| ReadonlyArray<any>
 			? T
 			: { [P in keyof T]?: DeepPartial<T[P]> }
 		: T;
@@ -142,7 +148,9 @@ export interface SiteData<ThemeConfig = any> {
 	additionalConfig?: AdditionalConfigDict<ThemeConfig> | AdditionalConfigLoader<ThemeConfig>;
 }
 
-export type HeadConfig = [string, Record<string, string>] | [string, Record<string, string>, string];
+export type HeadConfig =
+	| [string, Record<string, string>]
+	| [string, Record<string, string>, string];
 
 export interface PageDataPayload {
 	path: string;
