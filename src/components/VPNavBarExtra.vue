@@ -5,18 +5,16 @@ import { useI18n } from '@/composables/i18n';
 import { useLangs } from '@/composables/langs';
 import VPFlyout from './VPFlyout.vue';
 import VPMenuLink from './VPMenuLink.vue';
-import VPSocialLinks from './VPSocialLinks.vue';
 import VPSwitchAppearance from './VPSwitchAppearance.vue';
 
-const { site, theme } = useData();
+const { site } = useData();
 const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 const i18n = useI18n();
 
 const hasExtraContent = computed(
 	() =>
 		(localeLinks.value.length && currentLang.value.label) ||
-		site.value.appearance ||
-		theme.value.socialLinks,
+		site.value.appearance
 );
 </script>
 
@@ -43,12 +41,6 @@ const hasExtraContent = computed(
 				<div class="appearance-action">
 					<VPSwitchAppearance />
 				</div>
-			</div>
-		</div>
-
-		<div v-if="theme.socialLinks" class="group">
-			<div class="item social-links">
-				<VPSocialLinks class="social-links-list" :links="theme.socialLinks" />
 			</div>
 		</div>
 	</VPFlyout>
@@ -80,8 +72,7 @@ const hasExtraContent = computed(
 	color: var(--vp-c-text-1);
 }
 
-.item.appearance,
-.item.social-links {
+.item.appearance {
 	display: flex;
 	align-items: center;
 	padding: 0 12px;
@@ -93,9 +84,5 @@ const hasExtraContent = computed(
 
 .appearance-action {
 	margin-right: -2px;
-}
-
-.social-links-list {
-	margin: -4px -8px;
 }
 </style>

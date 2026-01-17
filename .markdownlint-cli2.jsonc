@@ -1,0 +1,9 @@
+{
+	"config": {
+		"no-inline-html": false,
+		"table-column-style": false,
+		"line-length": false
+	},
+	"gitignore": true,
+	"globs": ["**/*.md"]
+}

@@ -9,7 +9,7 @@ hero:
     dark: /logo-dark.svg
     alt: 网站 Logo
 ---
-
+<!-- markdownlint-disable-next-line MD041 -->
 <script setup>
 import Cards from "./components/landingCards.vue"
 </script>

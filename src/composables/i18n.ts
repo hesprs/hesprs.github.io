@@ -49,6 +49,7 @@ const i18nTranslations = {
 		copySelection: '复制选中内容',
 		copyImage: '复制图片',
 		downloadImage: '下载图片',
+		search: '搜索',
 		copyLink: '复制链接',
 		newTab: '在新标签页中打开',
 	},
