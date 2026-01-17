@@ -26,7 +26,7 @@ const translate = createSearchTranslate(defaultTranslations);
 </template>
 
 <style lang="scss" scoped>
-[class*="DocSearch"] {
+[class*='DocSearch'] {
 	--docsearch-actions-height: auto;
 	--docsearch-actions-width: auto;
 	--docsearch-background-color: var(--vp-c-bg-soft);
@@ -51,7 +51,7 @@ const translate = createSearchTranslate(defaultTranslations);
 	--docsearch-text-color: var(--vp-c-text-1);
 }
 
-.dark [class*="DocSearch"] {
+.dark [class*='DocSearch'] {
 	--docsearch-modal-shadow: none;
 }
 
@@ -59,22 +59,28 @@ const translate = createSearchTranslate(defaultTranslations);
 	--docsearch-muted-color: var(--docsearch-text-color);
 	--docsearch-searchbox-background: transparent;
 	border: none !important;
-    color: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    background-color: transparent;
-    transition: background-color 0.3s;
-    border-radius: 50%;
-    cursor: pointer;
-    .icon { transition: color 0.3s, opacity 0.3s }
-    &:hover {
-        background-color: var(--vp-c-brand-1);
-        .icon { color: var(--main-card-background) }
-    }
+	color: unset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	padding: 0;
+	background-color: transparent;
+	transition: background-color 0.3s;
+	border-radius: 50%;
+	cursor: pointer;
+	.icon {
+		transition:
+			color 0.3s,
+			opacity 0.3s;
+	}
+	&:hover {
+		background-color: var(--vp-c-brand-1);
+		.icon {
+			color: var(--main-card-background);
+		}
+	}
 }
 
 @media (min-width: 768px) {

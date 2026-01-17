@@ -1,8 +1,10 @@
 <template>
 	<button class="VPSwitch" type="button" role="switch">
-		<span class="check"> <span class="icon" v-if="$slots.default">
-			<slot />
-		</span> </span>
+		<span class="check">
+			<span class="icon" v-if="$slots.default">
+				<slot />
+			</span>
+		</span>
 	</button>
 </template>
 
@@ -43,17 +45,17 @@
 	height: 18px;
 	border-radius: 50%;
 	overflow: hidden;
-    :deep([class^='vpi-']) {
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        width: 12px;
-        height: 12px;
-        color: var(--vp-c-text-2);
-    }
-    .dark & :deep([class^='vpi-']) {
-        color: var(--vp-c-text-1);
-        transition: opacity 0.25s !important;
-    }
+	:deep([class^='vpi-']) {
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		width: 12px;
+		height: 12px;
+		color: var(--vp-c-text-2);
+	}
+	.dark & :deep([class^='vpi-']) {
+		color: var(--vp-c-text-1);
+		transition: opacity 0.25s !important;
+	}
 }
 </style>

@@ -17,7 +17,11 @@ const href = computed(() =>
 );
 
 const isActiveLink = computed(() =>
-	isActive(page.value.relativePath, props.item.activeMatch || href.value, !!props.item.activeMatch),
+	isActive(
+		page.value.relativePath,
+		props.item.activeMatch || href.value,
+		!!props.item.activeMatch,
+	),
 );
 
 const { closeScreen } = inject(navInjectionKey) as NavExposedMethods;
@@ -48,6 +52,9 @@ const { closeScreen } = inject(navInjectionKey) as NavExposedMethods;
 	transition:
 		border-color 0.25s,
 		color 0.25s;
-    &:hover, &.active { color: var(--vp-c-brand-1) }
+	&:hover,
+	&.active {
+		color: var(--vp-c-brand-1);
+	}
 }
 </style>

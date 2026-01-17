@@ -20,10 +20,8 @@ watchPostEffect(() => {
 <template>
 	<div
 		v-if="
-      site.appearance &&
-      site.appearance !== 'force-dark' &&
-      site.appearance !== 'force-auto'
-    "
+			site.appearance && site.appearance !== 'force-dark' && site.appearance !== 'force-auto'
+		"
 		class="VPNavScreenAppearance"
 	>
 		<p class="text">{{ i18n.appearance }}</p>
@@ -57,16 +55,20 @@ watchPostEffect(() => {
 }
 
 .sun {
-    opacity: 1;
-    .dark & { opacity: 0 }
+	opacity: 1;
+	.dark & {
+		opacity: 0;
+	}
 }
 
 .moon {
-    opacity: 0;
-    .dark & { opacity: 1 }
+	opacity: 0;
+	.dark & {
+		opacity: 1;
+	}
 }
 
 .dark .VPSwitchAppearance :deep(.check) {
-    transform: translateX(18px);
+	transform: translateX(18px);
 }
 </style>

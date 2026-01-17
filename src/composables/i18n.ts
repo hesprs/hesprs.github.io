@@ -1,10 +1,13 @@
 import { computed } from 'vue';
+
 import { useData } from './data';
 
 export function useI18n() {
 	const { localeIndex } = useData();
 	return computed(
-		() => i18nTranslations[localeIndex.value as keyof typeof i18nTranslations] || i18nTranslations.en,
+		() =>
+			i18nTranslations[localeIndex.value as keyof typeof i18nTranslations] ||
+			i18nTranslations.en,
 	);
 }
 

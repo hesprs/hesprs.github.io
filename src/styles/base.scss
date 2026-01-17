@@ -2,7 +2,7 @@
 ::before,
 ::after {
 	box-sizing: border-box;
-    @media (prefers-reduced-motion: reduce) {
+	@media (prefers-reduced-motion: reduce) {
 		animation-delay: -1ms !important;
 		animation-duration: 1ms !important;
 		animation-iteration-count: 1 !important;
@@ -10,24 +10,26 @@
 		scroll-behavior: auto !important;
 		transition-duration: 0s !important;
 		transition-delay: 0s !important;
-    }
+	}
 }
 
 html {
 	line-height: 1.4;
 	font-size: 16px;
 	-webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
-    &.dark { color-scheme: dark }
+	scroll-behavior: smooth;
+	&.dark {
+		color-scheme: dark;
+	}
 }
 
 body {
-    padding: 0;
-    animation: show forwards 0.5s;
-    overflow-x: hidden;
-    transition:
-        color 0.3s,
-        background-color 0.3s;
+	padding: 0;
+	animation: show forwards 0.5s;
+	overflow-x: hidden;
+	transition:
+		color 0.3s,
+		background-color 0.3s;
 	margin: 0;
 	width: 100%;
 	min-width: 320px;
@@ -44,7 +46,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-main { display: block }
+main {
+	display: block;
+}
 
 h1,
 h2,
@@ -127,15 +131,18 @@ button {
 	font-family: inherit;
 	background-color: transparent;
 	background-image: none;
-    &:focus, &:focus-visible {
-	    outline: 1px dotted;
-	    outline: 4px auto -webkit-focus-ring-color;
-    }
-    &:focus:not(:focus-visible) { outline: none !important }
+	&:focus,
+	&:focus-visible {
+		outline: 1px dotted;
+		outline: 4px auto -webkit-focus-ring-color;
+	}
+	&:focus:not(:focus-visible) {
+		outline: none !important;
+	}
 }
 
 button:enabled,
-[role="button"]:enabled {
+[role='button']:enabled {
 	cursor: pointer;
 }
 
@@ -168,8 +175,8 @@ input::-webkit-inner-spin-button {
 	margin: 0;
 }
 
-input[type="number"] {
-    appearance: textfield;
+input[type='number'] {
+	appearance: textfield;
 	-moz-appearance: textfield;
 }
 
@@ -178,7 +185,7 @@ textarea {
 }
 
 select {
-    appearance: none;
+	appearance: none;
 	-webkit-appearance: none;
 }
 
@@ -200,10 +207,10 @@ p {
 
 mjx-container {
 	overflow-x: auto;
-    > svg {
-	    display: inline-block;
-	    margin: auto;
-    }
+	> svg {
+		display: inline-block;
+		margin: auto;
+	}
 }
 
 /**
@@ -224,7 +231,7 @@ mjx-container {
 a,
 area,
 button,
-[role="button"],
+[role='button'],
 input,
 label,
 select,

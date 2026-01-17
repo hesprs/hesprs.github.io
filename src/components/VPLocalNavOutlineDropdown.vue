@@ -25,7 +25,7 @@ function closeOnClickOutside(e: Event) {
 	}
 }
 
-watch(open, value => {
+watch(open, (value) => {
 	if (value) {
 		document.addEventListener('click', closeOnClickOutside);
 		return;

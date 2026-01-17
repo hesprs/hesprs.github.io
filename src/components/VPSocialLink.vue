@@ -19,7 +19,10 @@ onMounted(async () => {
 		span.className.startsWith('vpi-social-') &&
 		(getComputedStyle(span).maskImage || getComputedStyle(span).webkitMaskImage) === 'none'
 	) {
-		span.style.setProperty('--icon', `url('https://api.iconify.design/simple-icons/${props.icon}.svg')`);
+		span.style.setProperty(
+			'--icon',
+			`url('https://api.iconify.design/simple-icons/${props.icon}.svg')`,
+		);
 	}
 });
 
@@ -29,7 +32,7 @@ const svg = computed(() => {
 });
 
 if (import.meta.env.SSR) {
-	typeof props.icon === 'string' && useSSRContext<SSGContext>()?.vpSocialIcons.add(props.icon);
+	if (typeof props.icon === 'string') useSSRContext<SSGContext>()?.vpSocialIcons.add(props.icon);
 }
 </script>
 
@@ -62,9 +65,9 @@ if (import.meta.env.SSR) {
 }
 
 .VPSocialLink > :deep(svg),
-.VPSocialLink > :deep([class^="vpi-social-"]) {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+.VPSocialLink > :deep([class^='vpi-social-']) {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
 }
 </style>

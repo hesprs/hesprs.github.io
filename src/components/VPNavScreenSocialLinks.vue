@@ -6,5 +6,9 @@ const { theme } = useData();
 </script>
 
 <template>
-	<VPSocialLinks v-if="theme.socialLinks" class="VPNavScreenSocialLinks" :links="theme.socialLinks" />
+	<VPSocialLinks
+		v-if="theme.socialLinks"
+		class="VPNavScreenSocialLinks"
+		:links="theme.socialLinks"
+	/>
 </template>

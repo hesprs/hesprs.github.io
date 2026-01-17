@@ -1,19 +1,19 @@
 export function copyImage(src: string) {
 	fetch(src)
-		.then(response => response.blob())
-		.then(blob => {
+		.then((response) => response.blob())
+		.then(async (blob) => {
 			const item = new ClipboardItem({ [blob.type]: blob });
-			navigator.clipboard.write([item]);
+			await navigator.clipboard.write([item]);
 		})
-		.catch(err => {
+		.catch((err) => {
 			console.error('Failed to copy image: ', err);
 		});
 }
 
 export function downloadImage(src: string) {
 	fetch(src)
-		.then(response => response.blob())
-		.then(blob => {
+		.then((response) => response.blob())
+		.then((blob) => {
 			const link = document.createElement('a');
 			link.href = URL.createObjectURL(blob);
 			link.download = getFilenameFromUrl(src) || 'image.png';
@@ -22,7 +22,7 @@ export function downloadImage(src: string) {
 			document.body.removeChild(link);
 			URL.revokeObjectURL(link.href);
 		})
-		.catch(err => {
+		.catch((err) => {
 			console.error('Failed to download image: ', err);
 		});
 }
@@ -56,8 +56,8 @@ export function refresh() {
 	window.location.reload();
 }
 
-export function copyText(text: string) {
-	navigator.clipboard.writeText(text);
+export async function copyText(text: string) {
+	await navigator.clipboard.writeText(text);
 }
 
 export function openInNewTab(url: string) {

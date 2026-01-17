@@ -53,24 +53,32 @@ function onBlur() {
 <style lang="scss" scoped>
 .VPFlyout {
 	position: relative;
-    &:hover {
-	    color: var(--vp-c-brand-1);
-	    transition: color 0.25s;
-    }
-    &:hover .text { color: var(--vp-c-text-2) }
-    &:hover .icon { fill: var(--vp-c-text-2) }
-    &.active .text { color: var(--vp-c-brand-1) }
-    &.active:hover .text { color: var(--vp-c-brand-2) }
+	&:hover {
+		color: var(--vp-c-brand-1);
+		transition: color 0.25s;
+	}
+	&:hover .text {
+		color: var(--vp-c-text-2);
+	}
+	&:hover .icon {
+		fill: var(--vp-c-text-2);
+	}
+	&.active .text {
+		color: var(--vp-c-brand-1);
+	}
+	&.active:hover .text {
+		color: var(--vp-c-brand-2);
+	}
 }
 
-.button[aria-expanded="false"] + .menu {
+.button[aria-expanded='false'] + .menu {
 	opacity: 0;
 	visibility: hidden;
 	transform: translateY(0);
 }
 
 .VPFlyout:hover .menu,
-.button[aria-expanded="true"] + .menu {
+.button[aria-expanded='true'] + .menu {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);

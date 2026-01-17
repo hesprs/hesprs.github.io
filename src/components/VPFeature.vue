@@ -67,7 +67,9 @@ defineProps<{
 	flex-direction: column;
 	padding: 12px;
 	height: 100%;
-    > :deep(.VPImage) { margin-bottom: 20px }
+	> :deep(.VPImage) {
+		margin-bottom: 20px;
+	}
 }
 
 .icon {

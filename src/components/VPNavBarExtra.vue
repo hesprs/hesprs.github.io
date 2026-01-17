@@ -28,10 +28,10 @@ const hasExtraContent = computed(
 
 		<div
 			v-if="
-        site.appearance &&
-        site.appearance !== 'force-dark' &&
-        site.appearance !== 'force-auto'
-      "
+				site.appearance &&
+				site.appearance !== 'force-dark' &&
+				site.appearance !== 'force-auto'
+			"
 			class="group"
 		>
 			<div class="item appearance">

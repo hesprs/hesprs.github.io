@@ -8,6 +8,7 @@ import '@/styles/components/vp-sponsor.css';
 import '@/styles/fonts.css';
 
 import type { Theme } from 'vitepress';
+
 import VPBadge from '@/components/VPBadge.vue';
 import Layout from '@/Layout.vue';
 

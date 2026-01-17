@@ -21,7 +21,12 @@
 				</a>
 			</footer>
 		</div>
-		<img v-if="props.meta.logo" :src="props.meta.logo" class="logo" :alt="`${props.meta.name} Logo`" />
+		<img
+			v-if="props.meta.logo"
+			:src="props.meta.logo"
+			class="logo"
+			:alt="`${props.meta.name} Logo`"
+		/>
 	</article>
 </template>
 
@@ -41,45 +46,53 @@ const props = defineProps<{
 <style scoped lang="scss">
 .project-card {
 	padding: 20px 28px;
-    &.with-logo {
-        display: grid;
-	    grid-template-columns: 16fr 9fr;
-    }
-    @media (max-width: 767px) {
-        padding: 16px;
-        display: flex !important;
-        flex-direction: column;
-        h1 { text-align: center !important }
-    }
-    h1 { text-align: left }
-    a {
-        &::before { display: none; }
-    }
-    .logo {
-        margin: auto 0;
-	    padding: 0 0 0 20px;
-        @media (max-width: 767px) {
-            width: 80%;
-            max-width: 400px;
-            padding: 0;
-            order: 1;
-            margin: 0 auto 20px auto;
-        }
-    }
-    .card-body {
-        @media (max-width: 767px) { order: 2; }
-    }
+	&.with-logo {
+		display: grid;
+		grid-template-columns: 16fr 9fr;
+	}
+	@media (max-width: 767px) {
+		padding: 16px;
+		display: flex !important;
+		flex-direction: column;
+		h1 {
+			text-align: center !important;
+		}
+	}
+	h1 {
+		text-align: left;
+	}
+	a {
+		&::before {
+			display: none;
+		}
+	}
+	.logo {
+		margin: auto 0;
+		padding: 0 0 0 20px;
+		@media (max-width: 767px) {
+			width: 80%;
+			max-width: 400px;
+			padding: 0;
+			order: 1;
+			margin: 0 auto 20px auto;
+		}
+	}
+	.card-body {
+		@media (max-width: 767px) {
+			order: 2;
+		}
+	}
 }
 .description {
-    padding: 16px 20px;
-    margin: 12px 0;
+	padding: 16px 20px;
+	margin: 12px 0;
 }
 .skills-list {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 10px;
-    padding-top: 10px;
+	padding-top: 10px;
 	.skills-item {
 		display: flex;
 		align-items: center;
@@ -91,12 +104,12 @@ const props = defineProps<{
 		transition:
 			background-color 0.3s,
 			color 0.3s;
-        font-weight: bold;
-        border-radius: 40px;
-        &:hover {
-            background-color: var(--main-card-background);
-            color: var(--vp-c-brand-2) !important;
-        }
+		font-weight: bold;
+		border-radius: 40px;
+		&:hover {
+			background-color: var(--main-card-background);
+			color: var(--vp-c-brand-2) !important;
+		}
 		.skills-logo {
 			width: 32px;
 			height: 32px;

@@ -1,4 +1,5 @@
 import { withBase } from 'vitepress';
+
 import { useData } from '@/composables/data';
 import { isExternal, treatAsHtml } from '@/shared';
 
@@ -26,7 +27,12 @@ export function ensureStartingSlash(path: string): string {
 export function normalizeLink(url: string): string {
 	const { pathname, search, hash, protocol } = new URL(url, 'http://a.com');
 
-	if (isExternal(url) || url.startsWith('#') || !protocol.startsWith('http') || !treatAsHtml(pathname))
+	if (
+		isExternal(url) ||
+		url.startsWith('#') ||
+		!protocol.startsWith('http') ||
+		!treatAsHtml(pathname)
+	)
 		return url;
 
 	const { site } = useData();

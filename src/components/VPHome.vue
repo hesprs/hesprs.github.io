@@ -11,8 +11,8 @@ const { frontmatter, theme } = useData();
 	<main
 		class="VPHome"
 		:class="{
-            'external-link-icon-enabled': theme.externalLinkIcon
-        }"
+			'external-link-icon-enabled': theme.externalLinkIcon,
+		}"
 	>
 		<slot name="home-hero-before" />
 		<VPHomeHero>
@@ -47,9 +47,9 @@ const { frontmatter, theme } = useData();
 
 <style lang="scss" scoped>
 .VPHome {
-    margin-top: 24px;
-    @media (min-width: 960px) {
-        margin-top: 40px;
-    }
+	margin-top: 24px;
+	@media (min-width: 960px) {
+		margin-top: 40px;
+	}
 }
 </style>

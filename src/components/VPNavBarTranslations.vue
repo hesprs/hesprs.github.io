@@ -33,10 +33,10 @@ const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 .VPNavBarTranslations {
 	display: none;
 	margin: 0 8px;
-    @media (min-width: 1280px) {
+	@media (min-width: 1280px) {
 		display: flex;
 		align-items: center;
-    }
+	}
 }
 
 .title {

@@ -27,17 +27,21 @@ watchPostEffect(() => {
 </template>
 
 <style lang="scss" scoped>
-.moon, .sun {
-        position: absolute;
+.moon,
+.sun {
+	position: absolute;
 }
 .sun {
 	opacity: 1;
-    .dark & { opacity: 0 }
+	.dark & {
+		opacity: 0;
+	}
 }
 
 .moon {
 	opacity: 0;
-    .dark & { opacity: 1 }
+	.dark & {
+		opacity: 1;
+	}
 }
-
 </style>

@@ -1,11 +1,12 @@
-// biome-ignore-all lint/suspicious/noExplicitAny: spaghetti code, refactor needed
-// biome-ignore-all lint/style/noNonNullAssertion: spaghetti code, refactor needed
+// oxlint-disable typescript/no-explicit-any
 import { useData } from '@/composables/data';
 
 /**
  * @param themeObject Can be an object with `translations` and `locales` properties
  */
-export function createSearchTranslate(defaultTranslations: Record<string, any>): (key: string) => string {
+export function createSearchTranslate(
+	defaultTranslations: Record<string, any>,
+): (key: string) => string {
 	const { localeIndex, theme } = useData();
 
 	function translate(key: string): string {
@@ -13,13 +14,15 @@ export function createSearchTranslate(defaultTranslations: Record<string, any>):
 		const themeObject = theme.value.search?.options;
 
 		const isObject = themeObject && typeof themeObject === 'object';
-		const locales = (isObject && themeObject.locales?.[localeIndex.value]?.translations) || null;
+		const locales =
+			(isObject && themeObject.locales?.[localeIndex.value]?.translations) || null;
 		const translations = (isObject && themeObject.translations) || null;
 
 		let localeResult: Record<string, any> | null = locales;
 		let translationResult: Record<string, any> | null = translations;
 		let defaultResult: Record<string, any> | null = defaultTranslations;
 
+		// oxlint-disable-next-line typescript/no-non-null-assertion
 		const lastKey = keyPath.pop()!;
 		for (const k of keyPath) {
 			let fallbackResult: Record<string, any> | null = null;
@@ -46,7 +49,12 @@ export function createSearchTranslate(defaultTranslations: Record<string, any>):
 				localeResult = fallbackResult;
 			}
 		}
-		return localeResult?.[lastKey] ?? translationResult?.[lastKey] ?? defaultResult?.[lastKey] ?? '';
+		return (
+			localeResult?.[lastKey] ??
+			translationResult?.[lastKey] ??
+			defaultResult?.[lastKey] ??
+			''
+		);
 	}
 
 	return translate;

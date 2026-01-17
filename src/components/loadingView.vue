@@ -46,29 +46,31 @@ onBeforeUnmount(clear);
 
 <style lang="scss" scoped>
 .loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--main-card-background);
-    z-index: 9999;
-    .logo {
-        width: 100px;
-        height: 100px;
-        animation: loading 2s infinite;
-    }
-    .tip {
-        position: absolute;
-        bottom: 2rem;
-        font-size: 14px;
-        opacity: 0;
-        transition: opacity 0.3s;
-        &.show { opacity: 0.6 }
-    }
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--main-card-background);
+	z-index: 9999;
+	.logo {
+		width: 100px;
+		height: 100px;
+		animation: loading 2s infinite;
+	}
+	.tip {
+		position: absolute;
+		bottom: 2rem;
+		font-size: 14px;
+		opacity: 0;
+		transition: opacity 0.3s;
+		&.show {
+			opacity: 0.6;
+		}
+	}
 }
 </style>

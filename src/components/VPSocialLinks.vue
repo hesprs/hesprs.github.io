@@ -15,7 +15,14 @@ withDefaults(
 
 <template>
 	<div class="VPSocialLinks">
-		<VPSocialLink v-for="{ link, icon, ariaLabel } in links" :key="link" :icon :link :ariaLabel :me />
+		<VPSocialLink
+			v-for="{ link, icon, ariaLabel } in links"
+			:key="link"
+			:icon
+			:link
+			:ariaLabel
+			:me
+		/>
 	</div>
 </template>
 

@@ -1,7 +1,12 @@
 <script
 	lang="ts"
 	setup
-	generic="T extends (TritoTheme.NavItemComponent | TritoTheme.NavItemChildren | TritoTheme.NavItemWithLink)"
+	generic="
+		T extends
+			| TritoTheme.NavItemComponent
+			| TritoTheme.NavItemChildren
+			| TritoTheme.NavItemWithLink
+	"
 >
 import type { TritoTheme } from '@/shared';
 import VPMenuLink from './VPMenuLink.vue';

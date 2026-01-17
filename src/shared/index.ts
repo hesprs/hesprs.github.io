@@ -1,6 +1,6 @@
-// biome-ignore-all lint/suspicious/noExplicitAny: this file is a spaghetti, refactoring needed
-
+// oxlint-disable typescript/no-explicit-any
 import type { InjectionKey } from 'vue';
+
 import type { AdditionalConfig, HeadConfig, PageData, SiteData } from './types';
 
 export const toggleAppearanceKey: InjectionKey<
@@ -47,7 +47,11 @@ export const notFoundPageData: PageData = {
 	isNotFound: true,
 };
 
-export function isActive(currentPath: string, matchPath?: string, asRegex: boolean = false): boolean {
+export function isActive(
+	currentPath: string,
+	matchPath?: string,
+	asRegex: boolean = false,
+): boolean {
 	if (matchPath === undefined) {
 		return false;
 	}
@@ -82,7 +86,8 @@ export function isExternal(path: string): boolean {
 export function getLocaleForPath(siteData: SiteData | undefined, relativePath: string): string {
 	return (
 		Object.keys(siteData?.locales || {}).find(
-			key => key !== 'root' && !isExternal(key) && isActive(relativePath, `^/${key}/`, true),
+			(key) =>
+				key !== 'root' && !isExternal(key) && isActive(relativePath, `^/${key}/`, true),
 		) || 'root'
 	);
 }
@@ -92,7 +97,7 @@ export function getLocaleForPath(siteData: SiteData | undefined, relativePath: s
  */
 export function resolveSiteDataByRoute(siteData: SiteData, relativePath: string): SiteData {
 	const localeIndex = getLocaleForPath(siteData, relativePath);
-	const { label, link, ...localeConfig } = siteData.locales[localeIndex] ?? {};
+	const { ...localeConfig } = siteData.locales[localeIndex] ?? {};
 	Object.assign(localeConfig, { localeIndex });
 
 	const additionalConfigs = resolveAdditionalConfig(siteData, relativePath);
@@ -106,7 +111,7 @@ export function resolveSiteDataByRoute(siteData: SiteData, relativePath: string)
 		head: mergeHead(
 			siteData.head ?? [],
 			localeConfig.head ?? [],
-			...additionalConfigs.map(data => data.head ?? []).reverse(),
+			...additionalConfigs.map((data) => data.head ?? []).reverse(),
 		),
 	} as SiteData;
 
@@ -179,8 +184,7 @@ export function mergeHead(...headArrays: HeadConfig[][]): HeadConfig[] {
 }
 
 // https://github.com/rollup/rollup/blob/fec513270c6ac350072425cc045db367656c623b/src/utils/sanitizeFileName.ts
-
-// biome-ignore lint/suspicious/noControlCharactersInRegex: no harm to runtime
+// oxlint-disable-next-line no-control-regex
 const INVALID_CHAR_REGEX = /[\u0000-\u001F"#$&*+,:;<=>?[\]^`{|}\u007F]/g;
 const DRIVE_LETTER_REGEX = /^[a-z]:/i;
 
@@ -221,7 +225,7 @@ export function treatAsHtml(filename: string): boolean {
 			(extraExts && typeof extraExts === 'string' ? `,${extraExts}` : '')
 		)
 			.split(',')
-			.forEach(ext => {
+			.forEach((ext) => {
 				KNOWN_EXTENSIONS.add(ext);
 			});
 	}
@@ -261,7 +265,7 @@ function resolveAdditionalConfig({ additionalConfig }: SiteData, path: string): 
 	}
 
 	configs.push(additionalConfig['/']);
-	return configs.filter(config => config !== undefined);
+	return configs.filter((config) => config !== undefined);
 }
 
 // This helps users to understand which configuration files are active
@@ -283,10 +287,10 @@ function reportConfigLayers(path: string, layers: Partial<SiteData>[]) {
  * Layers are merged in descending precedence, i.e. earlier layer is on top.
  */
 export function stackView<T extends ObjectType>(..._layers: Partial<T>[]): T {
-	const layers = _layers.filter(layer => isObject(layer));
+	const layers = _layers.filter((layer) => isObject(layer));
 	if (layers.length <= 1) return _layers[0] as T;
 
-	const allKeys = new Set(layers.flatMap(layer => Reflect.ownKeys(layer)));
+	const allKeys = new Set(layers.flatMap((layer) => Reflect.ownKeys(layer)));
 	const allKeysArray = [...allKeys];
 
 	return new Proxy({} as T, {
@@ -295,7 +299,7 @@ export function stackView<T extends ObjectType>(..._layers: Partial<T>[]): T {
 			if (prop === UnpackStackView) return layers;
 			return stackView(
 				...layers
-					.map(layer => layer[prop])
+					.map((layer) => layer[prop])
 					.filter((v): v is NonNullable<T[string | symbol]> => v !== undefined),
 			);
 		},

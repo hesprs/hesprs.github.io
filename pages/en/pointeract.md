@@ -2,6 +2,7 @@
 title: Pointeract
 description: A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.
 ---
+
 <script setup>
 import ProjectCard from '$/components/projectCard.vue';
 import { IconBrandGithub, IconBrandNpm, IconHome }  from '@tabler/icons-vue';
@@ -56,15 +57,15 @@ Homepage & Documentation: [pointeract.consensia.cc](https://pointeract.consensia
 
 There're already plenty of interaction libraries out there, most famous ones are `Interact.js` and `Hammer.js`, but Pointeract is different.
 
-| Criteria                                                                                     | Pointeract                                            | [Hammer.js](https://hammerjs.github.io)          | [Interact.js](https://interactjs.io)                |
-|:---------------------------------------------------------------------------------------------|:-----------------------------------------------------:|:------------------------------------------------:|:---------------------------------------------------:|
-| Written in TypeScript?                                                                       | ✅                                                    | ❌                                               | ✅                                                  |
-| Tree-shakeable?                                                                              | [✅](https://bundlephobia.com/package/pointeract)     | [❌](https://bundlephobia.com/package/hammerjs)  | [❌](https://bundlephobia.com/package/interactjs)   |
+| Criteria                                                                                     |                      Pointeract                       |     [Hammer.js](https://hammerjs.github.io)      |        [Interact.js](https://interactjs.io)         |
+| :------------------------------------------------------------------------------------------- | :---------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
+| Written in TypeScript?                                                                       |                          ✅                           |                        ❌                        |                         ✅                          |
+| Tree-shakeable?                                                                              |   [✅](https://bundlephobia.com/package/pointeract)   | [❌](https://bundlephobia.com/package/hammerjs)  |  [❌](https://bundlephobia.com/package/interactjs)  |
 | Bundle Size (Minified + Gzipped)                                                             | 👑 [2KB](https://bundlephobia.com/package/pointeract) | [7KB](https://bundlephobia.com/package/hammerjs) | [28KB](https://bundlephobia.com/package/interactjs) |
-| Last Updated                                                                                 | 👑 Actively Maintained                                | 2015                                             | 2023                                                |
-| Features                                                                                     | Pointer and Wheel Related                             | Pointer Related                                  | 👑 Pointer and Wheel Related + Comprehensive Utils  |
-| Robust? (See [Testing](https://pointeract.consensia.cc/development/testing#chaotic-testing)) | ✅                                                    | ❌ Element Jerks                                 | ❌ Element Ignores the Second Touch                 |
-| Extensible?                                                                                  | ✅                                                    | ❌                                               | ❌                                                  |
+| Last Updated                                                                                 |                👑 Actively Maintained                 |                       2015                       |                        2023                         |
+| Features                                                                                     |               Pointer and Wheel Related               |                 Pointer Related                  | 👑 Pointer and Wheel Related + Comprehensive Utils  |
+| Robust? (See [Testing](https://pointeract.consensia.cc/development/testing#chaotic-testing)) |                          ✅                           |                 ❌ Element Jerks                 |         ❌ Element Ignores the Second Touch         |
+| Extensible?                                                                                  |                          ✅                           |                        ❌                        |                         ❌                          |
 
 ## License
 

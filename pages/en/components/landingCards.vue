@@ -1,9 +1,7 @@
 <template>
 	<div class="about-content first" style="grid-template-columns: 2fr 3fr">
 		<article class="s-card card-enhance hello">
-			<span class="title"
-				>Hello 👋<br />I am Hēsperus,
-			</span>
+			<span class="title">Hello 👋<br />I am Hēsperus,</span>
 			<span class="text">
 				High school student • OSS developer
 				<br />
@@ -14,12 +12,12 @@
 			<span class="tip">About My Name</span>
 			<br />
 			<span class="text">
-				<em>Hēsperus</em>, in Greek mythology, is the name of <strong>planet Venus </strong>appearing
-				in the twilight.
+				<em>Hēsperus</em>, in Greek mythology, is the name of
+				<strong> planet Venus</strong> appearing in the twilight.
 			</span>
-			<span class="text"
-				><code>Hesprs</code>is often used as my social media identifiers. While the website name
-				<code>Hēsperī</code>means "About Hēsperus".
+			<span class="text">
+				<code>Hesprs</code> is often used as my social media identifiers. While the website
+				name <code>Hēsperī</code> means "About Hēsperus".
 			</span>
 		</article>
 	</div>
@@ -49,27 +47,25 @@
 			<div class="box">
 				<div class="item s-card concave">
 					<span class="tip">Enneagram Type</span>
-					<span class="title"
-						>Type <span class="title large">5</span><span
-							style="color: var(--vp-c-brand-1); font-size: 20px;"
-							>w4
-						</span></span
-					>
+					<span class="title">
+						Type
+						<span class="title large"> 5</span>
+						<span style="color: var(--vp-c-brand-1); font-size: 20px">w4 </span>
+					</span>
 				</div>
 				<div class="item s-card concave">
 					<span class="tip">MBTI</span>
-					<span class="title large"
-						>INTJ<span style="color: var(--vp-c-brand-1); font-size: 20px;">-T </span></span
-					>
+					<span class="title large">
+						INTJ
+						<span style="color: var(--vp-c-brand-1); font-size: 20px">-T</span>
+					</span>
 				</div>
 			</div>
 			<span class="more">
 				Learn more about
-				<a href="https://www.enneagraminstitute.com/type-5/" target="_blank">Type-5</a>&nbsp;and <a
-					href="https://www.16personalities.com/intj-personality"
-					target="_blank"
-					>INTJ</a
-				>
+				<a href="https://www.enneagraminstitute.com/type-5/" target="_blank">Type-5</a
+				>&nbsp;and
+				<a href="https://www.16personalities.com/intj-personality" target="_blank">INTJ</a>
 			</span>
 		</article>
 	</div>
@@ -105,7 +101,9 @@
 		<article class="s-card card-enhance like image game">
 			<span class="tip">Favorite Game</span>
 			<span class="title large">Stellaris</span>
-			<span class="image-desc">"Our fleets will blot out the sun, as many suns as it takes."</span>
+			<span class="image-desc">
+				"Our fleets will blot out the sun, as many suns as it takes."
+			</span>
 		</article>
 	</div>
 </template>
@@ -221,17 +219,19 @@ const perspectives = [
 		width: 100%;
 		padding: 1.2rem 2rem;
 		overflow: hidden;
-        line-height: normal;
-        gap: 12px;
-        --title: 32px;
-        --title-large: 50px;
-        @media (max-width: 767px) {
-            padding-left: 20px;
-            padding-right: 20px;
-            --title: 24px;
-            --title-large: 42px;
-        }
-        > * { z-index: 2 }
+		line-height: normal;
+		gap: 12px;
+		--title: 32px;
+		--title-large: 50px;
+		@media (max-width: 767px) {
+			padding-left: 20px;
+			padding-right: 20px;
+			--title: 24px;
+			--title-large: 42px;
+		}
+		> * {
+			z-index: 2;
+		}
 		.tip {
 			font-size: 14px;
 			opacity: 0.8;
@@ -239,19 +239,23 @@ const perspectives = [
 		.title {
 			font-size: var(--title);
 			font-weight: bold;
-            &.large {
-                color: var(--vp-c-brand-1);
-                font-size: var(--title-large);
-            }
+			&.large {
+				color: var(--vp-c-brand-1);
+				font-size: var(--title-large);
+			}
 		}
-		.text { line-height: 1.5 }
+		.text {
+			line-height: 1.5;
+		}
 		&.child {
 			background-color: transparent;
 			border: none;
 			box-shadow: none;
 			padding: 0;
 			gap: 20px;
-			.s-card { height: 100% }
+			.s-card {
+				height: 100%;
+			}
 		}
 		&.hello {
 			justify-content: center;
@@ -260,18 +264,21 @@ const perspectives = [
 			background-image: linear-gradient(120deg, #5b27ff 0%, #00d4ff 100%);
 			background-size: 200% 200%;
 			animation: gradientFlow 6s ease infinite;
-            @media (max-width: 768px) {
-                padding: 1.2em;
-                align-items: center;
-                .text, .title { text-align: center }
-            }
+			@media (max-width: 768px) {
+				padding: 1.2em;
+				align-items: center;
+				.text,
+				.title {
+					text-align: center;
+				}
+			}
 		}
 		&.about-name {
-            padding-right: 30%;
-            &::before {
-                background-image: url('/hesprs.jpg');
-		    }
-        }
+			padding-right: 30%;
+			&::before {
+				background-image: url('/hesprs.jpg');
+			}
+		}
 		&.personality {
 			.more {
 				margin-top: auto;
@@ -279,48 +286,53 @@ const perspectives = [
 				color: var(--vp-c-text-2);
 				a {
 					color: var(--vp-c-text-2);
-					&:hover { color: var(--color) }
+					&:hover {
+						color: var(--color);
+					}
 				}
 			}
-            .box {
-                display: flex;
-                gap: 12px;
-                .item {
-                    padding-left: 24px;
-                    padding-right: 24px;
-                    position: relative;
-		            width: 100%;
-		            padding: 1.2rem 2rem;
-                    gap: 12px;
-                    @media (max-width: 767px) {
-                        padding-left: 16px;
-                        padding-right: 16px;
-                    }
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
+			.box {
+				display: flex;
+				gap: 12px;
+				.item {
+					padding-left: 24px;
+					padding-right: 24px;
+					position: relative;
+					width: 100%;
+					padding: 1.2rem 2rem;
+					gap: 12px;
+					@media (max-width: 767px) {
+						padding-left: 16px;
+						padding-right: 16px;
+					}
+					display: flex;
+					flex-direction: column;
+				}
+			}
 		}
-		&.skills, &.perspectives {
+		&.skills,
+		&.perspectives {
 			.skills-list {
 				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
-                gap: 10px;
+				gap: 10px;
 				.skills-item {
 					display: flex;
 					align-items: center;
-                    text-decoration: none;
+					text-decoration: none;
 					padding: 8px 12px 8px 8px;
 					background-color: var(--vp-c-bg);
 					border: 1px solid var(--vp-c-border);
 					box-shadow: 0 8px 12px -4px var(--main-border-shadow);
-					transition: background-color 0.3s, color 0.3s;
+					transition:
+						background-color 0.3s,
+						color 0.3s;
 					.skills-logo {
 						width: 32px;
 						height: 32px;
-                        padding: 4px;
-                        overflow: visible;
+						padding: 4px;
+						overflow: visible;
 						margin-right: 8px;
 						border-radius: 50%;
 						background-color: var(--color);
@@ -329,28 +341,34 @@ const perspectives = [
 				}
 			}
 		}
-        &.skills .skills-item {
-            font-weight: bold;
-            border-radius: 40px;
-            &:hover { background-color: var(--main-card-background) }
-        }
-        &.perspectives .skills-list {
-            gap: 8px;
-            .skills-item {
-                padding: 4px 6px 4px 4px !important;
-                font-size: small;
-                font-weight: normal !important;
-                border-radius: 10px;
-                > .icon { margin-right: 6px }
-            }
-        }
-        &.art::before {
-            background-image: url('https://img1.tucang.cc/api/image/show/e9287e92d561e0a07289663a3076bcbc');
-        }
+		&.skills .skills-item {
+			font-weight: bold;
+			border-radius: 40px;
+			&:hover {
+				background-color: var(--main-card-background);
+			}
+		}
+		&.perspectives .skills-list {
+			gap: 8px;
+			.skills-item {
+				padding: 4px 6px 4px 4px !important;
+				font-size: small;
+				font-weight: normal !important;
+				border-radius: 10px;
+				> .icon {
+					margin-right: 6px;
+				}
+			}
+		}
+		&.art::before {
+			background-image: url('https://img1.tucang.cc/api/image/show/e9287e92d561e0a07289663a3076bcbc');
+		}
 		&.like {
 			--height: 400px;
-			@media (max-width: 768px) { --height: 300px }
-            height: var(--height);
+			@media (max-width: 768px) {
+				--height: 300px;
+			}
+			height: var(--height);
 		}
 		&.image {
 			.image-desc {
@@ -360,39 +378,44 @@ const perspectives = [
 				align-items: center;
 				justify-content: space-between;
 				margin-top: auto;
-            }
+			}
 			&::before {
-				content: "";
-                background-position: center;
-			    background-size: cover;
+				content: '';
+				background-position: center;
+				background-size: cover;
 				position: absolute;
 				width: 100%;
 				bottom: 0;
-                box-shadow:
-                    inset 0 -70px 204px 10px var(--color),
-                    inset 0 0 12px 5px rgba(0,0,0, 0.8);
-                height: calc(var(--height) - var(--title-large) - 64px);
+				box-shadow:
+					inset 0 -70px 204px 10px var(--color),
+					inset 0 0 12px 5px rgba(0, 0, 0, 0.8);
+				height: calc(var(--height) - var(--title-large) - 64px);
 				left: 0;
 				z-index: 0;
 			}
 		}
-        &.era {
-            --color: #ffc6b2;
-            .dark & { --color: #4b2c15 }
-            &::before {
-                background-image: url('https://img1.tucang.cc/api/image/show/992f6c6b1d0c3bc21924edce390a4832');
-            }
-            
-        }
-        &.game {
-            --color: #afb7ff;
-            .dark & { --color: #0c0e20 }
-            &::before {
-                background-image: url('https://img1.tucang.cc/api/image/show/1deb77598a40d934d3f3adef3fd53913');
-            }
-        }
+		&.era {
+			--color: #ffc6b2;
+			.dark & {
+				--color: #4b2c15;
+			}
+			&::before {
+				background-image: url('https://img1.tucang.cc/api/image/show/992f6c6b1d0c3bc21924edce390a4832');
+			}
+		}
+		&.game {
+			--color: #afb7ff;
+			.dark & {
+				--color: #0c0e20;
+			}
+			&::before {
+				background-image: url('https://img1.tucang.cc/api/image/show/1deb77598a40d934d3f3adef3fd53913');
+			}
+		}
 	}
-	&:last-child { margin-bottom: 0 }
+	&:last-child {
+		margin-bottom: 0;
+	}
 	@media (max-width: 768px) {
 		display: flex;
 		flex-direction: column;
@@ -400,19 +423,21 @@ const perspectives = [
 }
 .first {
 	margin-top: 48px;
-    @media (min-width: 640px) { margin-top: 64px }
+	@media (min-width: 640px) {
+		margin-top: 64px;
+	}
 }
 .img-mask::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.7), transparent);
-    pointer-events: none;
-    z-index: 1;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.7), transparent);
+	pointer-events: none;
+	z-index: 1;
 }
 </style>

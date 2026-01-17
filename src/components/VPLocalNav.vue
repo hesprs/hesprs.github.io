@@ -35,16 +35,22 @@ onMounted(() => {
 	z-index: var(--vp-z-index-local-nav);
 	padding-top: var(--vp-layout-top-height, 0px);
 	width: 100%;
-    &.fixed { position: fixed }
-    @media (min-width: 960px) { top: var(--vp-nav-height) }
-    @media (min-width: 1280px) { display: none }
+	&.fixed {
+		position: fixed;
+	}
+	@media (min-width: 960px) {
+		top: var(--vp-nav-height);
+	}
+	@media (min-width: 1280px) {
+		display: none;
+	}
 }
 
 .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-    margin: 0 18px;
+	margin: 0 18px;
 }
 
 .menu {
@@ -55,11 +61,13 @@ onMounted(() => {
 	font-weight: 500;
 	color: var(--vp-c-text-2);
 	transition: color 0.5s;
-    @media (min-width: 960px) { display: none }
-    &:hover {
-	    color: var(--vp-c-text-1);
-	    transition: color 0.25s;
-    }
+	@media (min-width: 960px) {
+		display: none;
+	}
+	&:hover {
+		color: var(--vp-c-text-1);
+		transition: color 0.25s;
+	}
 }
 
 .menu-icon {
@@ -67,12 +75,15 @@ onMounted(() => {
 	font-size: 14px;
 }
 
-.menu, :deep(.VPLocalNavOutlineDropdown > button) {
-    padding: 12px 0 11px;
-    @media (min-width: 768px) { padding: 12px 0 11px }
+.menu,
+:deep(.VPLocalNavOutlineDropdown > button) {
+	padding: 12px 0 11px;
+	@media (min-width: 768px) {
+		padding: 12px 0 11px;
+	}
 }
 
 .title {
-    font-weight: 500;
+	font-weight: 500;
 }
 </style>

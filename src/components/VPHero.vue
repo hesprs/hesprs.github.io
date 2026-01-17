@@ -64,29 +64,34 @@ const { heroImageSlotExists } = inject(layoutInfoInjectionKey) as LayoutInfo;
 <style lang="scss" scoped>
 .VPHero {
 	padding: 0 36px;
-    @media (min-width: 960px) { padding: 0 48px; flex-direction: row !important; }
-    display: flex;
+	@media (min-width: 960px) {
+		padding: 0 48px;
+		flex-direction: row !important;
+	}
+	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
 	max-width: 1152px;
 }
 
 .main {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
+	justify-content: center;
+	display: flex;
+	flex-direction: column;
 	position: relative;
 	z-index: 10;
 	order: 2;
 	flex-shrink: 0;
-    @media (min-width: 960px) { order: 1 }
+	@media (min-width: 960px) {
+		order: 1;
+	}
 }
 
 .VPHero.has-image .container {
 	text-align: center;
-    @media (min-width: 960px) {
+	@media (min-width: 960px) {
 		text-align: left;
-    }
+	}
 }
 
 .heading {
@@ -101,7 +106,7 @@ const { heroImageSlotExists } = inject(layoutInfoInjectionKey) as LayoutInfo;
 	letter-spacing: -0.4px;
 	line-height: 40px;
 	font-weight: 700;
-    font-size: 32px;
+	font-size: 32px;
 	white-space: pre-wrap;
 }
 
@@ -111,7 +116,7 @@ const { heroImageSlotExists } = inject(layoutInfoInjectionKey) as LayoutInfo;
 }
 
 .clip {
-    color: transparent;
+	color: transparent;
 	background-color: var(--vp-c-brand-1);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -202,25 +207,25 @@ const { heroImageSlotExists } = inject(layoutInfoInjectionKey) as LayoutInfo;
 }
 
 .image-container {
-    display: flex;
-    order: 1;
-    justify-content: center;
+	display: flex;
+	order: 1;
+	justify-content: center;
 	position: relative;
-    @media (min-width: 960px) {
+	@media (min-width: 960px) {
 		order: 2;
 		margin: 0;
-        flex-grow: 1;
-        margin-left: 60px;
+		flex-grow: 1;
+		margin-left: 60px;
 	}
 }
 
 :deep(.image-src) {
-    width: 100%;
-    object-fit: contain;
-    max-width: 700px;
-    @media (min-width: 960px) {
-        display: flex;
-        flex-grow: 1;
+	width: 100%;
+	object-fit: contain;
+	max-width: 700px;
+	@media (min-width: 960px) {
+		display: flex;
+		flex-grow: 1;
 	}
 }
 </style>

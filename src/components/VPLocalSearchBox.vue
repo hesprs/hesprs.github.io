@@ -43,7 +43,7 @@ const searchIndexData = shallowRef(localSearchIndex);
 
 // hmr
 if (import.meta.hot) {
-	import.meta.hot.accept('@localSearchIndex', m => {
+	import.meta.hot.accept('@localSearchIndex', (m) => {
 		if (m) {
 			searchIndexData.value = m.default;
 		}
@@ -76,7 +76,8 @@ const searchIndex = computedAsync(async () =>
 				...(theme.value.search?.provider === 'local' &&
 					theme.value.search.options?.miniSearch?.searchOptions),
 			},
-			...(theme.value.search?.provider === 'local' && theme.value.search.options?.miniSearch?.options),
+			...(theme.value.search?.provider === 'local' &&
+				theme.value.search.options?.miniSearch?.options),
 		}),
 	),
 );
@@ -157,7 +158,7 @@ watchDebounced(
 
 		// Highlighting
 		const mods = showDetailedListValue
-			? await Promise.all(results.value.map(r => fetchExcerpt(r.id)))
+			? await Promise.all(results.value.map((r) => fetchExcerpt(r.id)))
 			: [];
 		if (canceled) return;
 		for (const { id, mod } of mods) {
@@ -187,7 +188,7 @@ watchDebounced(
 				const div = document.createElement('div');
 				app.mount(div);
 				const headings = div.querySelectorAll('h1, h2, h3, h4, h5, h6');
-				headings.forEach(el => {
+				headings.forEach((el) => {
 					const href = el.querySelector('a')?.getAttribute('href');
 					const anchor = href?.startsWith('#') && href.slice(1);
 					if (!anchor) return;
@@ -205,7 +206,7 @@ watchDebounced(
 
 		const terms = new Set<string>();
 
-		results.value = results.value.map(r => {
+		results.value = results.value.map((r) => {
 			const [id, anchor] = r.id.split('#');
 			const map = cache.get(id);
 			const text = map?.get(anchor) ?? '';
@@ -218,7 +219,7 @@ watchDebounced(
 		await nextTick();
 		if (canceled) return;
 
-		await new Promise(r => {
+		await new Promise((r) => {
 			mark.value?.unmark({
 				done: () => {
 					mark.value?.markRegExp(formMarkRegex(terms), { done: r });
@@ -255,7 +256,7 @@ const disableReset = computed(() => {
 });
 function focusSearchInput(select = true) {
 	searchInput.value?.focus();
-	select && searchInput.value?.select();
+	if (select) searchInput.value?.select();
 }
 
 onMounted(() => {
@@ -273,7 +274,7 @@ function onSearchBarClick(event: PointerEvent) {
 const selectedIndex = ref(-1);
 const disableMouseOver = ref(true);
 
-watch(results, r => {
+watch(results, (r) => {
 	selectedIndex.value = r.length ? 0 : -1;
 	scrollToSelectedResult();
 });
@@ -285,7 +286,7 @@ function scrollToSelectedResult() {
 	});
 }
 
-onKeyStroke('ArrowUp', event => {
+onKeyStroke('ArrowUp', (event) => {
 	event.preventDefault();
 	selectedIndex.value--;
 	if (selectedIndex.value < 0) {
@@ -295,7 +296,7 @@ onKeyStroke('ArrowUp', event => {
 	scrollToSelectedResult();
 });
 
-onKeyStroke('ArrowDown', event => {
+onKeyStroke('ArrowDown', (event) => {
 	event.preventDefault();
 	selectedIndex.value++;
 	if (selectedIndex.value >= results.value.length) {
@@ -307,7 +308,7 @@ onKeyStroke('ArrowDown', event => {
 
 const router = useRouter();
 
-onKeyStroke('Enter', e => {
+onKeyStroke('Enter', (e) => {
 	if (e.isComposing) return;
 
 	if (e.target instanceof HTMLButtonElement && e.target.type !== 'submit') return;
@@ -356,7 +357,7 @@ onMounted(() => {
 	window.history.pushState(null, '', null);
 });
 
-useEventListener('popstate', event => {
+useEventListener('popstate', (event) => {
 	event.preventDefault();
 	emit('close');
 });
@@ -384,7 +385,7 @@ function formMarkRegex(terms: Set<string>) {
 	return new RegExp(
 		[...terms]
 			.sort((a, b) => b.length - a.length)
-			.map(term => `(${escapeRegExp(term)})`)
+			.map((term) => `(${escapeRegExp(term)})`)
 			.join('|'),
 		'gi',
 	);
@@ -431,7 +432,9 @@ function onMouseMove(e: MouseEvent) {
 					<input
 						ref="searchInput"
 						v-model="filterText"
-						:aria-activedescendant="selectedIndex > -1 ? ('localsearch-item-' + selectedIndex) : undefined"
+						:aria-activedescendant="
+							selectedIndex > -1 ? 'localsearch-item-' + selectedIndex : undefined
+						"
 						aria-autocomplete="both"
 						:aria-controls="results?.length ? 'localsearch-list' : undefined"
 						aria-labelledby="localsearch-label"
@@ -453,9 +456,7 @@ function onMouseMove(e: MouseEvent) {
 							type="button"
 							:class="{ 'detailed-list': showDetailedList }"
 							:title="translate('modal.displayDetails')"
-							@click="
-                selectedIndex > -1 && (showDetailedList = !showDetailedList)
-              "
+							@click="selectedIndex > -1 && (showDetailedList = !showDetailedList)"
 						>
 							<span class="vpi-layout-list local-search-icon" />
 						</button>
@@ -491,8 +492,8 @@ function onMouseMove(e: MouseEvent) {
 							:href="p.id"
 							class="result"
 							:class="{
-                selected: selectedIndex === index
-              }"
+								selected: selectedIndex === index,
+							}"
 							:aria-label="[...p.titles, p.title].join(' > ')"
 							@mouseenter="!disableMouseOver && (selectedIndex = index)"
 							@focusin="selectedIndex = index"
@@ -506,7 +507,9 @@ function onMouseMove(e: MouseEvent) {
 										<span class="text" v-html="t" />
 										<span class="vpi-chevron-right local-search-icon" />
 									</span>
-									<span class="title main"> <span class="text" v-html="p.title" /> </span>
+									<span class="title main">
+										<span class="text" v-html="p.title" />
+									</span>
 								</div>
 
 								<div v-if="showDetailedList" class="excerpt-wrapper">
@@ -520,7 +523,8 @@ function onMouseMove(e: MouseEvent) {
 						</a>
 					</li>
 					<li v-if="filterText && !results.length && enableNoResults" class="no-results">
-						{{ translate('modal.noResultsText') }}"<strong>{{ filterText }}</strong>"
+						{{ translate('modal.noResultsText') }}"<strong>{{ filterText }}</strong
+						>"
 					</li>
 				</ul>
 
@@ -791,24 +795,24 @@ function onMouseMove(e: MouseEvent) {
 }
 
 .excerpt :deep(*) {
-  font-size: 0.8rem !important;
-  line-height: 130% !important;
+	font-size: 0.8rem !important;
+	line-height: 130% !important;
 }
 
 .titles :deep(mark),
 .excerpt :deep(mark) {
-  background-color: var(--vp-local-search-highlight-bg);
-  color: var(--vp-local-search-highlight-text);
-  border-radius: 2px;
-  padding: 0 2px;
+	background-color: var(--vp-local-search-highlight-bg);
+	color: var(--vp-local-search-highlight-text);
+	border-radius: 2px;
+	padding: 0 2px;
 }
 
 .excerpt :deep(.vp-code-group) .tabs {
-  display: none;
+	display: none;
 }
 
 .excerpt :deep(.vp-code-group) div[class*='language-'] {
-  border-radius: 8px !important;
+	border-radius: 8px !important;
 }
 
 .excerpt-gradient-bottom {

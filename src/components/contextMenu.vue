@@ -8,9 +8,9 @@
 		>
 			<div
 				:style="{
-                    left: rightMenuX + 'px',
-                    top: rightMenuY + 'px',
-                }"
+					left: rightMenuX + 'px',
+					top: rightMenuY + 'px',
+				}"
 				ref="rightMenuRef"
 				class="menu-content s-card hover card-enhance"
 				@contextmenu.stop="closeRightMenu"
@@ -39,12 +39,20 @@
 						<IconAppWindow />
 						<span class="name">{{ i18n.newTab }}</span>
 					</div>
-					<div v-if="selection.type === 'link'" class="btn" @click="copyText(selection.data.href)">
+					<div
+						v-if="selection.type === 'link'"
+						class="btn"
+						@click="copyText(selection.data.href)"
+					>
 						<IconCopy />
 						<span class="name">{{ i18n.copyLink }}</span>
 					</div>
 					<!-- image selection -->
-					<div v-if="selection.type === 'image'" class="btn" @click="copyImage(selection.data.src)">
+					<div
+						v-if="selection.type === 'image'"
+						class="btn"
+						@click="copyImage(selection.data.src)"
+					>
 						<IconClipboardCopy />
 						<span class="name">{{ i18n.copyImage }}</span>
 					</div>
@@ -66,13 +74,18 @@
 						<IconBrandGoogle />
 						<span class="name">{{ i18n.search }}</span>
 					</a>
-					<div v-if="selection.type === 'text'" class="btn" @click="copyText(selection.data)">
+					<div
+						v-if="selection.type === 'text'"
+						class="btn"
+						@click="copyText(selection.data)"
+					>
 						<IconCopy />
 						<span class="name">{{ i18n.copySelection }}</span>
 					</div>
 				</div>
 				<div class="all-menu general">
-					<div class="btn" @click="copyText(router.route.path)"><!-- TODO: Refine URL -->
+					<div class="btn" @click="copyText(router.route.path)">
+						<!-- TODO: Refine URL -->
 						<IconLink />
 						<span class="name">{{ i18n.copyCurrentURL }}</span>
 					</div>
@@ -266,7 +279,9 @@ onBeforeUnmount(() => {
 			.btn {
 				justify-content: flex-start;
 				margin-bottom: 6px;
-				&:last-child { margin-bottom: 0 }
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 			&.general {
 				padding-top: 12px;
@@ -283,8 +298,12 @@ onBeforeUnmount(() => {
 			transition:
 				color 0.3s,
 				background-color 0.3s;
-			.icon { transition: color 0.3s }
-			.name { margin-left: 12px }
+			.icon {
+				transition: color 0.3s;
+			}
+			.name {
+				margin-left: 12px;
+			}
 			&:hover {
 				color: var(--main-card-background);
 				background-color: var(--vp-c-brand-1);
