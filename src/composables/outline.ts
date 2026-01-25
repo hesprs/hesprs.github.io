@@ -1,7 +1,7 @@
+import type { TritoTheme } from '@/shared';
 import { getScrollOffset } from 'vitepress';
 import { onMounted, onUnmounted, onUpdated, type Ref } from 'vue';
 
-import type { TritoTheme } from '@/shared';
 import { throttleAndDebounce } from '@/support/utils';
 
 import { useAside } from './aside';

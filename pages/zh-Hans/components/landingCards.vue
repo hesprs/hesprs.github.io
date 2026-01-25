@@ -236,11 +236,13 @@ const perspectives = [
 		}
 		.tip {
 			font-size: 14px;
+			line-height: 1;
 			opacity: 0.8;
 		}
 		.title {
 			font-size: var(--title);
 			font-weight: bold;
+			line-height: 1.2;
 			&.large {
 				color: var(--vp-c-brand-1);
 				font-size: var(--title-large);

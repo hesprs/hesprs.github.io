@@ -8,9 +8,11 @@ import ProjectCard from '$/components/projectCard.vue';
 import { IconBrandGithub, IconBrandNpm, IconHome }  from '@tabler/icons-vue';
 import { useData } from 'vitepress';
 const { page } = useData();
-const meta = {
-    name: page.value.title,
-    description: page.value.description,
+</script>
+
+<ProjectCard :meta="{
+    name: page.title,
+    description: page.description,
     logo: 'https://pointeract.consensia.cc/logo.svg  ',
     links: [
         {
@@ -32,10 +34,7 @@ const meta = {
             color: '#EA2039'
         },
     ]
-}
-</script>
-
-<ProjectCard :meta />
+}" />
 
 ## 简介
 

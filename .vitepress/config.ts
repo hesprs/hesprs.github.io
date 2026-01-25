@@ -5,7 +5,6 @@ import { createMarkdownRenderer, defineConfig } from 'vitepress';
 
 const srcDir = resolve(__dirname, '../pages');
 const md = await createMarkdownRenderer(srcDir);
-const renderMarkdown = (content: string) => md.render(content);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -79,7 +78,7 @@ export default defineConfig({
 	},
 	vite: {
 		publicDir: resolve(__dirname, '../public'),
-		plugins: [jsonCanvasVitePlugin(renderMarkdown)],
+		plugins: [jsonCanvasVitePlugin(md.render)],
 		resolve: {
 			alias: [
 				{

@@ -1,3 +1,4 @@
+import type { TritoTheme } from '@/shared';
 import { useWindowScroll } from '@vueuse/core';
 import { onContentUpdated } from 'vitepress';
 import {
@@ -9,8 +10,6 @@ import {
 	shallowRef,
 	watchPostEffect,
 } from 'vue';
-
-import type { TritoTheme } from '@/shared';
 
 import { useData } from './data';
 import { getHeaders } from './outline';

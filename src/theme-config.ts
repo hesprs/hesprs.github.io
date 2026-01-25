@@ -1,9 +1,8 @@
-// oxlint-disable typescript/no-explicit-any
-import type { Options as _MiniSearchOptions } from 'minisearch';
-
 import type { DocSearchProps } from '@/shared/docsearch';
 import type { Header, PageData } from '@/shared/index';
 import type { LocalSearchTranslations } from '@/shared/local-search';
+// oxlint-disable typescript/no-explicit-any
+import type { Options as _MiniSearchOptions } from 'minisearch';
 
 export namespace TritoTheme {
 	export interface Config {
