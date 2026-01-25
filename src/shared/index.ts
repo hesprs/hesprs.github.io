@@ -1,7 +1,6 @@
+import type { AdditionalConfig, HeadConfig, PageData, SiteData } from './types';
 // oxlint-disable typescript/no-explicit-any
 import type { InjectionKey } from 'vue';
-
-import type { AdditionalConfig, HeadConfig, PageData, SiteData } from './types';
 
 export const toggleAppearanceKey: InjectionKey<
 	(coords: { clientX: number; clientY: number }) => Promise<void>

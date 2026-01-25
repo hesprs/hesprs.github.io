@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-    name: HESPERI
-    tagline: About Hēsperus
-    image:
-        light: /logo.svg
-        dark: /logo-dark.svg
-        alt: Website Logo
+  name: HESPERI
+  tagline: About Hēsperus
+  image:
+    light: /logo.svg
+    dark: /logo-dark.svg
+    alt: Website Logo
 ---
 
 <script setup>

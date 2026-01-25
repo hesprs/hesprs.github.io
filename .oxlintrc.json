@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["unicorn", "typescript", "oxc", "import", "vitest", "vue"],
+	"plugins": ["unicorn", "typescript", "oxc", "import", "vue", "jsdoc"],
 	"categories": {},
 	"rules": {
 		"constructor-super": "warn",
@@ -95,7 +95,7 @@
 		"typescript/require-array-sort-compare": "warn",
 		"typescript/restrict-template-expressions": "warn",
 		"typescript/triple-slash-reference": "warn",
-		"typescript/unbound-method": "warn",
+		"typescript/unbound-method": "allow",
 		"unicorn/no-await-in-promise-methods": "warn",
 		"unicorn/no-empty-file": "warn",
 		"unicorn/no-invalid-fetch-options": "warn",
@@ -108,27 +108,14 @@
 		"unicorn/no-useless-length-check": "warn",
 		"unicorn/no-useless-spread": "warn",
 		"unicorn/prefer-set-size": "warn",
-		"unicorn/prefer-string-starts-ends-with": "warn"
-	},
-	"settings": {
-		"jsdoc": {
-			"ignorePrivate": false,
-			"ignoreInternal": false,
-			"ignoreReplacesDocs": true,
-			"overrideReplacesDocs": true,
-			"augmentsExtendsReplacesDocs": false,
-			"implementsReplacesDocs": false,
-			"exemptDestructuredRootsFromChecks": false,
-			"tagNamePreference": {}
-		},
-		"vitest": {
-			"typecheck": false
-		},
-		"plugins": ["typescript"],
-		"rules": {
-			"typescript/no-floating-promises": "error",
-			"typescript/no-unsafe-assignment": "warn"
-		}
+		"unicorn/prefer-string-starts-ends-with": "warn",
+		"jsdoc/ignorePrivate": "warn",
+		"jsdoc/ignoreInternal": "warn",
+		"jsdoc/ignoreReplacesDocs": "warn",
+		"jsdoc/overrideReplacesDocs": "warn",
+		"jsdoc/augmentsExtendsReplacesDocs": "warn",
+		"jsdoc/implementsReplacesDocs": "warn",
+		"jsdoc/exemptDestructuredRootsFromChecks": "warn"
 	},
 	"env": {
 		"builtin": true
