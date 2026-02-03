@@ -63,6 +63,14 @@ export default defineConfig({
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }],
 		['meta', { name: 'color-scheme', content: 'dark light' }],
+		[
+			'script',
+			{
+				differ: '',
+				src: 'https://analytics.consensia.cc/script.js',
+				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
+			},
+		],
 	],
 	sitemap: { hostname: 'https://hesprs.github.io' },
 	themeConfig: {

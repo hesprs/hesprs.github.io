@@ -12,15 +12,15 @@
 		"build": "vitepress build",
 		"preview": "vitepress preview",
 		"lint": "oxlint --type-aware --fix && oxfmt",
-		"check": "tsc && oxfmt --check && oxlint --type-aware"
+		"check": "vue-tsc && oxfmt --check && oxlint --type-aware"
 	},
 	"dependencies": {
 		"@docsearch/css": "^4.5.3",
 		"@docsearch/js": "^4.5.3",
 		"@tabler/icons-vue": "^3.36.1",
-		"@vueuse/core": "^14.1.0",
-		"@vueuse/integrations": "^14.1.0",
-		"json-canvas-viewer": "^3.4.1",
+		"@vueuse/core": "^14.2.0",
+		"@vueuse/integrations": "^14.2.0",
+		"json-canvas-viewer": "^3.4.2",
 		"mark.js": "^8.11.1",
 		"minisearch": "^7.2.0",
 		"vitepress": "2.0.0-alpha.15",
@@ -28,13 +28,14 @@
 		"vue3-carousel": "^0.17.0"
 	},
 	"devDependencies": {
-		"@types/node": "^25.0.10",
-		"oxfmt": "^0.26.0",
-		"oxlint": "^1.41.0",
-		"oxlint-tsgolint": "^0.11.1",
+		"@types/node": "^25.2.0",
+		"oxfmt": "^0.28.0",
+		"oxlint": "^1.43.0",
+		"oxlint-tsgolint": "^0.11.4",
 		"sass": "^1.97.3",
 		"typescript": "^5.9.3",
-		"vite": "^7.3.1"
+		"vite": "^7.3.1",
+		"vue-tsc": "^3.2.4"
 	},
 	"packageManager": "pnpm@10.23.0"
 }

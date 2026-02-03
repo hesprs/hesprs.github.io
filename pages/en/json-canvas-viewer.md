@@ -8,15 +8,15 @@ import ProjectCard from '$/components/projectCard.vue';
 import Viewer from 'json-canvas-viewer/vue';
 import { Minimap, MistouchPreventer, Controls } from 'json-canvas-viewer/modules';
 import canvas from '$/assets/demo.canvas';
-import { IconBrandGithub, IconBrandNpm, IconBook, IconJson }  from '@tabler/icons-vue';
+import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson }  from '@tabler/icons-vue';
 import { useData } from 'vitepress';
-const { page, isDark } = useData();
+const { isDark } = useData();
 const isPrerendering = import.meta.env.SSR;
 </script>
 
 <ProjectCard :meta="{
-    name: page.title,
-    description: page.description,
+    name: $frontmatter.title,
+    description: $frontmatter.description,
     logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
     links: [
         {
@@ -34,7 +34,7 @@ const isPrerendering = import.meta.env.SSR;
         {
             name: 'Documentation',
             url: 'https://github.com/hesprs/json-canvas-viewer/wiki',
-            icon: IconBook,
+            icon: IconVocabulary,
             color: '#425aef'
         },
         {
