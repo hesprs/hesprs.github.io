@@ -56,8 +56,7 @@
 				<div class="item s-card concave">
 					<span class="tip">MBTI</span>
 					<span class="title large">
-						INTJ
-						<span style="color: var(--vp-c-brand-1); font-size: 20px">-T</span>
+						INTJ<span style="color: var(--vp-c-brand-1); font-size: 20px">-T</span>
 					</span>
 				</div>
 			</div>
