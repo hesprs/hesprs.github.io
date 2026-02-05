@@ -54,15 +54,15 @@ Pointeract 是一个轻量级的 JavaScript/TypeScript 工具库，专注于一�
 
 市面上已有许多交互库，其中最著名的当属 `Interact.js` 和 `Hammer.js`，但 Pointeract 截然不同。
 
-| 判定标准                                                                                 |                      Pointeract                       |     [Hammer.js](https://hammerjs.github.io)      |        [Interact.js](https://interactjs.io)         |
-| :--------------------------------------------------------------------------------------- | :---------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
-| 使用 TypeScript 编写？                                                                   |                          ✅                           |                        ❌                        |                         ✅                          |
-| 支持摇树优化？                                                                           |   [✅](https://bundlephobia.com/package/pointeract)   | [❌](https://bundlephobia.com/package/hammerjs)  |  [❌](https://bundlephobia.com/package/interactjs)  |
-| 包体积（压缩后）                                                                         | 👑 [2KB](https://bundlephobia.com/package/pointeract) | [7KB](https://bundlephobia.com/package/hammerjs) | [28KB](https://bundlephobia.com/package/interactjs) |
-| 最近更新时间                                                                             |                     👑 持续维护中                     |                     2015 年                      |                       2023 年                       |
-| 功能范围                                                                                 |                    指针及滚轮相关                     |                     指针相关                     |         👑 指针及滚轮相关 + 全面的实用工具          |
-| 稳健性？（参见 [测试](https://pointeract.consensia.cc/development/testing#monkey-test)） |                          ✅                           |                   ❌ 元素抖动                    |                  ❌ 忽略第二次触摸                  |
-| 可扩展性？                                                                               |                          ✅                           |                        ❌                        |                         ❌                          |
+| 判定标准                                                  |                      Pointeract                       |     [Hammer.js](https://hammerjs.github.io)      |        [Interact.js](https://interactjs.io)         |
+| :-------------------------------------------------------- | :---------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
+| 使用 TypeScript 编写？                                    |                          ✅                           |                        ❌                        |                         ✅                          |
+| 支持摇树优化（Tree-shakeable）？                          |   [✅](https://bundlephobia.com/package/pointeract)   | [❌](https://bundlephobia.com/package/hammerjs)  |  [❌](https://bundlephobia.com/package/interactjs)  |
+| 总包体积（压缩后）                                        | 👑 [3KB](https://bundlephobia.com/package/pointeract) | [7KB](https://bundlephobia.com/package/hammerjs) | [28KB](https://bundlephobia.com/package/interactjs) |
+| 最近更新时间                                              |                     👑 持续维护中                     |                       2015                       |                        2023                         |
+| 功能范围                                                  |             指针及滚轮相关 + 部分实用工具             |                     指针相关                     |         👑 指针及滚轮相关 + 全面的实用工具          |
+| 稳健性？（参见 [测试](/development/testing#monkey-test)） |                          ✅                           |                   ❌ 元素抖动                    |                  ❌ 忽略第二次触摸                  |
+| 可扩展性？                                                |                          ✅                           |                        ❌                        |                         ❌                          |
 
 ## 许可证
 
