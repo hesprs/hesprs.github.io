@@ -54,15 +54,15 @@ Homepage & Documentation: [pointeract.consensia.cc](https://pointeract.consensia
 
 There're already plenty of interaction libraries out there, most famous ones are `Interact.js` and `Hammer.js`, but Pointeract is different.
 
-| Criteria                                                  |                      Pointeract                       |     [Hammer.js](https://hammerjs.github.io)      |        [Interact.js](https://interactjs.io)         |
-| :-------------------------------------------------------- | :---------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
-| Written in TypeScript?                                    |                          ✅                           |                        ❌                        |                         ✅                          |
-| Tree-shakeable?                                           |   [✅](https://bundlephobia.com/package/pointeract)   | [❌](https://bundlephobia.com/package/hammerjs)  |  [❌](https://bundlephobia.com/package/interactjs)  |
-| Total Bundle Size (Minified + Gzipped)                    | 👑 [3KB](https://bundlephobia.com/package/pointeract) | [7KB](https://bundlephobia.com/package/hammerjs) | [28KB](https://bundlephobia.com/package/interactjs) |
-| Last Updated                                              |                👑 Actively Maintained                 |                       2015                       |                        2023                         |
-| Features                                                  |        Pointer and Wheel Related + Some Utils         |                 Pointer Related                  | 👑 Pointer and Wheel Related + Comprehensive Utils  |
-| Robust? (See [Testing](/development/testing#monkey-test)) |                          ✅                           |                 ❌ Element Jerks                 |         ❌ Element Ignores the Second Touch         |
-| Extensible?                                               |                          ✅                           |                        ❌                        |                         ❌                          |
+| Criteria                                                                                 |                      Pointeract                       |     [Hammer.js](https://hammerjs.github.io)      |        [Interact.js](https://interactjs.io)         |
+| :--------------------------------------------------------------------------------------- | :---------------------------------------------------: | :----------------------------------------------: | :-------------------------------------------------: |
+| Written in TypeScript?                                                                   |                          ✅                           |                        ❌                        |                         ✅                          |
+| Tree-shakeable?                                                                          |   [✅](https://bundlephobia.com/package/pointeract)   | [❌](https://bundlephobia.com/package/hammerjs)  |  [❌](https://bundlephobia.com/package/interactjs)  |
+| Total Bundle Size (Minified + Gzipped)                                                   | 👑 [3KB](https://bundlephobia.com/package/pointeract) | [7KB](https://bundlephobia.com/package/hammerjs) | [28KB](https://bundlephobia.com/package/interactjs) |
+| Last Updated                                                                             |                👑 Actively Maintained                 |                       2015                       |                        2023                         |
+| Features                                                                                 |        Pointer and Wheel Related + Some Utils         |                 Pointer Related                  | 👑 Pointer and Wheel Related + Comprehensive Utils  |
+| Robust? (See [Testing](https://pointeract.consensia.cc/development/testing#monkey-test)) |                          ✅                           |                 ❌ Element Jerks                 |         ❌ Element Ignores the Second Touch         |
+| Extensible?                                                                              |                          ✅                           |                        ❌                        |                         ❌                          |
 
 ## License
 
