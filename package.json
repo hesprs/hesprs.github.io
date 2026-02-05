@@ -20,7 +20,7 @@
 		"@tabler/icons-vue": "^3.36.1",
 		"@vueuse/core": "^14.2.0",
 		"@vueuse/integrations": "^14.2.0",
-		"json-canvas-viewer": "^3.4.2",
+		"json-canvas-viewer": "^3.4.3",
 		"mark.js": "^8.11.1",
 		"minisearch": "^7.2.0",
 		"vitepress": "2.0.0-alpha.15",

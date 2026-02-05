@@ -24,8 +24,8 @@ importers:
         specifier: ^14.2.0
         version: 14.2.0(focus-trap@7.8.0)(vue@3.5.27(typescript@5.9.3))
       json-canvas-viewer:
-        specifier: ^3.4.2
-        version: 3.4.2
+        specifier: ^3.4.3
+        version: 3.4.3
       mark.js:
         specifier: ^8.11.1
         version: 8.11.1
@@ -673,14 +673,14 @@ packages:
   '@vue/compiler-ssr@3.5.27':
     resolution: {integrity: sha512-Sj7h+JHt512fV1cTxKlYhg7qxBvack+BGncSpH+8vnN+KN95iPIcqB5rsbblX40XorP+ilO7VIKlkuu3Xq2vjw==}
 
-  '@vue/devtools-api@8.0.5':
-    resolution: {integrity: sha512-DgVcW8H/Nral7LgZEecYFFYXnAvGuN9C3L3DtWekAncFBedBczpNW8iHKExfaM559Zm8wQWrwtYZ9lXthEHtDw==}
+  '@vue/devtools-api@8.0.6':
+    resolution: {integrity: sha512-+lGBI+WTvJmnU2FZqHhEB8J1DXcvNlDeEalz77iYgOdY1jTj1ipSBaKj3sRhYcy+kqA8v/BSuvOz1XJucfQmUA==}
 
-  '@vue/devtools-kit@8.0.5':
-    resolution: {integrity: sha512-q2VV6x1U3KJMTQPUlRMyWEKVbcHuxhqJdSr6Jtjz5uAThAIrfJ6WVZdGZm5cuO63ZnSUz0RCsVwiUUb0mDV0Yg==}
+  '@vue/devtools-kit@8.0.6':
+    resolution: {integrity: sha512-9zXZPTJW72OteDXeSa5RVML3zWDCRcO5t77aJqSs228mdopYj5AiTpihozbsfFJ0IodfNs7pSgOGO3qfCuxDtw==}
 
-  '@vue/devtools-shared@8.0.5':
-    resolution: {integrity: sha512-bRLn6/spxpmgLk+iwOrR29KrYnJjG9DGpHGkDFG82UM21ZpJ39ztUT9OXX3g+usW7/b2z+h46I9ZiYyB07XMXg==}
+  '@vue/devtools-shared@8.0.6':
+    resolution: {integrity: sha512-Pp1JylTqlgMJvxW6MGyfTF8vGvlBSCAvMFaDCYa82Mgw7TT5eE5kkHgDvmOGHWeJE4zIDfCpCxHapsK2LtIAJg==}
 
   '@vue/language-core@3.2.4':
     resolution: {integrity: sha512-bqBGuSG4KZM45KKTXzGtoCl9cWju5jsaBKaJJe3h5hRAAWpZUuj5G+L+eI01sPIkm4H6setKRlw7E85wLdDNew==}
@@ -853,8 +853,8 @@ packages:
     resolution: {integrity: sha512-oG7cgbmg5kLYae2N5IVd3jm2s+vldjxJzK1pcu9LfpGuQ93MQSzo0okvRna+7y5ifrD+20FE8FvjusyGaz14fw==}
     engines: {node: '>=18'}
 
-  json-canvas-viewer@3.4.2:
-    resolution: {integrity: sha512-eQNkai46KlP1djJOcOPqwCtuoiuU4RJTJrKgTdgMK9ero/4ATQmtczW+EVK6GyGmXgK7n91AG5rYCr5jeU5G8g==}
+  json-canvas-viewer@3.4.3:
+    resolution: {integrity: sha512-/7OxmjWcoQzmnbHbGRYnhEDS13f34eDa1Rug46CQFZsW59Gj3QIjUNONLsJrz0YyjTFGy3GSSrbQGc8U4O6VYg==}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -935,8 +935,8 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
-  pointeract@1.1.0:
-    resolution: {integrity: sha512-GhZQYxZirDMGpOEDEKAXlaLOLvX1CfkRPIbLGKsvItZmrYN7C8qKJokG/NinTXnoFVRYQh578Kv0zx167y9Mgg==}
+  pointeract@1.1.1:
+    resolution: {integrity: sha512-etTy9BkLFpyAVmxUODfG5eIThjp+ywXUz84pBCgoDs683xe8lZ5U6ggmc+3VBMkpzLFyMq1s6CBFGFMU4e31qg==}
 
   postcss@8.5.6:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
@@ -1550,13 +1550,13 @@ snapshots:
       '@vue/compiler-dom': 3.5.27
       '@vue/shared': 3.5.27
 
-  '@vue/devtools-api@8.0.5':
+  '@vue/devtools-api@8.0.6':
     dependencies:
-      '@vue/devtools-kit': 8.0.5
+      '@vue/devtools-kit': 8.0.6
 
-  '@vue/devtools-kit@8.0.5':
+  '@vue/devtools-kit@8.0.6':
     dependencies:
-      '@vue/devtools-shared': 8.0.5
+      '@vue/devtools-shared': 8.0.6
       birpc: 2.9.0
       hookable: 5.5.3
       mitt: 3.0.1
@@ -1564,7 +1564,7 @@ snapshots:
       speakingurl: 14.0.1
       superjson: 2.2.6
 
-  '@vue/devtools-shared@8.0.5':
+  '@vue/devtools-shared@8.0.6':
     dependencies:
       rfdc: 1.4.1
 
@@ -1732,11 +1732,11 @@ snapshots:
 
   is-what@5.5.0: {}
 
-  json-canvas-viewer@3.4.2:
+  json-canvas-viewer@3.4.3:
     dependencies:
       '@ahmedsemih/color-fns': 1.3.0
       '@needle-di/core': 1.1.0
-      pointeract: 1.1.0
+      pointeract: 1.1.1
 
   magic-string@0.30.21:
     dependencies:
@@ -1834,7 +1834,7 @@ snapshots:
 
   picomatch@4.0.3: {}
 
-  pointeract@1.1.0: {}
+  pointeract@1.1.1: {}
 
   postcss@8.5.6:
     dependencies:
@@ -1994,7 +1994,7 @@ snapshots:
       '@shikijs/types': 3.22.0
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 6.0.4(vite@7.3.1(@types/node@25.2.0)(sass@1.97.3))(vue@3.5.27(typescript@5.9.3))
-      '@vue/devtools-api': 8.0.5
+      '@vue/devtools-api': 8.0.6
       '@vue/shared': 3.5.27
       '@vueuse/core': 14.2.0(vue@3.5.27(typescript@5.9.3))
       '@vueuse/integrations': 14.2.0(focus-trap@7.8.0)(vue@3.5.27(typescript@5.9.3))
