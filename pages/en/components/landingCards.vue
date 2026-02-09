@@ -24,23 +24,6 @@
 	<LandingCarousel />
 	<h1 style="margin-bottom: 24px">More About Me</h1>
 	<div class="about-content" style="grid-template-columns: 2fr 3fr">
-		<article class="s-card card-enhance skills">
-			<span class="tip">Skills</span>
-			<br />
-			<div class="skills-list">
-				<a
-					v-for="(item, index) in skills"
-					:key="index"
-					:style="{ '--color': item.color }"
-					:href="item.link"
-					class="skills-item"
-					target="_blank"
-				>
-					<component class="skills-logo" :is="item.icon" />
-					{{ item.name }}
-				</a>
-			</div>
-		</article>
 		<article class="s-card card-enhance personality">
 			<span class="tip">Personality</span>
 			<br />
@@ -66,6 +49,23 @@
 				>&nbsp;and
 				<a href="https://www.16personalities.com/intj-personality" target="_blank">INTJ</a>
 			</span>
+		</article>
+		<article class="s-card card-enhance skills">
+			<span class="tip">Skills & Tools</span>
+			<br />
+			<div class="skills-list">
+				<a
+					v-for="(item, index) in skills"
+					:key="index"
+					:style="{ '--color': item.color }"
+					:href="item.link"
+					class="skills-item"
+					target="_blank"
+				>
+					<component class="skills-logo" :is="item.icon" />
+					{{ item.name }}
+				</a>
+			</div>
 		</article>
 	</div>
 	<div class="about-content" style="grid-template-columns: 3fr 2fr">
@@ -122,6 +122,11 @@ import {
 	IconGenderTransgender,
 	IconSettingsBolt,
 	IconWorldHeart,
+	IconBrandReact,
+	IconPuzzle,
+	IconSnowflake,
+	IconBolt,
+	IconBrandOpenai,
 } from '@tabler/icons-vue';
 import LandingCarousel from './landingCarousel.vue';
 
@@ -151,6 +156,12 @@ const skills = [
 		link: 'https://vuejs.org/',
 	},
 	{
+		name: 'React',
+		color: '#58c4dc',
+		icon: IconBrandReact,
+		link: 'https://react.dev/',
+	},
+	{
 		name: 'Python',
 		color: '#3776AB',
 		icon: IconBrandPython,
@@ -173,6 +184,30 @@ const skills = [
 		color: '#F4792B',
 		icon: IconBrandBlender,
 		link: 'https://www.blender.org/',
+	},
+	{
+		name: 'OpenAI SDK',
+		color: '#000000',
+		icon: IconBrandOpenai,
+		link: 'https://platform.openai.com/docs/overview',
+	},
+	{
+		name: 'Browser Extension',
+		color: '#67d55e',
+		icon: IconPuzzle,
+		link: 'https://wxt.dev/',
+	},
+	{
+		name: 'NixOS',
+		color: '#4d6fb7',
+		icon: IconSnowflake,
+		link: 'https://nixos.org/',
+	},
+	{
+		name: 'FastAPI',
+		color: '#009486',
+		icon: IconBolt,
+		link: 'https://fastapi.tiangolo.com/',
 	},
 ];
 
@@ -222,7 +257,7 @@ const perspectives = [
 		gap: 12px;
 		--title: 32px;
 		--title-large: 50px;
-		@media (max-width: 767px) {
+		@media (max-width: 960px) {
 			padding-left: 20px;
 			padding-right: 20px;
 			--title: 24px;
@@ -293,6 +328,10 @@ const perspectives = [
 			.box {
 				display: flex;
 				gap: 12px;
+				flex-direction: column;
+				@media (max-width: 767px) {
+					flex-direction: row;
+				}
 				.item {
 					padding-left: 24px;
 					padding-right: 24px;
