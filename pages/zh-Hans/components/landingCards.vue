@@ -1,10 +1,7 @@
 <template>
 	<div class="about-content first" style="grid-template-columns: 2fr 3fr">
 		<article class="s-card card-enhance hello">
-			<span class="title"
-				>你好 👋<br />
-				我是 Hēsperus，
-			</span>
+			<span class="title">你好 👋<br />我是 Hēsperus，</span>
 			<span class="text">
 				高中生 • 开源开发者
 				<br />
@@ -15,7 +12,7 @@
 			<span class="tip">关于我的名字</span>
 			<br />
 			<span class="text">
-				<em>Hēsperus</em> 在希腊神话中，是出现在暮光中的 <strong>金星</strong> 的名字。
+				<em>Hēsperus</em> 在希腊神话中，是出现在暮光中的 <strong>金星 </strong>的名字。
 			</span>
 			<span class="text">
 				<code>Hesprs</code> 常被用作我在社交媒体上的标识。而网站名
@@ -26,8 +23,36 @@
 	<LandingCarousel />
 	<h1 style="margin-bottom: 24px">更多关于我</h1>
 	<div class="about-content" style="grid-template-columns: 2fr 3fr">
+		<article class="s-card card-enhance personality">
+			<span class="tip">个性</span>
+			<br />
+			<div class="box">
+				<div class="item s-card concave">
+					<span class="tip">Enneagram 九型人格</span>
+					<span class="title">
+						类型
+						<span class="title large"> 5</span>
+						<span style="color: var(--vp-c-brand-1); font-size: 20px">w4 </span>
+					</span>
+				</div>
+				<div class="item s-card concave">
+					<span class="tip">MBTI</span>
+					<span class="title large">
+						INTJ<span style="color: var(--vp-c-brand-1); font-size: 20px">-T</span>
+					</span>
+				</div>
+			</div>
+			<span class="more">
+				了解更多关于
+				<a href="https://www.enneagraminstitute.com/type-5/  " target="_blank">第五型</a
+				>&nbsp;和
+				<a href="https://www.16personalities.com/intj-personality  " target="_blank"
+					>INTJ</a
+				>
+			</span>
+		</article>
 		<article class="s-card card-enhance skills">
-			<span class="tip">技能</span>
+			<span class="tip">技能与工具</span>
 			<br />
 			<div class="skills-list">
 				<a
@@ -42,35 +67,6 @@
 					{{ item.name }}
 				</a>
 			</div>
-		</article>
-		<article class="s-card card-enhance personality">
-			<span class="tip">个性</span>
-			<br />
-			<div class="box">
-				<div class="item s-card concave">
-					<span class="tip">九型人格</span>
-					<span class="title"
-						>类型 <span class="title large">5</span
-						><span style="color: var(--vp-c-brand-1); font-size: 20px">w4 </span></span
-					>
-				</div>
-				<div class="item s-card concave">
-					<span class="tip">MBTI</span>
-					<span class="title large"
-						>INTJ<span style="color: var(--vp-c-brand-1); font-size: 20px"
-							>-T
-						</span></span
-					>
-				</div>
-			</div>
-			<span class="more">
-				了解更多关于
-				<a href="https://www.enneagraminstitute.com/type-5/  " target="_blank">第五型</a
-				>&nbsp;和
-				<a href="https://www.16personalities.com/intj-personality  " target="_blank"
-					>INTJ</a
-				>
-			</span>
 		</article>
 	</div>
 	<div class="about-content" style="grid-template-columns: 3fr 2fr">
@@ -125,6 +121,11 @@ import {
 	IconGenderTransgender,
 	IconSettingsBolt,
 	IconWorldHeart,
+	IconBrandReact,
+	IconPuzzle,
+	IconSnowflake,
+	IconBolt,
+	IconBrandOpenai,
 } from '@tabler/icons-vue';
 import LandingCarousel from './landingCarousel.vue';
 
@@ -154,6 +155,12 @@ const skills = [
 		link: 'https://vuejs.org/  ',
 	},
 	{
+		name: 'React',
+		color: '#58c4dc',
+		icon: IconBrandReact,
+		link: 'https://react.dev/  ',
+	},
+	{
 		name: 'Python',
 		color: '#3776AB',
 		icon: IconBrandPython,
@@ -176,6 +183,30 @@ const skills = [
 		color: '#F4792B',
 		icon: IconBrandBlender,
 		link: 'https://www.blender.org/  ',
+	},
+	{
+		name: 'OpenAI SDK',
+		color: '#000000',
+		icon: IconBrandOpenai,
+		link: 'https://platform.openai.com/docs/overview  ',
+	},
+	{
+		name: '浏览器扩展',
+		color: '#67d55e',
+		icon: IconPuzzle,
+		link: 'https://wxt.dev/  ',
+	},
+	{
+		name: 'NixOS',
+		color: '#4d6fb7',
+		icon: IconSnowflake,
+		link: 'https://nixos.org/  ',
+	},
+	{
+		name: 'FastAPI',
+		color: '#009486',
+		icon: IconBolt,
+		link: 'https://fastapi.tiangolo.com/  ',
 	},
 ];
 
@@ -225,7 +256,7 @@ const perspectives = [
 		gap: 12px;
 		--title: 32px;
 		--title-large: 50px;
-		@media (max-width: 767px) {
+		@media (max-width: 960px) {
 			padding-left: 20px;
 			padding-right: 20px;
 			--title: 24px;
@@ -298,6 +329,10 @@ const perspectives = [
 			.box {
 				display: flex;
 				gap: 12px;
+				flex-direction: column;
+				@media (max-width: 767px) {
+					flex-direction: row;
+				}
 				.item {
 					padding-left: 24px;
 					padding-right: 24px;
