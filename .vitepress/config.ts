@@ -113,5 +113,8 @@ export default defineConfig<ThemeConfig>({
 				},
 			],
 		},
+        ssr: {
+            noExternal: ['vitepress-theme-trito']
+        }
 	},
 });
