@@ -38,7 +38,7 @@ import { IconBrandGithub, IconBrandNpm, IconVocabulary }  from '@tabler/icons-vu
 
 Pointeract is a tiny JavaScript/TypeScript utility library focusing on one thing - handling user interactions with DOM elements, e.g. multitouch and touchpad.
 
-With the unique strength of versatile typings in TypeScript and its dynamic nature, Pointeract have achieved a highly _modular, extendable and efficient_ architecture. Its core bundle size is only **1KB** minified + gzipped, functionalities come from also byte-sized modules. It's fully **tree-shakable**, the fewer modules you use, the smaller your bundle is.
+With the unique strength of versatile typings in TypeScript and its dynamic nature, Pointeract has achieved a highly _modular, extendable and efficient_ architecture. Its core bundle size is only **1KB** minified + gzipped, functionalities come from also byte-sized modules. It's fully **tree-shakable**, the fewer modules you use, the smaller your bundle is.
 
 Homepage & Documentation: [pointeract.consensia.cc](https://pointeract.consensia.cc).
 

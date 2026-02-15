@@ -5,30 +5,31 @@
 			<span class="text">
 				高中生 • 开源开发者
 				<br />
-				未来主义远见者 • 古典文化爱好者
+				未来主义者 • 古典文化爱好者
 			</span>
 		</article>
 		<article class="s-card card-enhance about-name img-mask">
 			<span class="tip">关于我的名字</span>
 			<br />
 			<span class="text">
-				<em>Hēsperus</em> 在希腊神话中，是出现在暮光中的 <strong>金星 </strong>的名字。
+				<em>Hēsperus</em> 在希腊神话中，是暮色里出现的 <strong>金星</strong> 的名字。
 			</span>
 			<span class="text">
-				<code>Hesprs</code> 常被用作我在社交媒体上的标识。而网站名
-				<code>Hēsperī</code> 则意为“关于 Hēsperus”。
+				<code>Hesprs</code> 常作为我在社交媒体上的标识。而网站名
+				<code>Hēsperī</code> 意为“关于 Hēsperus”。
 			</span>
 		</article>
 	</div>
+	<h2 class="upper">我的项目</h2>
 	<LandingCarousel />
-	<h1 style="margin-bottom: 24px">更多关于我</h1>
+	<h2 style="margin-bottom: 24px">更多关于我</h2>
 	<div class="about-content" style="grid-template-columns: 2fr 3fr">
 		<article class="s-card card-enhance personality">
-			<span class="tip">个性</span>
+			<span class="tip">性格特质</span>
 			<br />
 			<div class="box">
 				<div class="item s-card concave">
-					<span class="tip">Enneagram 九型人格</span>
+					<span class="tip">九型人格</span>
 					<span class="title">
 						类型
 						<span class="title large"> 5</span>
@@ -43,12 +44,10 @@
 				</div>
 			</div>
 			<span class="more">
-				了解更多关于
-				<a href="https://www.enneagraminstitute.com/type-5/  " target="_blank">第五型</a
-				>&nbsp;和
-				<a href="https://www.16personalities.com/intj-personality  " target="_blank"
-					>INTJ</a
-				>
+				进一步了解
+				<a href="https://www.enneagraminstitute.com/type-5/" target="_blank">Type-5</a>
+				&nbsp;和
+				<a href="https://www.16personalities.com/intj-personality" target="_blank">INTJ</a>
 			</span>
 		</article>
 		<article class="s-card card-enhance skills">
@@ -77,7 +76,7 @@
 			<span class="title">粗野主义 / 未来主义</span>
 		</article>
 		<article class="s-card card-enhance perspectives">
-			<span class="tip">观点</span>
+			<span class="tip">理念立场</span>
 			<br />
 			<div class="skills-list">
 				<div
@@ -94,12 +93,12 @@
 	</div>
 	<div class="about-content" style="grid-template-columns: 1fr 1fr">
 		<article class="s-card card-enhance like image era">
-			<span class="tip">喜爱的历史时期</span>
+			<span class="tip">最钟爱的历史时期</span>
 			<span class="title large">维多利亚时代</span>
 			<span class="image-desc">“这是最好的时代，也是最坏的时代。”</span>
 		</article>
 		<article class="s-card card-enhance like image game">
-			<span class="tip">喜爱的游戏</span>
+			<span class="tip">最喜爱的游戏</span>
 			<span class="title large">群星</span>
 			<span class="image-desc">“我们的舰队遮天蔽日，无论天上有多少个太阳。”</span>
 		</article>
@@ -134,79 +133,79 @@ const skills = [
 		name: 'JavaScript',
 		color: '#EFD81C',
 		icon: IconBrandJavascript,
-		link: 'https://developer.mozilla.org/docs/Web/JavaScript  ',
+		link: 'https://developer.mozilla.org/docs/Web/JavaScript',
 	},
 	{
 		name: 'TypeScript',
 		color: '#3178C6',
 		icon: IconBrandTypescript,
-		link: 'https://www.typescriptlang.org/  ',
+		link: 'https://www.typescriptlang.org/',
 	},
 	{
 		name: 'SCSS',
 		color: '#CF649A',
 		icon: IconBrandSass,
-		link: 'https://sass-lang.com/  ',
+		link: 'https://sass-lang.com/',
 	},
 	{
 		name: 'Vue',
 		color: '#41b883',
 		icon: IconBrandVue,
-		link: 'https://vuejs.org/  ',
+		link: 'https://vuejs.org/',
 	},
 	{
 		name: 'React',
 		color: '#58c4dc',
 		icon: IconBrandReact,
-		link: 'https://react.dev/  ',
+		link: 'https://react.dev/',
 	},
 	{
 		name: 'Python',
 		color: '#3776AB',
 		icon: IconBrandPython,
-		link: 'https://www.python.org/  ',
+		link: 'https://www.python.org/',
 	},
 	{
 		name: 'Git',
 		color: '#F05032',
 		icon: IconBrandGit,
-		link: 'https://git-scm.com/  ',
+		link: 'https://git-scm.com/',
 	},
 	{
 		name: 'Figma',
 		color: '#0C8CE9',
 		icon: IconBrandFigma,
-		link: 'https://www.figma.com  ',
+		link: 'https://www.figma.com',
 	},
 	{
 		name: 'Blender',
 		color: '#F4792B',
 		icon: IconBrandBlender,
-		link: 'https://www.blender.org/  ',
+		link: 'https://www.blender.org/',
 	},
 	{
 		name: 'OpenAI SDK',
 		color: '#000000',
 		icon: IconBrandOpenai,
-		link: 'https://platform.openai.com/docs/overview  ',
+		link: 'https://platform.openai.com/docs/overview',
 	},
 	{
-		name: '浏览器扩展',
+		name: 'Browser Extension',
 		color: '#67d55e',
 		icon: IconPuzzle,
-		link: 'https://wxt.dev/  ',
+		link: 'https://wxt.dev/',
 	},
 	{
 		name: 'NixOS',
 		color: '#4d6fb7',
 		icon: IconSnowflake,
-		link: 'https://nixos.org/  ',
+		link: 'https://nixos.org/',
 	},
 	{
 		name: 'FastAPI',
 		color: '#009486',
 		icon: IconBolt,
-		link: 'https://fastapi.tiangolo.com/  ',
+		link: 'https://fastapi.tiangolo.com/',
 	},
 ];
 
@@ -214,7 +213,7 @@ const perspectives = [
 	{
 		name: '世界主义',
 		icon: IconWorldHeart,
-		title: '一个拥有共同目标的家园世界，以及通往星辰的开放之路。',
+		title: '一个拥有共同目标的地球家园，并向星辰敞开道路。',
 	},
 	{
 		name: 'LGBT 权益',
@@ -224,22 +223,44 @@ const perspectives = [
 	{
 		name: '机会平等',
 		icon: IconBlendMode,
-		title: '国王的继承人，贫民窟的孩子，都应有相同的起点。',
+		title: '帝王之后与贫民之子，皆有平等的起点。',
 	},
 	{
 		name: '反种族主义',
 		icon: IconCell,
-		title: '所有种族都是幻觉，我们共享同一个身份——人类。',
+		title: '所有种族都是幻象，我们共享同一身份——人类。',
 	},
 	{
 		name: '技术进步主义',
 		icon: IconSettingsBolt,
-		title: '自时间之初，我们的宇宙就注定踏上永恒的进步之旅。',
+		title: '自时间之初，我们的宇宙便已踏上永无止境的进步之旅。',
 	},
 ];
 </script>
 
 <style lang="scss" scoped>
+h2 {
+	font-size: 2rem;
+	line-height: 1.2em;
+	font-weight: 600;
+	&.upper {
+		margin-top: 48px;
+		margin-bottom: 16px;
+		@media (min-width: 640px) {
+			margin-top: 64px;
+		}
+	}
+}
+
+code {
+	border-radius: 4px;
+	padding: 3px 6px;
+	background-color: var(--vp-code-bg);
+	transition:
+		color 0.25s,
+		background-color 0.5s;
+}
+
 .about-content {
 	display: grid;
 	grid-template-columns: auto auto;
@@ -267,8 +288,8 @@ const perspectives = [
 		}
 		.tip {
 			font-size: 14px;
-			line-height: 1;
 			opacity: 0.8;
+			line-height: 1;
 		}
 		.title {
 			font-size: var(--title);
@@ -321,6 +342,7 @@ const perspectives = [
 				color: var(--vp-c-text-2);
 				a {
 					color: var(--vp-c-text-2);
+					text-decoration: underline;
 					&:hover {
 						color: var(--color);
 					}
@@ -364,6 +386,10 @@ const perspectives = [
 					background-color: var(--vp-c-bg);
 					border: 1px solid var(--vp-c-border);
 					box-shadow: 0 8px 12px -4px var(--main-border-shadow);
+					color: var(--vp-c-text);
+					&:hover {
+						color: var(--vp-c-brand-1);
+					}
 					transition:
 						background-color 0.3s,
 						color 0.3s;

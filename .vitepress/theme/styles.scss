@@ -1,0 +1,42 @@
+:root {
+	--vp-home-hero-image-background-image: none !important;
+	--vp-home-hero-image-filter: none !important;
+}
+
+.canvas-viewer {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border-radius: 12px;
+	box-shadow: var(--vp-shadow-2);
+	border: 1px solid var(--vp-c-border);
+	overflow: hidden;
+	@media (max-width: 768px) {
+		aspect-ratio: 1 / 1;
+		margin-left: -24px;
+		border-radius: 0;
+		border: none;
+		width: 100vw;
+	}
+}
+
+// Vue Carousel
+.carousel__track {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+@media (max-width: 768px) {
+	.carousel__viewport {
+		width: 100vw !important;
+		margin-left: -24px;
+	}
+}
+.carousel {
+	--vc-nav-color: var(--vp-c-text-1);
+	--vc-nav-width: 40px;
+	--vc-nav-height: 40px;
+	--vc-nav-color-hover: var(--vp-c-brand-1);
+	.carousel__next,
+	.carousel__prev {
+		transition: color 0.2s;
+	}
+}

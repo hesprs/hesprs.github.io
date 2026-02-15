@@ -21,8 +21,9 @@
 			</span>
 		</article>
 	</div>
+	<h2 class="upper">See My Projects</h2>
 	<LandingCarousel />
-	<h1 style="margin-bottom: 24px">More About Me</h1>
+	<h2 style="margin-bottom: 24px">More About Me</h2>
 	<div class="about-content" style="grid-template-columns: 2fr 3fr">
 		<article class="s-card card-enhance personality">
 			<span class="tip">Personality</span>
@@ -241,6 +242,28 @@ const perspectives = [
 </script>
 
 <style lang="scss" scoped>
+h2 {
+	font-size: 2rem;
+	line-height: 1.2em;
+	font-weight: 600;
+	&.upper {
+		margin-top: 48px;
+		margin-bottom: 16px;
+		@media (min-width: 640px) {
+			margin-top: 64px;
+		}
+	}
+}
+
+code {
+	border-radius: 4px;
+	padding: 3px 6px;
+	background-color: var(--vp-code-bg);
+	transition:
+		color 0.25s,
+		background-color 0.5s;
+}
+
 .about-content {
 	display: grid;
 	grid-template-columns: auto auto;
@@ -269,10 +292,12 @@ const perspectives = [
 		.tip {
 			font-size: 14px;
 			opacity: 0.8;
+			line-height: 1;
 		}
 		.title {
 			font-size: var(--title);
 			font-weight: bold;
+			line-height: 1.2;
 			&.large {
 				color: var(--vp-c-brand-1);
 				font-size: var(--title-large);
@@ -320,6 +345,7 @@ const perspectives = [
 				color: var(--vp-c-text-2);
 				a {
 					color: var(--vp-c-text-2);
+					text-decoration: underline;
 					&:hover {
 						color: var(--color);
 					}
@@ -363,6 +389,10 @@ const perspectives = [
 					background-color: var(--vp-c-bg);
 					border: 1px solid var(--vp-c-border);
 					box-shadow: 0 8px 12px -4px var(--main-border-shadow);
+					color: var(--vp-c-text);
+					&:hover {
+						color: var(--vp-c-brand-1);
+					}
 					transition:
 						background-color 0.3s,
 						color 0.3s;

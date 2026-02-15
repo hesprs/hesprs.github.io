@@ -1,4 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 
-import Theme from '../../src';
+import './styles.scss';
+
+import Theme from 'vitepress-theme-trito';
+
 export default Theme;

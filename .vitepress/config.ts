@@ -2,12 +2,12 @@ import { resolve } from 'node:path';
 
 import { jsonCanvasVitePlugin } from 'json-canvas-viewer/bridges';
 import { createMarkdownRenderer, defineConfig } from 'vitepress';
+import type { ThemeConfig } from 'vitepress-theme-trito';
 
 const srcDir = resolve(__dirname, '../pages');
 const md = await createMarkdownRenderer(srcDir);
 
-// https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default defineConfig<ThemeConfig>({
 	srcDir,
 	outDir: resolve(__dirname, '../dist'),
 	cleanUrls: true,
@@ -23,8 +23,14 @@ export default defineConfig({
 			themeConfig: {
 				nav: [
 					{ text: 'Home', link: '/' },
-					{ text: 'Pointeract', link: '/pointeract' },
-					{ text: 'Canvas Viewer', link: '/json-canvas-viewer' },
+					{
+						text: 'Projects',
+						items: [
+							{ text: 'Pointeract', link: '/pointeract' },
+							{ text: 'JSON Canvas Viewer', link: '/json-canvas-viewer' },
+							{ text: 'Trito', link: '/trito' },
+						],
+					},
 				],
 			},
 			head: [
@@ -45,8 +51,14 @@ export default defineConfig({
 			themeConfig: {
 				nav: [
 					{ text: '首页', link: '/zh-Hans/' },
-					{ text: 'Pointeract', link: '/zh-Hans/pointeract' },
-					{ text: 'Canvas Viewer', link: '/zh-Hans/json-canvas-viewer' },
+					{
+						text: '项目',
+						items: [
+							{ text: 'Pointeract', link: '/zh-Hans/pointeract' },
+							{ text: 'JSON Canvas Viewer', link: '/zh-Hans/json-canvas-viewer' },
+							{ text: 'Trito', link: '/zh-Hans/trito' },
+						],
+					},
 				],
 			},
 			head: [
@@ -75,6 +87,8 @@ export default defineConfig({
 	sitemap: { hostname: 'https://hesprs.github.io' },
 	themeConfig: {
 		logo: { src: '/logo-flat.svg', alt: 'Website logo' },
+		logoLarge: { dark: '/logo-dark.svg', light: '/logo.svg', alt: 'Website large logo' },
+		aside: 'left',
 		search: { provider: 'local' },
 		socialLinks: [
 			{ icon: 'npm', link: 'https://www.npmjs.com/~hesprs' },

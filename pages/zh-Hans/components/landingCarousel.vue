@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import 'vue3-carousel/carousel.css';
 import { Carousel, type CarouselConfig, Navigation, Slide } from 'vue3-carousel';
-import { VPLink } from '@';
+import { VPLink } from 'vitepress-theme-trito';
 
 const carouselConfig: Partial<CarouselConfig> = {
 	itemsToShow: 0.5,
@@ -28,11 +28,18 @@ const projects = [
 		descriptionShort: '高度可扩展的人类手势识别器。',
 		link: '/zh-Hans/pointeract',
 	},
+	{
+		title: 'Trito',
+		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
+		description:
+			'一个为静态网站生成工具 VitePress 打造的主题，专注于 UI/UX 细节优化，当前你正在访问的网站即由它驱动。',
+		descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
+		link: '/zh-Hans/trito',
+	},
 ];
 </script>
 
 <template>
-	<h1 class="upper">我的项目</h1>
 	<Carousel class="lower carousel" v-bind="carouselConfig">
 		<Slide v-for="(project, index) in projects" :key="index">
 			<VPLink :href="project.link" class="carousel__item">
@@ -50,14 +57,6 @@ const projects = [
 </template>
 
 <style lang="scss" scoped>
-.upper {
-	margin-top: 48px;
-	margin-bottom: 16px;
-	@media (min-width: 640px) {
-		margin-top: 64px;
-	}
-}
-
 .lower {
 	margin-bottom: 48px;
 	@media (min-width: 640px) {
@@ -97,7 +96,6 @@ const projects = [
 	grid-template-columns: calc(var(--carousel-height) + var(--image-text-padding)) 1fr;
 	grid-template-rows: 2fr 3fr;
 	margin: 0 var(--carousel-item-margin);
-	text-decoration: none;
 	.logo {
 		grid-area: logo;
 		margin: auto 0;
@@ -108,22 +106,24 @@ const projects = [
 		grid-area: title;
 		border: none;
 		font-size: var(--title-size);
+		font-weight: 600;
 		line-height: 1;
 		margin-top: auto;
 	}
 	.description {
 		grid-area: description;
 		color: var(--vp-c-text-1);
+		font-weight: normal;
 		font-size: var(--description-size);
+		margin-top: 1rem;
 	}
 	.description-short {
 		color: var(--vp-c-text-1);
 		font-size: var(--description-size);
 		display: none;
+		font-weight: normal;
 		text-align: center;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 0;
+		margin: 1rem auto 0;
 	}
 	@media (max-width: 768px) {
 		display: block;
@@ -145,6 +145,10 @@ const projects = [
 		.logo {
 			width: 90%;
 			max-width: 300px;
+		}
+		.title,
+		.description-short {
+			max-width: calc(200px + 40vw);
 		}
 	}
 }

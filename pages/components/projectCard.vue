@@ -69,6 +69,7 @@ const props = defineProps<{
 	.logo {
 		margin: auto 0;
 		padding: 0 0 0 20px;
+		box-shadow: none;
 		@media (max-width: 767px) {
 			width: 80%;
 			max-width: 400px;

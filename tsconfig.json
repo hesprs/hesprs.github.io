@@ -25,6 +25,6 @@
 	"vueCompilerOptions": {
 		"vitePressExtensions": [".md"]
 	},
-	"include": [".vitepress/**/*", "src/**/*", "pages/**/*", "public"],
+	"include": [".vitepress/**/*", "pages/**/*", "public"],
 	"exclude": ["node_modules", "dist"]
 }
