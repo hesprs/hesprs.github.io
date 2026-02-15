@@ -23,7 +23,7 @@
 		"json-canvas-viewer": "^3.4.3",
 		"mark.js": "^8.11.1",
 		"minisearch": "^7.2.0",
-		"vitepress": "2.0.0-alpha.15",
+		"vitepress": "2.0.0-alpha.16",
 		"vitepress-theme-trito": "^1.0.5",
 		"vue": "^3.5.28",
 		"vue3-carousel": "^0.17.0"
