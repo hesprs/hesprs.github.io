@@ -78,7 +78,7 @@ export default defineConfig<ThemeConfig>({
 		[
 			'script',
 			{
-				differ: '',
+				defer: '',
 				src: 'https://analytics.consensia.cc/script.js',
 				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
 			},
