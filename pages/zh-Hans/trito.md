@@ -73,13 +73,13 @@ import { ThemeConfig } from 'vitepress-theme-trito'; // 特别适用于 TypeScri
 import { defineConfig } from 'vitepress';
 
 export default defineConfig<ThemeConfig>({
-	// [特别适用于 TypeScript] 类型参数使 VitePress 能识别该主题
-	// ... 你的配置
-	vite: {
-		ssr: {
-			noExternal: ['vitepress-theme-trito'], // 确保网站能够成功构建
-		},
-	},
+  // [特别适用于 TypeScript] 类型参数使 VitePress 能识别该主题
+  // ... 你的配置
+  vite: {
+    ssr: {
+      noExternal: ['vitepress-theme-trito'], // 确保网站能够成功构建
+    },
+  },
 });
 ```
 

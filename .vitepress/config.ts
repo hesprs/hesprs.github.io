@@ -1,8 +1,7 @@
-import { resolve } from 'node:path';
-
-import { jsonCanvasVitePlugin } from 'json-canvas-viewer/bridges';
-import { createMarkdownRenderer, defineConfig } from 'vitepress';
 import type { ThemeConfig } from 'vitepress-theme-trito';
+import { jsonCanvasVitePlugin } from 'json-canvas-viewer/bridges';
+import { resolve } from 'node:path';
+import { createMarkdownRenderer, defineConfig } from 'vitepress';
 
 const srcDir = resolve(__dirname, '../pages');
 const md = await createMarkdownRenderer(srcDir);
@@ -113,8 +112,8 @@ export default defineConfig<ThemeConfig>({
 				},
 			],
 		},
-        ssr: {
-            noExternal: ['vitepress-theme-trito']
-        }
+		ssr: {
+			noExternal: ['vitepress-theme-trito'],
+		},
 	},
 });

@@ -5,22 +5,25 @@
 	"useTabs": true,
 	"singleQuote": true,
 	"experimentalSortImports": {
+		"newlinesBetween": false,
 		"groups": [
-			["side-effect"],
-			["builtin"],
-			["external", "external-type"],
-			["internal", "internal-type"],
-			["parent", "parent-type"],
-			["sibling", "sibling-type"],
-			["index", "index-type"]
+			"type-import",
+			["value-builtin", "value-external"],
+			"type-internal",
+			"value-internal",
+			["type-parent", "type-sibling", "type-index"],
+			["value-parent", "value-sibling", "value-index"],
+			"unknown"
 		]
 	},
-	"ignorePatterns": ["public/googlef6d380b198d159b3.html", "yandex_86a7efad068e2d03.html"],
+    "ignorePatterns": ["public/googlef6d380b198d159b3.html", "yandex_86a7efad068e2d03.html"],
+	"embeddedLanguageFormatting": "auto",
 	"overrides": [
 		{
 			"files": ["*.md", "*.yaml", "*.yml"],
 			"options": {
-				"tabWidth": 2
+				"tabWidth": 2,
+				"useTabs": false
 			}
 		}
 	]
