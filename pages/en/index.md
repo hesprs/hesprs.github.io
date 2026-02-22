@@ -7,6 +7,6 @@ hero:
 ---
 
 <script setup>
-import Cards from "./components/landingCards.vue"
+import Cards from "./LandingCards.vue"
 </script>
 <Cards />

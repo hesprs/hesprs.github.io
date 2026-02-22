@@ -4,7 +4,7 @@ description: A front-end library that resolves user interactions and dispatches 
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/projectCard.vue';
+import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary }  from '@tabler/icons-vue';
 </script>
 

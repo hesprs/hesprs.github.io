@@ -16,14 +16,9 @@
 		"allowImportingTsExtensions": true,
 		"lib": ["ESNext", "DOM", "dom.iterable"],
 		"paths": {
-			"@/*": ["./src/*"],
-			"@": ["./src"],
 			"$*": ["./pages*"],
 			"$/*": ["./pages/*"]
 		}
-	},
-	"vueCompilerOptions": {
-		"vitePressExtensions": [".md"]
 	},
 	"include": [".vitepress/**/*", "pages/**/*", "public"],
 	"exclude": ["node_modules", "dist"]

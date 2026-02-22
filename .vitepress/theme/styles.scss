@@ -3,22 +3,6 @@
 	--vp-home-hero-image-filter: none !important;
 }
 
-.canvas-viewer {
-	width: 100%;
-	aspect-ratio: 16 / 9;
-	border-radius: 12px;
-	box-shadow: var(--vp-shadow-2);
-	border: 1px solid var(--vp-c-border);
-	overflow: hidden;
-	@media (max-width: 768px) {
-		aspect-ratio: 1 / 1;
-		margin-left: -24px;
-		border-radius: 0;
-		border: none;
-		width: 100vw;
-	}
-}
-
 // Vue Carousel
 .carousel__track {
 	margin: 0 !important;

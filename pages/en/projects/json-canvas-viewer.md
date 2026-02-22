@@ -4,17 +4,13 @@ description: A front-end library that ships an extensible viewer for JSON Canvas
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/projectCard.vue';
-import Viewer from 'json-canvas-viewer/vue';
-import { Minimap, MistouchPreventer, Controls } from 'json-canvas-viewer/modules';
-import canvas from '$/assets/demo.canvas';
-import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson }  from '@tabler/icons-vue';
-import { useData } from 'vitepress';
-const { isDark } = useData();
-const isPrerendering = import.meta.env.SSR;
+import Card from '$/components/ProjectCard.vue';
+import Viewer from '$/components/CanvasViewer.vue';
+import canvas from '$/assets/json-canvas-viewer.canvas';
+import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler/icons-vue';
 </script>
 
-<ProjectCard :meta="{
+<Card :meta="{
     name: $frontmatter.title,
     description: $frontmatter.description,
     logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
@@ -48,20 +44,7 @@ const isPrerendering = import.meta.env.SSR;
 
 ## Demo
 
-<Suspense>
-    <Viewer
-        :options="{
-            loading: 'lazy',
-            minimapCollapsed: true,
-            preventMistouchAtStart: true,
-        }"
-        class="canvas-viewer"
-        :modules="[Minimap, MistouchPreventer, Controls]"
-        :theme="isDark ? 'dark' : 'light'"
-        :canvas
-        :isPrerendering
-    />
-</Suspense>
+<Viewer :canvas />
 
 Above illustration of the architecture of JSON Canvas Viewer is an instance of itself, with modules [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap), [`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls), and [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer) loaded.
 
@@ -83,7 +66,7 @@ Above illustration of the architecture of JSON Canvas Viewer is an instance of i
 - Modern aesthetics with light and dark mode support
 - A [chimp version](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-chimpanzee-version) specially designed for fast trial is available
 - 🔥 More performant than rendering canvases in Obsidian!
-- 🧩 Out-of-the-box extensibility and tree-shaking, current optional modules include:
+- 🧩 Out-of-the-box extensibility and tree-shaking powered by [SynthKernel](/researches/synthkernel) architecture, current optional modules include:
   - [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap) for easy navigation
   - [`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls) displays zoom in/out and fullscreen buttons
   - [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer) prevents the canvas from intercepting page scroll.

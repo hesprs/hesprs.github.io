@@ -3,11 +3,11 @@ layout: home
 unstyled: true
 
 hero:
-  name: HESPERI
+  name: 赫斯珀里
   tagline: 关于 Hēsperus
 ---
 
 <script setup>
-import Cards from "./components/landingCards.vue"
+import Cards from "./LandingCards.vue"
 </script>
 <Cards />

@@ -11,10 +11,10 @@ export default defineConfig<ThemeConfig>({
 	outDir: resolve(__dirname, '../dist'),
 	cleanUrls: true,
 	lastUpdated: true,
-	title: 'HESPERI',
 	rewrites: { 'en/:rest*': ':rest*' },
 	locales: {
 		root: {
+			title: 'HESPERI',
 			description:
 				"Hēsperus' (hesprs) portfolio, including information about Hēsperus' personalities, hobbies, and project introductions and demos.",
 			label: 'English',
@@ -25,12 +25,21 @@ export default defineConfig<ThemeConfig>({
 					{
 						text: 'Projects',
 						items: [
-							{ text: 'Pointeract', link: '/pointeract' },
-							{ text: 'JSON Canvas Viewer', link: '/json-canvas-viewer' },
-							{ text: 'Trito', link: '/trito' },
+							{ text: 'Pointeract', link: '/projects/pointeract' },
+							{ text: 'JSON Canvas Viewer', link: '/projects/json-canvas-viewer' },
+							{ text: 'Trito', link: '/projects/trito' },
 						],
 					},
+					{
+						text: 'Researches',
+						items: [{ text: 'SynthKernel', link: '/researches/synthkernel' }],
+					},
 				],
+				footer: {
+					message:
+						'All content licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> License.',
+					copyright: 'Copyright © 2025-2026 Hēsperus',
+				},
 			},
 			head: [
 				[
@@ -43,6 +52,7 @@ export default defineConfig<ThemeConfig>({
 			],
 		},
 		'zh-Hans': {
+			title: '赫斯珀里',
 			description:
 				'Hēsperus（hesprs）的作品集，包含有关 Hēsperus 的个性、爱好以及项目介绍和演示。',
 			label: '简体中文',
@@ -53,12 +63,24 @@ export default defineConfig<ThemeConfig>({
 					{
 						text: '项目',
 						items: [
-							{ text: 'Pointeract', link: '/zh-Hans/pointeract' },
-							{ text: 'JSON Canvas Viewer', link: '/zh-Hans/json-canvas-viewer' },
-							{ text: 'Trito', link: '/zh-Hans/trito' },
+							{ text: 'Pointeract', link: '/zh-Hans/projects/pointeract' },
+							{
+								text: 'JSON Canvas Viewer',
+								link: '/zh-Hans/projects/json-canvas-viewer',
+							},
+							{ text: 'Trito', link: '/zh-Hans/projects/trito' },
 						],
 					},
+					{
+						text: '研究',
+						items: [{ text: 'SynthKernel', link: '/zh-Hans/researches/synthkernel' }],
+					},
 				],
+				footer: {
+					message:
+						'所有内容依据 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> 许可证授权。',
+					copyright: '版权所有 © 2025-2026 Hēsperus',
+				},
 			},
 			head: [
 				[
@@ -92,6 +114,7 @@ export default defineConfig<ThemeConfig>({
 		socialLinks: [
 			{ icon: 'npm', link: 'https://www.npmjs.com/~hesprs' },
 			{ icon: 'github', link: 'https://github.com/hesprs' },
+			{ icon: 'x', link: 'https://x.com/Hesprs' },
 		],
 	},
 	markdown: {

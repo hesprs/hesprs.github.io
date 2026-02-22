@@ -4,7 +4,7 @@ description: A theme for VitePress, a static site generator. Focuses on UI/UX po
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/projectCard.vue';
+import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm }  from '@tabler/icons-vue';
 </script>
 

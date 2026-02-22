@@ -13,12 +13,21 @@ const carouselConfig: Partial<CarouselConfig> = {
 
 const projects = [
 	{
+		title: 'SynthKernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		description:
+			'A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.',
+		descriptionShort:
+			'A novel TypeScript software architecture that aims to redefine modularity practices.',
+		link: '/researches/synthkernel',
+	},
+	{
 		title: 'JSON Canvas Viewer',
 		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
 		description:
 			'A front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.',
 		descriptionShort: 'View JSON canvas directly in your browser.',
-		link: '/json-canvas-viewer',
+		link: '/projects/json-canvas-viewer',
 	},
 	{
 		title: 'Pointeract',
@@ -26,7 +35,7 @@ const projects = [
 		description:
 			'A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.',
 		descriptionShort: 'Super extensible human gesture recognizer.',
-		link: '/pointeract',
+		link: '/projects/pointeract',
 	},
 	{
 		title: 'Trito',
@@ -34,7 +43,7 @@ const projects = [
 		description:
 			'A theme for VitePress, a static site generator. Focuses on UI/UX polishes and is powering the website you are visiting right now.',
 		descriptionShort: 'Visually refurbished VitePress default theme.',
-		link: '/trito',
+		link: '/projects/trito',
 	},
 ];
 </script>

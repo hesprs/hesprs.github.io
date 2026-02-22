@@ -4,7 +4,7 @@ description: 一个为静态网站生成器 VitePress 打造的主题，专注�
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/projectCard.vue';
+import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm } from '@tabler/icons-vue';
 </script>
 

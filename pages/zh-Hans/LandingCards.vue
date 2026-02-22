@@ -16,7 +16,7 @@
 			</span>
 			<span class="text">
 				<code>Hesprs</code> 常作为我在社交媒体上的标识。而网站名
-				<code>Hēsperī</code> 意为“关于 Hēsperus”。
+				<code>赫斯珀里 (Hēsperī)</code> 意为“关于 Hēsperus”。
 			</span>
 		</article>
 	</div>
@@ -123,10 +123,13 @@ import {
 	IconBrandReact,
 	IconPuzzle,
 	IconSnowflake,
-	IconBolt,
-	IconBrandOpenai,
+	IconRobot,
+	IconFileCode,
+	IconBurger,
+	IconBrandNodejs,
+	IconBrandDeno,
 } from '@tabler/icons-vue';
-import LandingCarousel from './landingCarousel.vue';
+import LandingCarousel from './LandingCarousel.vue';
 
 const skills = [
 	{
@@ -184,10 +187,10 @@ const skills = [
 		link: 'https://www.blender.org/',
 	},
 	{
-		name: 'OpenAI SDK',
+		name: 'Agent Skills',
 		color: '#000000',
-		icon: IconBrandOpenai,
-		link: 'https://platform.openai.com/docs/overview',
+		icon: IconRobot,
+		link: 'https://agentskills.io/',
 	},
 	{
 		name: 'Browser Extension',
@@ -196,16 +199,35 @@ const skills = [
 		link: 'https://wxt.dev/',
 	},
 	{
+		name: 'Jupyter Notebook',
+		color: '#f37726',
+		icon: IconFileCode,
+		link: 'https://jupyter.org/',
+	},
+	{
 		name: 'NixOS',
 		color: '#4d6fb7',
 		icon: IconSnowflake,
 		link: 'https://nixos.org/',
 	},
 	{
-		name: 'FastAPI',
-		color: '#009486',
-		icon: IconBolt,
-		link: 'https://fastapi.tiangolo.com/',
+		name: 'Node.js',
+		color: '#417e38',
+		icon: IconBrandNodejs,
+		link: 'https://nodejs.org/',
+	},
+
+	{
+		name: 'Bun',
+		color: '#f472b6',
+		icon: IconBurger,
+		link: 'https://bun.com/',
+	},
+	{
+		name: 'Deno',
+		color: '#70ffaf',
+		icon: IconBrandDeno,
+		link: 'https://deno.com/',
 	},
 ];
 

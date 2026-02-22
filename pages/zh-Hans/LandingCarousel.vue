@@ -13,12 +13,20 @@ const carouselConfig: Partial<CarouselConfig> = {
 
 const projects = [
 	{
+		title: 'SynthKernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		description:
+			'一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。',
+		descriptionShort: '一种旨在重塑模块化实践的新型 TypeScript 软件架构。',
+		link: '/zh-Hans/researches/synthkernel',
+	},
+	{
 		title: 'JSON Canvas Viewer',
 		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg  ',
 		description:
 			'一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。',
 		descriptionShort: '直接在浏览器中查看 JSON 画布。',
-		link: '/zh-Hans/json-canvas-viewer',
+		link: '/zh-Hans/projects/json-canvas-viewer',
 	},
 	{
 		title: 'Pointeract',
@@ -26,7 +34,7 @@ const projects = [
 		description:
 			'一个前端库，用于解析用户交互并派发平移缩放事件，是 Hammer.js 的轻量级且可扩展的替代方案。',
 		descriptionShort: '高度可扩展的人类手势识别器。',
-		link: '/zh-Hans/pointeract',
+		link: '/zh-Hans/projects/pointeract',
 	},
 	{
 		title: 'Trito',
@@ -34,7 +42,7 @@ const projects = [
 		description:
 			'一个为静态网站生成工具 VitePress 打造的主题，专注于 UI/UX 细节优化，当前你正在访问的网站即由它驱动。',
 		descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
-		link: '/zh-Hans/trito',
+		link: '/zh-Hans/projects/trito',
 	},
 ];
 </script>

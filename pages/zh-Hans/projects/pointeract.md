@@ -4,7 +4,7 @@ description: 一个前端库，用于解析用户交互并派发平移缩放事�
 ---
 
 <script setup>
-import ProjectCard from '$/components/projectCard.vue';
+import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary }  from '@tabler/icons-vue';
 </script>
 

@@ -3,17 +3,14 @@ title: JSON Canvas Viewer
 description: 一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。
 ---
 
-<script setup>
-import ProjectCard from '$/components/projectCard.vue';
-import Viewer from 'json-canvas-viewer/vue';
-import { Minimap, MistouchPreventer, Controls } from 'json-canvas-viewer/modules';
-import canvas from '$/assets/demo.canvas';
-import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson }  from '@tabler/icons-vue';
-import { useData } from 'vitepress';
-const { isDark } = useData();
+<script lang="ts" setup>
+import Card from '$/components/ProjectCard.vue';
+import Viewer from '$/components/CanvasViewer.vue';
+import canvas from '$/assets/json-canvas-viewer.canvas';
+import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler/icons-vue';
 </script>
 
-<ProjectCard :meta="{
+<Card :meta="{
     name: $frontmatter.title,
     description: $frontmatter.description,
     logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
@@ -47,21 +44,7 @@ const { isDark } = useData();
 
 ## 演示
 
-<Suspense>
-    <Viewer
-        :options="{
-            loading: 'lazy',
-            minimapCollapsed: true,
-            preventMistouchAtStart: true,
-            mistouchPreventerBannerText: '点击以解锁'
-        }"
-        class="canvas-viewer"
-        :modules="[Minimap, MistouchPreventer, Controls]"
-        :theme="isDark ? 'dark' : 'light'"
-        :canvas
-        :isPrerendering
-    />
-</Suspense>
+<Viewer :canvas />
 
 上方展示 JSON Canvas Viewer 架构的插图即为该查看器自身的实例，已加载 [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap)、[`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls) 和 [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer) 模块。
 
@@ -83,7 +66,7 @@ const { isDark } = useData();
 - 具备现代美学设计，支持亮色与暗色模式
 - 提供专为快速试用设计的 [chimp 版本](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-chimpanzee-version)
 - 🔥 性能优于在 Obsidian 中渲染画布！
-- 🧩 开箱即用的可扩展性与摇树优化（tree-shaking），当前可选模块包括：
+- 🧩 由 [SynthKernel](/zh-Hans/researches/synthkernel) 架构驱动的开箱即用式可扩展性与摇树优化，当前可选模块包括：
   - [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap)：便于导航
   - [`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls)：显示缩放及全屏按钮
   - [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer)：防止画布干扰页面滚动

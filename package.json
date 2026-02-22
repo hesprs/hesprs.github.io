@@ -17,7 +17,7 @@
 	"dependencies": {
 		"@docsearch/css": "^4.6.0",
 		"@docsearch/js": "^4.6.0",
-		"@tabler/icons-vue": "^3.36.1",
+		"@tabler/icons-vue": "^3.37.1",
 		"@vueuse/core": "^14.2.1",
 		"@vueuse/integrations": "^14.2.1",
 		"json-canvas-viewer": "^3.4.3",
@@ -30,13 +30,13 @@
 	},
 	"devDependencies": {
 		"@types/node": "^25.3.0",
-		"oxfmt": "^0.33.0",
-		"oxlint": "^1.48.0",
-		"oxlint-tsgolint": "^0.14.0",
+		"oxfmt": "^0.34.0",
+		"oxlint": "^1.49.0",
+		"oxlint-tsgolint": "^0.14.2",
 		"sass": "^1.97.3",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1",
-		"vue-tsc": "^3.2.4"
+		"vue-tsc": "^3.2.5"
 	},
 	"packageManager": "pnpm@10.29.3"
 }
