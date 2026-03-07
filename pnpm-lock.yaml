@@ -12,8 +12,8 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(vue@3.5.29(typescript@5.9.3))
       '@tabler/icons-vue':
-        specifier: ^3.39.0
-        version: 3.39.0(vue@3.5.29(typescript@5.9.3))
+        specifier: ^3.40.0
+        version: 3.40.0(vue@3.5.29(typescript@5.9.3))
       vitepress:
         specifier: 2.0.0-alpha.16
         version: 2.0.0-alpha.16(@types/node@25.3.5)(postcss@8.5.8)(sass@1.97.3)(typescript@5.9.3)
@@ -786,13 +786,13 @@ packages:
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
 
-  '@tabler/icons-vue@3.39.0':
-    resolution: {integrity: sha512-tUklX3E/0lIBTkQd07HRcvkqFz+KmDqI+smurcmwH0+t5hUL+A1dm3bjsZqlccO5OMi4CXa/mHP6TiHU36kN7g==}
+  '@tabler/icons-vue@3.40.0':
+    resolution: {integrity: sha512-DyAOsnL6p3THhI8/74WvCFu86vlNI8U6DKtNHnYYjQpljtENLIy6i/bLiug3Lr04S71yKTWNxYyfd/8K8YFzQw==}
     peerDependencies:
       vue: '>=3.0.1'
 
-  '@tabler/icons@3.39.0':
-    resolution: {integrity: sha512-nd9f5+OVJNDR13v6rqPdmALkVhDknDuGMLuj16sK9UaRkOTQWwQM+EWG2fMYBNSH8ISsHiXfryNGQogIpsar4g==}
+  '@tabler/icons@3.40.0':
+    resolution: {integrity: sha512-V/Q4VgNPKubRTiLdmWjV/zscYcj5IIk+euicUtaVVqF6luSC9rDngYWgST5/yh3Mrg/mYUwRv1YVTk71Jp0twQ==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -1716,12 +1716,12 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@tabler/icons-vue@3.39.0(vue@3.5.29(typescript@5.9.3))':
+  '@tabler/icons-vue@3.40.0(vue@3.5.29(typescript@5.9.3))':
     dependencies:
-      '@tabler/icons': 3.39.0
+      '@tabler/icons': 3.40.0
       vue: 3.5.29(typescript@5.9.3)
 
-  '@tabler/icons@3.39.0': {}
+  '@tabler/icons@3.40.0': {}
 
   '@types/estree@1.0.8': {}
 
@@ -2255,7 +2255,7 @@ snapshots:
     dependencies:
       '@docsearch/css': 4.6.0
       '@docsearch/js': 4.6.0
-      '@tabler/icons-vue': 3.39.0(vue@3.5.29(typescript@5.9.3))
+      '@tabler/icons-vue': 3.40.0(vue@3.5.29(typescript@5.9.3))
       '@vueuse/core': 14.2.1(vue@3.5.29(typescript@5.9.3))
       '@vueuse/integrations': 14.2.1(focus-trap@7.8.0)(vue@3.5.29(typescript@5.9.3))
       mark.js: 8.11.1
