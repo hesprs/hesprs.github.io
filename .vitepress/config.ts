@@ -1,13 +1,10 @@
 import type { ThemeConfig } from 'vitepress-theme-trito';
-import { jsonCanvasVitePlugin } from 'json-canvas-viewer/bridges';
 import { resolve } from 'node:path';
-import { createMarkdownRenderer, defineConfig } from 'vitepress';
-
-const srcDir = resolve(__dirname, '../pages');
-const md = await createMarkdownRenderer(srcDir);
+import canvas from 'vite-plugin-json-canvas';
+import { defineConfig } from 'vitepress';
 
 export default defineConfig<ThemeConfig>({
-	srcDir,
+	srcDir: resolve(__dirname, '../pages'),
 	outDir: resolve(__dirname, '../dist'),
 	cleanUrls: true,
 	lastUpdated: true,
@@ -122,7 +119,7 @@ export default defineConfig<ThemeConfig>({
 	},
 	vite: {
 		publicDir: resolve(__dirname, '../public'),
-		plugins: [jsonCanvasVitePlugin(md.render)],
+		plugins: [canvas()],
 		resolve: {
 			alias: [
 				{

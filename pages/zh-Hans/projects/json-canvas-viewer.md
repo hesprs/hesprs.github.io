@@ -5,8 +5,7 @@ description: 一个前端库，提供可扩展的 JSON Canvas 查看器，能够
 
 <script lang="ts" setup>
 import Card from '$/components/ProjectCard.vue';
-import Viewer from '$/components/CanvasViewer.vue';
-import canvas from '$/assets/json-canvas-viewer.canvas';
+import Viewer from '$/components/DemoViewer.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler/icons-vue';
 </script>
 
@@ -44,7 +43,7 @@ import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler
 
 ## 演示
 
-<Viewer :canvas />
+<Viewer />
 
 上方展示 JSON Canvas Viewer 架构的插图即为该查看器自身的实例，已加载 [`Minimap`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#minimap)、[`Controls`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#controls) 和 [`MistouchPreventer`](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules#mistouch-preventer) 模块。
 
@@ -76,12 +75,12 @@ import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler
 
 JSON Canvas Viewer 目前可无缝集成以下技术栈 / 技术（包括但不限于）：
 
-- ✅ Vanilla JS/TS：天然支持
-- ✅ 预渲染：[`renderToString`](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#prerendering)
-- ✅ Vite：[Vite 插件](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#vite)
-- ✅ Webpack：[Webpack Loader & Plugin](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#webpack)
-- ✅ Vue：[Vue 组件](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#vue-component)
-- ✅ React：[React 组件](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#react-component)
+- ✅ **原生 JS/TS**: [原生支持](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#vanilla-jsts) - `json-canvas-viewer`
+- ✅ **预渲染**: [`renderToString`](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering) - `json-canvas-viewer`
+- ✅ **Vite**: [Vite 插件](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#vite) - `vite-plugin-json-canvas`
+- ✅ **Vue**: [Vue 组件](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#vue) - `@json-canvas-viewer/vue`
+- ✅ **React**: [React 组件](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#react) - `@json-canvas-viewer/react`
+- ✅ **Preact**: [Preact 组件](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#preact) - `@json-canvas-viewer/preact`
 
 了解更多关于 JSON Canvas Viewer 的信息，请访问 [GitHub 仓库](https://github.com/hesprs/json-canvas-viewer)。
 

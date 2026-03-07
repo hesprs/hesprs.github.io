@@ -16,7 +16,7 @@
 		"allowImportingTsExtensions": true,
 		"lib": ["ESNext", "DOM", "dom.iterable"],
 		"paths": {
-			"$*": ["./pages*"],
+			"$": ["./pages"],
 			"$/*": ["./pages/*"]
 		}
 	},

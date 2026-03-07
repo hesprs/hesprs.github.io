@@ -22,7 +22,7 @@
 		</article>
 	</div>
 	<h2 class="upper">See My Projects</h2>
-	<LandingCarousel />
+	<LandingCarousel :projects />
 	<h2 style="margin-bottom: 24px">More About Me</h2>
 	<div class="about-content" style="grid-template-columns: 2fr 3fr">
 		<article class="s-card card-enhance personality">
@@ -109,6 +109,7 @@
 </template>
 
 <script lang="ts" setup>
+import LandingCarousel from '$/components/LandingCarousel.vue';
 import {
 	IconBlendMode,
 	IconBrandBlender,
@@ -122,7 +123,7 @@ import {
 	IconCell,
 	IconGenderTransgender,
 	IconSettingsBolt,
-	IconWorldHeart,
+	IconWorldMap,
 	IconBrandReact,
 	IconPuzzle,
 	IconSnowflake,
@@ -131,8 +132,9 @@ import {
 	IconBrandNodejs,
 	IconBurger,
 	IconFileCode,
+	IconCreativeCommons,
+	IconCircleDashedLetterT,
 } from '@tabler/icons-vue';
-import LandingCarousel from './LandingCarousel.vue';
 
 const skills = [
 	{
@@ -232,13 +234,24 @@ const skills = [
 		icon: IconBrandDeno,
 		link: 'https://deno.com/',
 	},
+	{
+		name: 'Turborepo',
+		color: '#ff1e56',
+		icon: IconCircleDashedLetterT,
+		link: 'https://turborepo.dev/',
+	},
 ];
 
 const perspectives = [
 	{
 		name: 'Cosmopolitanism',
-		icon: IconWorldHeart,
+		icon: IconWorldMap,
 		title: 'A home world with unified goals, and the path open to the stars.',
+	},
+	{
+		name: 'Free Culture Movement',
+		icon: IconCreativeCommons,
+		title: 'Intellectual creations should not be enclosed by walls, everyone should have the autonomy to access, modify, and share.',
 	},
 	{
 		name: 'LGBT Rights',
@@ -259,6 +272,42 @@ const perspectives = [
 		name: 'Techno-Progressivism',
 		icon: IconSettingsBolt,
 		title: 'Since the beginning of time, our universe has been destined onto an eternal odyssey of progress.',
+	},
+];
+
+const projects = [
+	{
+		title: 'SynthKernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		description:
+			'A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.',
+		descriptionShort:
+			'A novel TypeScript software architecture that aims to redefine modularity practices.',
+		link: '/researches/synthkernel',
+	},
+	{
+		title: 'JSON Canvas Viewer',
+		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
+		description:
+			'A front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.',
+		descriptionShort: 'View JSON canvas directly in your browser.',
+		link: '/projects/json-canvas-viewer',
+	},
+	{
+		title: 'Pointeract',
+		logo: 'https://pointeract.consensia.cc/logo.svg',
+		description:
+			'A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.',
+		descriptionShort: 'Super extensible human gesture recognizer.',
+		link: '/projects/pointeract',
+	},
+	{
+		title: 'Trito',
+		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
+		description:
+			'A theme for VitePress, a static site generator. Focuses on UI/UX polishes and is powering the website you are visiting right now.',
+		descriptionShort: 'Visually refurbished VitePress default theme.',
+		link: '/projects/trito',
 	},
 ];
 </script>

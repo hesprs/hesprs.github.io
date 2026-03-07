@@ -1,5 +1,5 @@
 {
-	"edges":[
+    "edges":[
 		{
 			"id":"69024ca37afac075",
 			"styleAttributes":{},
@@ -503,7 +503,7 @@
 		{
 			"id":"1e4c16e7d7eaf055",
 			"styleAttributes":{},
-			"text":"## Learn More\n\n- [Deadly simple chimp usage](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-chimpanzee-version)\n- [Full setup](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-full-version)\n- [Vite plugin](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-vite)\n- [Webpack loader and plugin](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-webpack)\n- [Use as a Vue component](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#vue-component)\n- [Use as a React component](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#react-component)\n- [Prerendering](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#prerendering)\n- [Optional modules](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules)\n- [Extend the viewer](https://github.com/hesprs/json-canvas-viewer/wiki/5-%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB-Develop-a-Module)",
+			"text":"## Learn More\n\n- [Deadly simple chimp usage](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-chimpanzee-version)\n- [Full setup](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#-full-version)\n- [Vite plugin](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#vite)\n- [Use as a Vue component](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#vue)\n- [Use as a React component](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#react)\n- [Use as a Preact component](https://github.com/hesprs/json-canvas-viewer/wiki/1-%F0%9F%9A%80-Quick-Start#preact)\n- [Prerendering](https://github.com/hesprs/json-canvas-viewer/wiki/4-%F0%9F%96%87%EF%B8%8F-Prerendering-and-Bridges#prerendering)\n- [Optional modules](https://github.com/hesprs/json-canvas-viewer/wiki/3-%F0%9F%A7%A9-Modules)\n- [Extend the viewer](https://github.com/hesprs/json-canvas-viewer/wiki/5-%F0%9F%A7%91%E2%80%8D%F0%9F%92%BB-Develop-a-Module)",
 			"type":"text",
 			"x":2820,
 			"y":-960,

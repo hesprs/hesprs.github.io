@@ -21,7 +21,7 @@
 		</article>
 	</div>
 	<h2 class="upper">我的项目</h2>
-	<LandingCarousel />
+	<LandingCarousel :projects />
 	<h2 style="margin-bottom: 24px">更多关于我</h2>
 	<div class="about-content" style="grid-template-columns: 2fr 3fr">
 		<article class="s-card card-enhance personality">
@@ -106,6 +106,7 @@
 </template>
 
 <script lang="ts" setup>
+import LandingCarousel from '$/components/LandingCarousel.vue';
 import {
 	IconBlendMode,
 	IconBrandBlender,
@@ -119,7 +120,7 @@ import {
 	IconCell,
 	IconGenderTransgender,
 	IconSettingsBolt,
-	IconWorldHeart,
+	IconWorldMap,
 	IconBrandReact,
 	IconPuzzle,
 	IconSnowflake,
@@ -128,8 +129,9 @@ import {
 	IconBurger,
 	IconBrandNodejs,
 	IconBrandDeno,
+	IconCircleDashedLetterT,
+	IconCreativeCommons,
 } from '@tabler/icons-vue';
-import LandingCarousel from './LandingCarousel.vue';
 
 const skills = [
 	{
@@ -229,13 +231,24 @@ const skills = [
 		icon: IconBrandDeno,
 		link: 'https://deno.com/',
 	},
+	{
+		name: 'Turborepo',
+		color: '#ff1e56',
+		icon: IconCircleDashedLetterT,
+		link: 'https://turborepo.dev/',
+	},
 ];
 
 const perspectives = [
 	{
 		name: '世界主义',
-		icon: IconWorldHeart,
+		icon: IconWorldMap,
 		title: '一个拥有共同目标的地球家园，并向星辰敞开道路。',
+	},
+	{
+		name: '自主文化运动',
+		icon: IconCreativeCommons,
+		title: '智力成果不应被高墙围困，每个人都应拥有访问、修改和分享的自由。',
 	},
 	{
 		name: 'LGBT 权益',
@@ -256,6 +269,41 @@ const perspectives = [
 		name: '技术进步主义',
 		icon: IconSettingsBolt,
 		title: '自时间之初，我们的宇宙便已踏上永无止境的进步之旅。',
+	},
+];
+
+const projects = [
+	{
+		title: 'SynthKernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		description:
+			'一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。',
+		descriptionShort: '一种旨在重塑模块化实践的新型 TypeScript 软件架构。',
+		link: '/zh-Hans/researches/synthkernel',
+	},
+	{
+		title: 'JSON Canvas Viewer',
+		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg  ',
+		description:
+			'一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。',
+		descriptionShort: '直接在浏览器中查看 JSON 画布。',
+		link: '/zh-Hans/projects/json-canvas-viewer',
+	},
+	{
+		title: 'Pointeract',
+		logo: 'https://pointeract.consensia.cc/logo.svg  ',
+		description:
+			'一个前端库，用于解析用户交互并派发平移缩放事件，是 Hammer.js 的轻量级且可扩展的替代方案。',
+		descriptionShort: '高度可扩展的人类手势识别器。',
+		link: '/zh-Hans/projects/pointeract',
+	},
+	{
+		title: 'Trito',
+		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
+		description:
+			'一个为静态网站生成工具 VitePress 打造的主题，专注于 UI/UX 细节优化，当前你正在访问的网站即由它驱动。',
+		descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
+		link: '/zh-Hans/projects/trito',
 	},
 ];
 </script>

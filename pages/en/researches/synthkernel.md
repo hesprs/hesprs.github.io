@@ -135,6 +135,6 @@ SynthKernel is design philosophy, not a library or software. You can try to kick
 
 SynthKernel is an **experimental, open-source research project** maintained by Hēsperus. It is licensed to encourage both adoption and collaboration.
 
-- **Architecture Whitepaper & README:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- **Architecture Whitepaper & README:** [CC BY 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 - **Agent Skill:** [MIT License](https://mit-license.org/)
 - **Copyright:** © 2026 Hesprs (Hēsperus)

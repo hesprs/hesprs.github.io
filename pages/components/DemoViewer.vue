@@ -1,17 +1,15 @@
 <script lang="ts" setup>
+import canvas from '$/assets/json-canvas-viewer.canvas';
 import {
 	JSONCanvasViewerComponent as Viewer,
-	type JSONCanvas,
 	Minimap,
 	MistouchPreventer,
 	Controls,
 } from '@json-canvas-viewer/vue';
 import { useData } from 'vitepress';
+import Counter from './DemoCounter.vue';
 const { isDark } = useData();
 const isPrerendering = import.meta.env.SSR;
-defineProps<{
-	canvas: JSONCanvas;
-}>();
 </script>
 
 <template>
@@ -27,6 +25,8 @@ defineProps<{
 			:theme="isDark ? 'dark' : 'light'"
 			:canvas
 			:isPrerendering
-		/>
+		>
+			<template #link><Counter /></template>
+		</Viewer>
 	</Suspense>
 </template>
