@@ -1,15 +1,15 @@
 <template>
 	<article
 		class="s-card card-enhance project-card"
-		:class="{ 'with-logo': props.meta.logo }"
+		:class="{ 'with-logo': logo }"
 		aria-labelledby="project-title"
 	>
 		<div class="card-body">
-			<h1 id="project-title">{{ props.meta.name }}</h1>
-			<p class="s-card concave description">{{ props.meta.description }}</p>
+			<h1 id="project-title">{{ title }}</h1>
+			<p class="s-card concave description">{{ description }}</p>
 			<footer class="skills-list">
 				<a
-					v-for="(item, index) in props.meta.links"
+					v-for="(item, index) in links"
 					:key="index"
 					:href="item.url"
 					target="_blank"
@@ -17,41 +17,40 @@
 					:style="{ '--color': item.color }"
 				>
 					<component class="skills-logo" :is="item.icon" />
-					{{ item.name }}
+					{{ links[index].name }}
 				</a>
 			</footer>
 		</div>
-		<img
-			v-if="props.meta.logo"
-			:src="props.meta.logo"
-			class="logo"
-			:alt="`${props.meta.name} Logo`"
-		/>
+		<img v-if="logo" :src="logo" class="logo" :alt="`${title} Logo`" />
 	</article>
 </template>
 
 <script setup lang="ts">
 import type { Icon } from '@tabler/icons-vue';
 
-const props = defineProps<{
-	meta: {
-		name: string;
-		description: string;
-		logo?: string;
-		links: Array<{ name: string; url: string; icon: Icon; color: string }>;
-	};
-}>();
+export type Props = {
+	title: string;
+	description: string;
+	logo?: string;
+	links: Array<{ name: string; url: string; icon: Icon; color: string }>;
+};
+
+defineProps<Props>();
 </script>
 
 <style scoped lang="scss">
 .project-card {
 	padding: 20px 28px;
+	margin-bottom: 32px;
 	&.with-logo {
 		display: grid;
 		grid-template-columns: 16fr 9fr;
 	}
 	@media (max-width: 767px) {
 		padding: 16px;
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-radius: 0;
 		display: flex !important;
 		flex-direction: column;
 		h1 {
@@ -121,6 +120,9 @@ const props = defineProps<{
 			background-color: var(--color);
 			color: #fff;
 		}
+	}
+	@media (max-width: 767px) {
+		justify-content: center;
 	}
 }
 </style>

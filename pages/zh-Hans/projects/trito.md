@@ -1,36 +1,32 @@
 ---
+layout: project
 title: Trito
 description: 一个为静态网站生成器 VitePress 打造的主题，专注于 UI/UX 细节优化，当前你正在访问的网站即由它驱动。
+logo: https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm } from '@tabler/icons-vue';
+import { useLinks } from '$/composables/links';
+useLinks([
+    {
+        name: 'GitHub',
+        url: 'https://github.com/hesprs/vitepress-theme-trito',
+        icon: IconBrandGithub,
+        color: '#010409'
+    },
+    {
+        name: 'npm',
+        url: 'https://www.npmjs.com/package/vitepress-theme-trito',
+        icon: IconBrandNpm,
+        color: '#EA2039'
+    },
+]);
 </script>
-
-<ProjectCard :meta="{
-    name: $frontmatter.title,
-    description: $frontmatter.description,
-    logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
-    links: [
-        {
-            name: 'GitHub',
-            url: 'https://github.com/hesprs/vitepress-theme-trito',
-            icon: IconBrandGithub,
-            color: '#010409'
-        },
-        {
-            name: 'npm',
-            url: 'https://www.npmjs.com/package/vitepress-theme-trito',
-            icon: IconBrandNpm,
-            color: '#EA2039'
-        },
-    ]
-}" />
 
 ## 预览
 
-![预览图：文档页面的亮色与暗色主题](https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/preview2.png)
+![预览图：文档页面的前后对比动效](https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/home.gif)
 
 ## 什么是 Trito？
 

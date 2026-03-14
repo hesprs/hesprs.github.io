@@ -1,36 +1,32 @@
 ---
+layout: project
 title: Trito
 description: A theme for VitePress, a static site generator. Focuses on UI/UX polishes and is powering the website you are visiting right now.
+logo: https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm }  from '@tabler/icons-vue';
+import { useLinks } from '$/composables/links';
+useLinks([
+    {
+        name: 'GitHub',
+        url: 'https://github.com/hesprs/vitepress-theme-trito',
+        icon: IconBrandGithub,
+        color: '#010409'
+    },
+    {
+        name: 'npm',
+        url: 'https://www.npmjs.com/package/vitepress-theme-trito',
+        icon: IconBrandNpm,
+        color: '#EA2039'
+    },
+]);
 </script>
-
-<ProjectCard :meta="{
-    name: $frontmatter.title,
-    description: $frontmatter.description,
-    logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
-    links: [
-        {
-            name: 'GitHub',
-            url: 'https://github.com/hesprs/vitepress-theme-trito',
-            icon: IconBrandGithub,
-            color: '#010409'
-        },
-        {
-            name: 'npm',
-            url: 'https://www.npmjs.com/package/vitepress-theme-trito',
-            icon: IconBrandNpm,
-            color: '#EA2039'
-        },
-    ]
-}" />
 
 ## Preview
 
-![preview image of a document page with light and dark theme](https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/preview2.png)
+![preview image of a document page with before-after animation](https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/home.gif)
 
 ## What Is Trito?
 

@@ -6,9 +6,11 @@ import { Carousel, type CarouselConfig, Navigation, Slide } from 'vue3-carousel'
 const carouselConfig: Partial<CarouselConfig> = {
 	itemsToShow: 0.5,
 	wrapAround: true,
-	gap: 30,
+	gap: 600,
 	mouseDrag: false,
-	autoplay: 6000,
+	autoplay: 8000,
+	transitionEasing: 'cubic-bezier(.3,0,.3,1)',
+	transition: 600,
 };
 
 defineProps<{
@@ -89,20 +91,21 @@ defineProps<{
 		grid-area: title;
 		border: none;
 		font-size: var(--title-size);
-		font-weight: 600;
+		font-weight: 800;
 		line-height: 1;
 		margin-top: auto;
+		font-family: var(--vp-font-family-serif);
 	}
 	.description {
 		grid-area: description;
-		color: var(--vp-c-text-1);
+		color: var(--vp-c-text-2);
 		font-weight: normal;
 		font-size: var(--description-size);
 		margin-top: 1rem;
 		line-height: 1.5;
 	}
 	.description-short {
-		color: var(--vp-c-text-1);
+		color: var(--vp-c-text-2);
 		font-size: var(--description-size);
 		display: none;
 		font-weight: normal;

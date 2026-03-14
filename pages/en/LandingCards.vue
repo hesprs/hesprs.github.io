@@ -33,15 +33,13 @@
 					<span class="tip">Enneagram Type</span>
 					<span class="title">
 						Type
-						<span class="title large"> 5</span>
-						<span style="color: var(--vp-c-brand-1); font-size: 20px">w4 </span>
+						<span class="title large">5</span>
+						<span class="title large" style="font-size: 20px">w4</span>
 					</span>
 				</div>
 				<div class="item s-card concave">
 					<span class="tip">MBTI</span>
-					<span class="title large">
-						INTJ<span style="color: var(--vp-c-brand-1); font-size: 20px">-T</span>
-					</span>
+					<span class="title large"> INTJ<span style="font-size: 20px">-T</span></span>
 				</div>
 			</div>
 			<span class="more">
@@ -372,6 +370,7 @@ code {
 			&.large {
 				color: var(--vp-c-brand-1);
 				font-size: var(--title-large);
+				font-family: var(--vp-font-family-serif);
 			}
 		}
 		.text {

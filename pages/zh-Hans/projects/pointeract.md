@@ -1,38 +1,34 @@
 ---
+layout: project
 title: Pointeract
 description: 一个前端库，用于解析用户交互并派发平移缩放事件，是 Hammer.js 的轻量级且可扩展的替代方案。
+logo: https://pointeract.consensia.cc/logo.svg
 ---
 
 <script setup>
-import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary }  from '@tabler/icons-vue';
+import { useLinks } from '$/composables/links';
+useLinks([
+    {
+        name: '文档',
+        url: 'https://www.npmjs.com/package/pointeract  ',
+        icon: IconVocabulary,
+        color: '#425aef'
+    },
+    {
+        name: 'GitHub',
+        url: 'https://github.com/hesprs/pointeract  ',
+        icon: IconBrandGithub,
+        color: '#010409'
+    },
+    {
+        name: 'npm',
+        url: 'https://www.npmjs.com/package/pointeract  ',
+        icon: IconBrandNpm,
+        color: '#EA2039'
+    },
+]);
 </script>
-
-<ProjectCard :meta="{
-    name: $frontmatter.title,
-    description: $frontmatter.description,
-    logo: 'https://pointeract.consensia.cc/logo.svg  ',
-    links: [
-        {
-            name: '文档',
-            url: 'https://www.npmjs.com/package/pointeract  ',
-            icon: IconVocabulary,
-            color: '#425aef'
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/hesprs/pointeract  ',
-            icon: IconBrandGithub,
-            color: '#010409'
-        },
-        {
-            name: 'npm',
-            url: 'https://www.npmjs.com/package/pointeract  ',
-            icon: IconBrandNpm,
-            color: '#EA2039'
-        },
-    ]
-}" />
 
 ## 简介
 

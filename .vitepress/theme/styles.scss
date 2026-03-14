@@ -4,16 +4,6 @@
 }
 
 // Vue Carousel
-.carousel__track {
-	margin: 0 !important;
-	padding: 0 !important;
-}
-@media (max-width: 768px) {
-	.carousel__viewport {
-		width: 100vw !important;
-		margin-left: -24px;
-	}
-}
 .carousel {
 	--vc-nav-color: var(--vp-c-text-1);
 	--vc-nav-width: 40px;
@@ -22,6 +12,15 @@
 	.carousel__next,
 	.carousel__prev {
 		transition: color 0.2s;
+	}
+	.carousel__viewport {
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black 20px,
+			black calc(100% - 20px),
+			transparent
+		);
 	}
 }
 

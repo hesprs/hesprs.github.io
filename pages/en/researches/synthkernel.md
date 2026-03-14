@@ -1,41 +1,37 @@
 ---
+layout: project
 title: SynthKernel
 description: A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.
 outline: deep
+logo: https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg
 ---
 
 <script setup>
 import canvas from '$/assets/synthkernel.canvas';
 import Viewer from '$/components/CanvasViewer.vue';
-import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconFileSpark }  from '@tabler/icons-vue';
+import { useLinks } from '$/composables/links';
+useLinks([
+    {
+        name: 'GitHub',
+        url: 'https://github.com/hesprs/synthkernel',
+        icon: IconBrandGithub,
+        color: '#010409'
+    },
+    {
+        name: 'Whitepaper',
+        url: 'https://github.com/hesprs/synthkernel/blob/main/whitepaper.ipynb',
+        icon: IconFileSpark,
+        color: '#f37726'
+    },
+])
 </script>
-
-<ProjectCard :meta="{
-    name: $frontmatter.title,
-    description: $frontmatter.description,
-    logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
-    links: [
-        {
-            name: 'GitHub',
-            url: 'https://github.com/hesprs/synthkernel',
-            icon: IconBrandGithub,
-            color: '#010409'
-        },
-        {
-            name: 'Whitepaper',
-            url: 'https://github.com/hesprs/synthkernel/blob/main/whitepaper.ipynb',
-            icon: IconFileSpark,
-            color: '#f37726'
-        },
-    ]
-}" />
 
 ## Abstract
 
-The **modular monolith** is not a new concept. For decades, developers have sought the balance between the simplicity of a monolith and the maintainability of microservices. Yet, the implementation of this pattern often falters under the weight of "God Objects," manual registry maintenance, and configuration drift.
+For decades, developers have sought the balance between the simplicity of a monolith and the maintainability of microservices by turning to **modular monolith**. Yet, the implementation of this pattern often falters under the weight of complex inheritance and coupling, manual registry maintenance, and configuration drift.
 
-**SynthKernel** does not invent the modular monolith. Instead, it proposes a **novel architectural paradigm** for structuring one. By leveraging advanced TypeScript generics, extreme Inversion of Control, and a strict Loader-Module separation, SynthKernel ensures that modularity is enforced by the type system itself. This article explores the architecture's unique approach to type orchestration, its AI-native design philosophy, and how it eliminates the friction traditionally associated with modular development.
+**SynthKernel** proposes a **novel architectural paradigm** for structuring a modular monolith. By leveraging advanced TypeScript generics, extreme Inversion of Control, and a strict Loader-Module separation, SynthKernel ensures that modularity is enforced by the type system itself. This article explores the architecture's unique approach to type orchestration, its AI-native design philosophy, and how it eliminates the friction traditionally associated with modular development.
 
 **→ [Explore the GitHub Repository](https://github.com/hesprs/synthkernel)**
 
@@ -101,7 +97,7 @@ This allows coding agents to automatically generate modules, split bloated logic
 
 SynthKernel is a powerful tool, but it is not a silver bullet. It is best suited for specific contexts where structure and type safety are paramount.
 
-### ✅ Ideal Use Cases
+### Ideal Use Cases
 
 - **Backend Services:** Complex business logic requiring clear modular boundaries.
 - **CLI Applications:** Modular commands that need shared configuration.
@@ -109,7 +105,7 @@ SynthKernel is a powerful tool, but it is not a silver bullet. It is best suited
 - **Canvas Rendering Systems:** Composable layers with shared state.
 - **Large Modular Monoliths:** Projects exceeding 5,000 LOC where structure is critical.
 
-### ❌ When Not to Use
+### When Not to Use
 
 - **Frontend UI:** React, Vue, and Svelte have their own established conventions.
 - **Simple Scripts:** For projects under 200 LOC, a classical monolith is more convenient.

@@ -17,7 +17,9 @@
 		"lib": ["ESNext", "DOM", "dom.iterable"],
 		"paths": {
 			"$": ["./pages"],
-			"$/*": ["./pages/*"]
+			"$/*": ["./pages/*"],
+			"@": ["./.vitepress/theme"],
+			"@/*": ["./.vitepress/theme/*"]
 		}
 	},
 	"include": [".vitepress/**/*", "pages/**/*", "public"],

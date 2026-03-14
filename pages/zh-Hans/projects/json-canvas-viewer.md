@@ -1,45 +1,41 @@
 ---
 title: JSON Canvas Viewer
 description: 一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。
+layout: project
+logo: https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg
 ---
 
 <script lang="ts" setup>
-import Card from '$/components/ProjectCard.vue';
 import Viewer from '$/components/DemoViewer.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler/icons-vue';
+import { useLinks } from '$/composables/links';
+useLinks([
+    {
+        name: 'GitHub',
+        url: 'https://github.com/hesprs/json-canvas-viewer',
+        icon: IconBrandGithub,
+        color: '#010409'
+    },
+    {
+        name: 'npm',
+        url: 'https://www.npmjs.com/package/json-canvas-viewer',
+        icon: IconBrandNpm,
+        color: '#EA2039'
+    },
+    {
+        name: '文档',
+        url: 'https://github.com/hesprs/json-canvas-viewer/wiki',
+        icon: IconVocabulary,
+        color: '#425aef'
+    },
+    {
+        name: 'JSON Canvas',
+        url: 'https://jsoncanvas.org',
+        icon: IconJson,
+        color: '#8B0A5F'
+    },
+]);
 </script>
-
-<Card :meta="{
-    name: $frontmatter.title,
-    description: $frontmatter.description,
-    logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
-    links: [
-        {
-            name: 'GitHub',
-            url: 'https://github.com/hesprs/json-canvas-viewer',
-            icon: IconBrandGithub,
-            color: '#010409'
-        },
-        {
-            name: 'npm',
-            url: 'https://www.npmjs.com/package/json-canvas-viewer',
-            icon: IconBrandNpm,
-            color: '#EA2039'
-        },
-        {
-            name: '文档',
-            url: 'https://github.com/hesprs/json-canvas-viewer/wiki',
-            icon: IconVocabulary,
-            color: '#425aef'
-        },
-        {
-            name: 'JSON Canvas',
-            url: 'https://jsoncanvas.org',
-            icon: IconJson,
-            color: '#8B0A5F'
-        },
-    ],
-}" />
 
 ## 演示
 

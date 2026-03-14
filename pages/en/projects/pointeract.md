@@ -1,38 +1,34 @@
 ---
+layout: project
 title: Pointeract
 description: A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.
+logo: https://pointeract.consensia.cc/logo.svg
 ---
 
 <script lang="ts" setup>
-import ProjectCard from '$/components/ProjectCard.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary }  from '@tabler/icons-vue';
+import { useLinks } from '$/composables/links';
+useLinks([
+    {
+        name: 'Documentation',
+        url: 'https://www.npmjs.com/package/pointeract  ',
+        icon: IconVocabulary,
+        color: '#425aef'
+    },
+    {
+        name: 'GitHub',
+        url: 'https://github.com/hesprs/pointeract  ',
+        icon: IconBrandGithub,
+        color: '#010409'
+    },
+    {
+        name: 'npm',
+        url: 'https://www.npmjs.com/package/pointeract  ',
+        icon: IconBrandNpm,
+        color: '#EA2039'
+    },
+])
 </script>
-
-<ProjectCard :meta="{
-    name: $frontmatter.title,
-    description: $frontmatter.description,
-    logo: 'https://pointeract.consensia.cc/logo.svg',
-    links: [
-        {
-            name: 'Documentation',
-            url: 'https://www.npmjs.com/package/pointeract',
-            icon: IconVocabulary,
-            color: '#425aef'
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/hesprs/pointeract',
-            icon: IconBrandGithub,
-            color: '#010409'
-        },
-        {
-            name: 'npm',
-            url: 'https://www.npmjs.com/package/pointeract',
-            icon: IconBrandNpm,
-            color: '#EA2039'
-        },
-    ]
-}" />
 
 ## Introduction
 

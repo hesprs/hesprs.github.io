@@ -3,9 +3,13 @@ import { resolve } from 'node:path';
 import canvas from 'vite-plugin-json-canvas';
 import { defineConfig } from 'vitepress';
 
+function p(path: string) {
+	return resolve(__dirname, '..', path);
+}
+
 export default defineConfig<ThemeConfig>({
-	srcDir: resolve(__dirname, '../pages'),
-	outDir: resolve(__dirname, '../dist'),
+	srcDir: p('pages'),
+	outDir: p('dist'),
 	cleanUrls: true,
 	lastUpdated: true,
 	rewrites: { 'en/:rest*': ':rest*' },
@@ -93,14 +97,14 @@ export default defineConfig<ThemeConfig>({
 	head: [
 		['link', { rel: 'icon', href: '/favicon.ico' }],
 		['meta', { name: 'color-scheme', content: 'dark light' }],
-		[
-			'script',
-			{
-				defer: '',
-				src: 'https://analytics.consensia.cc/script.js',
-				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
-			},
-		],
+		//[
+		//	'script',
+		//	{
+		//		defer: '',
+		//		src: 'https://analytics.consensia.cc/script.js',
+		//		'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
+		//	},
+		//],
 	],
 	sitemap: { hostname: 'https://hesprs.github.io' },
 	themeConfig: {
@@ -118,17 +122,17 @@ export default defineConfig<ThemeConfig>({
 		image: { lazyLoading: true },
 	},
 	vite: {
-		publicDir: resolve(__dirname, '../public'),
+		publicDir: p('public'),
 		plugins: [canvas()],
 		resolve: {
 			alias: [
 				{
 					find: '@',
-					replacement: resolve(__dirname, '../src/'),
+					replacement: p('.vitepress/theme'),
 				},
 				{
 					find: '$',
-					replacement: resolve(__dirname, '../pages/'),
+					replacement: p('pages'),
 				},
 			],
 		},
