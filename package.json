@@ -16,22 +16,22 @@
 	},
 	"dependencies": {
 		"@json-canvas-viewer/vue": "^1.0.2",
-		"@tabler/icons-vue": "^3.40.0",
-		"vitepress": "2.0.0-alpha.16",
-		"vitepress-theme-trito": "^1.1.0",
-		"vue": "^3.5.30",
+		"@tabler/icons-vue": "^3.41.1",
+		"vitepress": "2.0.0-alpha.17",
+		"vitepress-theme-trito": "^1.1.1",
+		"vue": "^3.5.31",
 		"vue3-carousel": "^0.17.0"
 	},
 	"devDependencies": {
 		"@types/node": "^25.5.0",
-		"oxfmt": "^0.40.0",
-		"oxlint": "^1.55.0",
-		"oxlint-tsgolint": "^0.16.0",
+		"oxfmt": "^0.43.0",
+		"oxlint": "^1.58.0",
+		"oxlint-tsgolint": "^0.19.0",
 		"sass": "^1.98.0",
-		"typescript": "^5.9.3",
-		"vite": "^8.0.0",
+		"typescript": "^6.0.2",
+		"vite": "^8.0.3",
 		"vite-plugin-json-canvas": "^1.0.1",
-		"vue-tsc": "^3.2.5"
+		"vue-tsc": "^3.2.6"
 	},
 	"packageManager": "pnpm@10.29.3"
 }
