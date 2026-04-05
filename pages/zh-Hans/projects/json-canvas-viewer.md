@@ -1,6 +1,6 @@
 ---
 title: JSON Canvas Viewer
-description: 一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。
+description: JSON Canvas Viewer 是一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。
 layout: project
 logo: https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg
 ---

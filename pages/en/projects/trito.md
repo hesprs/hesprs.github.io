@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Trito
-description: A theme for VitePress, a static site generator. Focuses on UI/UX polishes and is powering the website you are visiting right now.
+description: Trito is a theme for VitePress, the static site generator. It is modified from VitePress default theme with focus on UI/UX polishes. It's also the theme of this website.
 logo: https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg
 ---
 

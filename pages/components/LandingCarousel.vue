@@ -52,7 +52,7 @@ defineProps<{
 .carousel {
 	--carousel-height: 300px;
 	--image-text-padding: 40px;
-	--carousel-item-margin: 150px;
+	--carousel-item-margin: 140px;
 	--title-size: 50px;
 	--description-size: 18px;
 	@media (max-width: 1260px) {
@@ -84,7 +84,8 @@ defineProps<{
 	.logo {
 		grid-area: logo;
 		margin: auto 0;
-		padding-right: var(--image-text-padding);
+		width: 90%;
+		aspect-ratio: 1/1;
 	}
 	.title {
 		color: var(--vp-c-brand-1);
@@ -127,10 +128,9 @@ defineProps<{
 		}
 		.title {
 			text-align: center;
-			margin-top: 0;
+			margin-top: 20px;
 		}
 		.logo {
-			width: 90%;
 			max-width: 300px;
 		}
 		.title,

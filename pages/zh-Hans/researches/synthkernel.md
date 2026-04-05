@@ -1,7 +1,7 @@
 ---
 layout: project
 title: SynthKernel
-description: 一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。
+description: SynthKerne 是一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。
 outline: deep
 logo: https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg
 ---

@@ -7,6 +7,8 @@ function p(path: string) {
 	return resolve(__dirname, '..', path);
 }
 
+const inDev = process.env.MODE === 'dev';
+
 export default defineConfig<ThemeConfig>({
 	srcDir: p('pages'),
 	outDir: p('dist'),
@@ -29,6 +31,10 @@ export default defineConfig<ThemeConfig>({
 							{ text: 'Pointeract', link: '/projects/pointeract' },
 							{ text: 'JSON Canvas Viewer', link: '/projects/json-canvas-viewer' },
 							{ text: 'Trito', link: '/projects/trito' },
+							{
+								text: 'Obsidian WebDAV Sync',
+								link: '/projects/obsidian-webdav-sync',
+							},
 						],
 					},
 					{
@@ -70,6 +76,10 @@ export default defineConfig<ThemeConfig>({
 								link: '/zh-Hans/projects/json-canvas-viewer',
 							},
 							{ text: 'Trito', link: '/zh-Hans/projects/trito' },
+							{
+								text: 'Obsidian WebDAV Sync',
+								link: '/zh-Hans/projects/obsidian-webdav-sync',
+							},
 						],
 					},
 					{
@@ -101,7 +111,7 @@ export default defineConfig<ThemeConfig>({
 			'script',
 			{
 				defer: '',
-				src: 'https://analytics.consensia.cc/script.js',
+				src: inDev ? '' : 'https://analytics.consensia.cc/script.js',
 				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
 			},
 		],
@@ -125,16 +135,10 @@ export default defineConfig<ThemeConfig>({
 		publicDir: p('public'),
 		plugins: [canvas()],
 		resolve: {
-			alias: [
-				{
-					find: '@',
-					replacement: p('.vitepress/theme'),
-				},
-				{
-					find: '$',
-					replacement: p('pages'),
-				},
-			],
+			alias: {
+				'@': p('.vitepress/theme'),
+				$: p('pages'),
+			},
 		},
 		ssr: {
 			noExternal: ['vitepress-theme-trito'],

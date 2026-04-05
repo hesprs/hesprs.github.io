@@ -46,6 +46,11 @@ defineProps<Props>();
 		display: grid;
 		grid-template-columns: 16fr 9fr;
 	}
+	.card-body {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
 	@media (max-width: 767px) {
 		padding: 16px;
 		border-left-color: transparent;
@@ -69,6 +74,7 @@ defineProps<Props>();
 		margin: auto 0;
 		padding: 0 0 0 20px;
 		box-shadow: none;
+		aspect-ratio: 1/1;
 		@media (max-width: 767px) {
 			width: 80%;
 			max-width: 400px;

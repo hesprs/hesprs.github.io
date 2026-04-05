@@ -275,15 +275,6 @@ const perspectives = [
 
 const projects = [
 	{
-		title: 'SynthKernel',
-		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
-		description:
-			'A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.',
-		descriptionShort:
-			'A novel TypeScript software architecture that aims to redefine modularity practices.',
-		link: '/researches/synthkernel',
-	},
-	{
 		title: 'JSON Canvas Viewer',
 		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
 		description:
@@ -300,10 +291,27 @@ const projects = [
 		link: '/projects/pointeract',
 	},
 	{
+		title: 'SynthKernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		description:
+			'A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.',
+		descriptionShort:
+			'A novel TypeScript software architecture that aims to redefine modularity practices.',
+		link: '/researches/synthkernel',
+	},
+	{
+		title: 'Obsidian WebDAV Sync',
+		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
+		description:
+			'A plugin for Obsidian that syncs your vault with a WebDAV server. It excels existing solutions at more robust file handling and better performance without vendor lock-in.',
+		descriptionShort: 'General-purpose & bidirectional WebDAV syncing for Obsidian vaults.',
+		link: '/projects/obsidian-webdav-sync',
+	},
+	{
 		title: 'Trito',
 		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
 		description:
-			'A theme for VitePress, a static site generator. Focuses on UI/UX polishes and is powering the website you are visiting right now.',
+			"A theme for VitePress, the static site generator. It is modified from VitePress default theme with focus on UI/UX polishes. It's also the theme of this website.",
 		descriptionShort: 'Visually refurbished VitePress default theme.',
 		link: '/projects/trito',
 	},

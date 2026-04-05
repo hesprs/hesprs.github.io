@@ -272,14 +272,6 @@ const perspectives = [
 
 const projects = [
 	{
-		title: 'SynthKernel',
-		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
-		description:
-			'一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。',
-		descriptionShort: '一种旨在重塑模块化实践的新型 TypeScript 软件架构。',
-		link: '/zh-Hans/researches/synthkernel',
-	},
-	{
 		title: 'JSON Canvas Viewer',
 		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg  ',
 		description:
@@ -296,10 +288,26 @@ const projects = [
 		link: '/zh-Hans/projects/pointeract',
 	},
 	{
+		title: 'SynthKernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		description:
+			'一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。',
+		descriptionShort: '一种旨在重塑模块化实践的新型 TypeScript 软件架构。',
+		link: '/zh-Hans/researches/synthkernel',
+	},
+	{
+		title: 'Obsidian WebDAV Sync',
+		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
+		description:
+			'一款用于 Obsidian 的插件，可将您的仓库与 WebDAV 服务器同步。它在文件处理的稳健性、性能表现以及无厂商锁定方面优于现有解决方案。',
+		descriptionShort: '面向 Obsidian 仓库的通用型双向 WebDAV 同步方案。',
+		link: '/zh-Hans/projects/obsidian-webdav-sync',
+	},
+	{
 		title: 'Trito',
 		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
 		description:
-			'一个为静态网站生成工具 VitePress 打造的主题，专注于 UI/UX 细节优化，当前你正在访问的网站即由它驱动。',
+			'一款专为 VitePress（静态站点生成器）设计的主题。它在 VitePress 默认主题的基础上进行了深度定制，重点优化了 UI/UX 体验。同时，它也是本网站所使用的主题。',
 		descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
 		link: '/zh-Hans/projects/trito',
 	},

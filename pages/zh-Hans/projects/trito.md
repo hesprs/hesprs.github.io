@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Trito
-description: 一个为静态网站生成器 VitePress 打造的主题，专注于 UI/UX 细节优化，当前你正在访问的网站即由它驱动。
+description: Trito 是一款专为 VitePress（静态站点生成器）设计的主题。它在 VitePress 默认主题的基础上进行了深度定制，重点优化了 UI/UX 体验。同时，它也是本网站所使用的主题。
 logo: https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Pointeract
-description: A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.
+description: Pointeract is a front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.
 logo: https://pointeract.consensia.cc/logo.svg
 ---
 
@@ -42,6 +42,7 @@ Homepage & Documentation: [pointeract.consensia.cc](https://pointeract.consensia
 
 - **Click (Double Click, Triple Click, Quadruple Click, Any Click)**
 - **Drag**
+- **Swipe (All directions, single / multiple fingers)**
 - **Pan and Zoom via Mouse Wheel (`ctrl`/`shift` key binding, touchpad support)**
 - **Pan and Zoom via Multitouch (Pan, Pinch)**
 - **One-line Prevent Default**

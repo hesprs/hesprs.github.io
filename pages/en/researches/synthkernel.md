@@ -1,7 +1,7 @@
 ---
 layout: project
 title: SynthKernel
-description: A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.
+description: SynthKernel is a novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.
 outline: deep
 logo: https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg
 ---

@@ -1,7 +1,7 @@
 ---
 layout: project
 title: JSON Canvas Viewer
-description: A front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.
+description: JSON Canvas Viewer is a front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.
 logo: https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg
 ---
 
