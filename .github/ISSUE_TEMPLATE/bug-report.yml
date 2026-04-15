@@ -1,46 +1,30 @@
 name: 🐛 Bug Report
 description: File a bug report to help us improve.
 title: '[Bug]: '
-labels: ['bug', 'triage']
+labels: ['bug']
 assignees:
-  - hesprs # Your GitHub username
+  - hesprs
 
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-        **Please read our [Contributing Guidelines](./CONTRIBUTING.md) before proceeding.**
+      value: Thanks for taking the time to fill out this bug report!
 
-  - type: checkboxes
-    id: terms
+  - type: textarea
+    id: real-outcome
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our Code of Conduct.
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
-
-  - type: dropdown
-    id: environment
-    attributes:
-      label: Environment
-      description: Where are you experiencing this issue?
-      options:
-        - Browser (Chrome/Firefox/Safari)
-        - Node.js
-        - Bun
-        - Other
+      label: Real Outcome
+      description: A brief and clear description on what happened.
+      placeholder: Tell us what you see!
     validations:
       required: true
 
   - type: textarea
-    id: what-happened
+    id: expected-outcome
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: 'A bug happened!'
+      label: Expected Outcome
+      description: Tell us what do you think is the correct behaviour.
+      placeholder: Tell us what you expect!
     validations:
       required: true
 
@@ -48,27 +32,36 @@ body:
     id: reproduction
     attributes:
       label: Steps to Reproduce
-      description: How can we reproduce this behavior?
+      description: How can we reproduce this behaviour?
       placeholder: |
         1. Go to '...'
         2. Click on '....'
-        3. Scroll down to '....'
+        3. Wait for '....'
         4. See error
-    validations:
-      required: true
-
-  - type: input
-    id: version
-    attributes:
-      label: Package Version
-      description: What version of our software are you running?
-      placeholder: e.g., 1.0.2
     validations:
       required: true
 
   - type: textarea
     id: logs
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      label: Support Log
+      description: Please go to plugin settings - `Development settings` - `Support report`, click `Export to note`, copy and paste the content of the full log. This will be automatically formatted into code, so no need for backticks.
       render: shell
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Issue Policies
+      description: By submitting this issue, you agree to follow the issue policies below.
+      options:
+        - label: I agree to follow this project's issue policies
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        - Please provide clear and reproducible information about the issue.
+        - Please ensure that one issue only contains one bug.
+        - Please confirm that your issue doesn't contain any sensitive information.
+        - Issues caused by non-standard WebDAV server configurations **will not be fixed**.
+        - Issues where maintainers has requested clarification / coordinated testing but the reporter hasn't provide any further information will be closed after 24 hours.
