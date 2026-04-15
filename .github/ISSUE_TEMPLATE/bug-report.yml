@@ -60,11 +60,11 @@ body:
   - type: markdown
     attributes:
       value: "
-        - I have provided clear and reproducible information about the issue.
-        - I have ensured that this issue only contains one bug.
-        - I have checked historical bugs and there's no entry fitting this scenario.
-        - I have confirmed that the issue doesn't contain any sensitive information.
-        - Issues caused by non-standard WebDAV server configurations **will not be fixed**.
-        - Issues where maintainers has requested clarification / coordinated testing but the reporter hasn't provide any further information will be closed after 24  hours.
+        - I have provided clear and reproducible information about the issue.<br>
+        - I have ensured that this issue only contains one bug.<br>
+        - I have checked historical bugs and there's no entry fitting this scenario.<br>
+        - I have confirmed that the issue doesn't contain any sensitive information.<br>
+        - Issues caused by non-standard WebDAV server configurations **will not be fixed**.<br>
+        - Issues where maintainers has requested clarification / coordinated testing but the reporter hasn't provide any further information will be closed after 24  hours.<br>
         - Issues without enough information will be closed after 24 hours.
         "
