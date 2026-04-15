@@ -52,16 +52,19 @@ body:
     id: terms
     attributes:
       label: Issue Policies
-      description: By submitting this issue, you agree to follow the issue policies below.
+      description: By submitting this issue, I agree to follow the issue policies below.
       options:
-        - label: I agree to follow this project's issue policies
+        - label: "I agree to follow this project's issue policies and confirm:"
           required: true
 
   - type: markdown
     attributes:
-      value: |
-        - Please provide clear and reproducible information about the issue.
-        - Please ensure that one issue only contains one bug.
-        - Please confirm that your issue doesn't contain any sensitive information.
+      value: "
+        - I have provided clear and reproducible information about the issue.
+        - I have ensured that this issue only contains one bug.
+        - I have checked historical bugs and there's no entry fitting this scenario.
+        - I have confirmed that the issue doesn't contain any sensitive information.
         - Issues caused by non-standard WebDAV server configurations **will not be fixed**.
-        - Issues where maintainers has requested clarification / coordinated testing but the reporter hasn't provide any further information will be closed after 24 hours.
+        - Issues where maintainers has requested clarification / coordinated testing but the reporter hasn't provide any further information will be closed after 24  hours.
+        - Issues without enough information will be closed after 24 hours.
+        "

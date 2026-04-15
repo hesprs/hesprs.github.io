@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["unicorn", "typescript", "oxc", "import", "vue", "jsdoc"],
+	"plugins": ["unicorn", "typescript", "oxc", "import", "vue"],
 	"categories": {},
 	"rules": {
 		"constructor-super": "warn",
@@ -108,14 +108,7 @@
 		"unicorn/no-useless-length-check": "warn",
 		"unicorn/no-useless-spread": "warn",
 		"unicorn/prefer-set-size": "warn",
-		"unicorn/prefer-string-starts-ends-with": "warn",
-		"jsdoc/ignorePrivate": "warn",
-		"jsdoc/ignoreInternal": "warn",
-		"jsdoc/ignoreReplacesDocs": "warn",
-		"jsdoc/overrideReplacesDocs": "warn",
-		"jsdoc/augmentsExtendsReplacesDocs": "warn",
-		"jsdoc/implementsReplacesDocs": "warn",
-		"jsdoc/exemptDestructuredRootsFromChecks": "warn"
+		"unicorn/prefer-string-starts-ends-with": "warn"
 	},
 	"env": {
 		"builtin": true
