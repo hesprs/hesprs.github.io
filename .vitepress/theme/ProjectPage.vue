@@ -3,14 +3,12 @@ import type Theme from 'vitepress-theme-trito';
 import { useData } from 'vitepress';
 import { VPDoc } from 'vitepress-theme-trito';
 import { provide, shallowRef } from 'vue';
-import { LinksKey } from '@/keys';
+import { LinkIconsKey } from '@/keys';
 import ProjectCard, { type Props } from '@/ProjectCard.vue';
 
-const links = shallowRef<Props['links']>([]);
+const linkIcons = shallowRef<Props['linkIcons']>({});
 const { frontmatter } = useData<typeof Theme>();
-provide(LinksKey, (_links: Props['links']) => {
-	links.value = _links;
-});
+provide(LinkIconsKey, (_icons: Props['linkIcons']) => (linkIcons.value = _icons));
 </script>
 
 <template>
@@ -18,7 +16,8 @@ provide(LinksKey, (_links: Props['links']) => {
 		<template #content-before>
 			<ProjectCard
 				:title="frontmatter.title"
-				:links
+				:links="frontmatter.links"
+				:linkIcons
 				:description="frontmatter.description"
 				:logo="frontmatter.logo"
 				class="vp-doc"

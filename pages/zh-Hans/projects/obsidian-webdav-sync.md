@@ -1,8 +1,13 @@
 ---
 layout: project
 title: Obsidian WebDAV Sync
-description: WebDAV Sync 是一款为 Obsidian 设计的插件，用于将您的仓库与 WebDAV 服务器同步。它在文件处理的稳健性、性能表现以及无厂商锁定方面优于现有解决方案。
+titleTemplate: 面向 Obsidian 的 WebDAV 同步插件
+description: WebDAV Sync 是一款为 Obsidian 设计的插件，用于将您的仓库与 WebDAV 服务器同步。它在可靠的双向同步、更好的性能以及无厂商锁定方面优于现有解决方案。
 logo: https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg
+links:
+  - name: GitHub 仓库
+    url: https://github.com/hesprs/obsidian-webdav-sync
+    color: '#010409'
 head:
   - - meta
     - name: keywords
@@ -11,32 +16,53 @@ head:
 
 <script lang="ts" setup>
 import { IconBrandGithub } from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([{
-    name: 'GitHub 仓库',
-    url: 'https://github.com/hesprs/obsidian-webdav-sync',
-    icon: IconBrandGithub,
-    color: '#010409'
-}]);
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({ 'GitHub 仓库': IconBrandGithub });
 </script>
 
 ## 简介
 
-Obsidian WebDAV Sync 是一款面向 Obsidian 的通用型双向 WebDAV 同步插件。鉴于目前尚无单一插件能可靠且便捷地将仓库与 WebDAV 服务器进行同步，故开发了此插件。其核心功能包括：
+Obsidian WebDAV Sync 是一款面向 Obsidian 的通用型双向 WebDAV 同步插件。由于当前没有单一插件能够可靠且便捷地将仓库与 WebDAV 服务器同步，因此开发了此插件。它在可靠双向同步、更好的性能以及无厂商锁定方面优于现有方案：
 
-- 🔄 本地仓库与远程 WebDAV 之间的双向同步
-- ⚡ 支持缓存加速的快速同步模式，实现实时同步
-- 📁 WebDAV 资源管理器，用于浏览远程目录
-- 🔀 冲突处理策略：
+- 🔄 **可靠的双向同步**：
+  - 插件可将您的仓库与 WebDAV 存储同步。
+  - 通过三方比较：远程状态、本地状态，以及上一次同步记录中的本地/远程状态。
+  - 再依据决策矩阵以获得最高精度与数据完整性，详情见[下方](#技术架构解析)。
+
+- 🔀 **自动同步与冲突处理**：
+  - 插件支持以下自动触发的同步方式：
+    - **启动同步**：在 Obsidian 启动时触发同步。
+    - **定时同步**：按固定周期触发同步。
+    - **实时同步**：检测到变更后立即触发同步。
+  - 插件支持以下冲突处理方式：
   - 智能合并 (Smart merge)
   - 保留最新版本 (Latest survive)
   - 使用远程版本 (Use remote)
   - 使用本地版本 (Use local)
   - 跳过 (Skip)
-- 🚀 针对不同规模的仓库提供严格/宽松两种同步模式
-- 📦 支持通过可配置的大小阈值跳过大文件
-- 🔁 可靠的文件处理机制，确保笔记完整性不受影响
-- 📜 轻量级本地数据库，保障可扩展性与高性能
+
+- ⚡ **极致性能**：
+  - 大多数同步操作通过并行化网络请求完成。
+  - 实时同步默认使用缓存的远程状态，因此通常可在数秒内完成。
+  - 体积比 Remotely Save **小 10 倍**，启动加载时间 **快 8 倍**。
+
+- 🧰 **细粒度配置**：
+  - 用户可调整多项参数以适配不同服务：
+    - **最大并发 WebDAV 请求数**：应对服务限流。
+    - **WebDAV 请求最小间隔**：应对服务限流。
+    - **跳过大文件**：应对存储空间不足。
+    - **最大并发同步任务数**：控制 CPU 与磁盘占用。
+    - **最大并发吞吐量**：控制内存占用并避免崩溃。
+
+- 📦 **生产级可扩展性**：
+  - 可平稳处理超过 3000 个文件的仓库。
+  - 负载均衡与分块下载可让插件一次处理 GB 级数据。
+  - 大文件下载支持断点续传。
+
+- 🎨 **优秀的 UI 与可观测性**：
+  - 通过四种方式（弹窗、状态栏、通知、日志）持续展示同步进度。
+  - 文件变更会以文件树形式呈现，便于精细选择性同步。
+  - 日志工具会输出可读性良好的 Markdown 文档。
 
 ## 为何需要另一款同步插件？
 

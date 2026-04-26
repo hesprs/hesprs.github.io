@@ -273,7 +273,7 @@ const perspectives = [
 const projects = [
 	{
 		title: 'JSON Canvas Viewer',
-		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg  ',
+		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
 		description:
 			'一个前端库，提供可扩展的 JSON Canvas 查看器，能够轻松集成到任何现有框架和范式中。',
 		descriptionShort: '直接在浏览器中查看 JSON 画布。',
@@ -281,11 +281,19 @@ const projects = [
 	},
 	{
 		title: 'Pointeract',
-		logo: 'https://pointeract.consensia.cc/logo.svg  ',
+		logo: 'https://pointeract.consensia.cc/logo.svg',
 		description:
-			'一个前端库，用于解析用户交互并派发平移缩放事件，是 Hammer.js 的轻量级且可扩展的替代方案。',
-		descriptionShort: '高度可扩展的人类手势识别器。',
+			'一个仅 1KB 核心体积、可摇树优化的 TypeScript 库，用于稳健的人类手势识别。支持鼠标、触控、触摸板与滚轮事件，是 Hammer.js 的现代化、可扩展替代方案。',
+		descriptionShort: '轻量且可扩展的人类手势识别器。',
 		link: '/zh-Hans/projects/pointeract',
+	},
+	{
+		title: 'Obsidian WebDAV Sync',
+		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
+		description:
+			'一款为 Obsidian 设计的插件，可将您的仓库与 WebDAV 服务器同步。它在可靠的双向同步、更好的性能以及无厂商锁定方面优于现有解决方案。',
+		descriptionShort: '面向 Obsidian 仓库的通用双向 WebDAV 同步。',
+		link: '/zh-Hans/projects/obsidian-webdav-sync',
 	},
 	{
 		title: 'SynthKernel',
@@ -296,18 +304,10 @@ const projects = [
 		link: '/zh-Hans/researches/synthkernel',
 	},
 	{
-		title: 'Obsidian WebDAV Sync',
-		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
-		description:
-			'一款用于 Obsidian 的插件，可将您的仓库与 WebDAV 服务器同步。它在文件处理的稳健性、性能表现以及无厂商锁定方面优于现有解决方案。',
-		descriptionShort: '面向 Obsidian 仓库的通用型双向 WebDAV 同步方案。',
-		link: '/zh-Hans/projects/obsidian-webdav-sync',
-	},
-	{
 		title: 'Trito',
 		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
 		description:
-			'一款专为 VitePress（静态站点生成器）设计的主题。它在 VitePress 默认主题的基础上进行了深度定制，重点优化了 UI/UX 体验。同时，它也是本网站所使用的主题。',
+			'一款经过视觉焕新的 VitePress 默认主题替代品。它以独特美学、极小 API 干预以及完善的 TypeScript 支持，提升静态站点的 UI/UX 体验。',
 		descriptionShort: '视觉焕然一新的 VitePress 默认主题。',
 		link: '/zh-Hans/projects/trito',
 	},

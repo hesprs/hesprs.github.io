@@ -286,9 +286,17 @@ const projects = [
 		title: 'Pointeract',
 		logo: 'https://pointeract.consensia.cc/logo.svg',
 		description:
-			'A front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.',
-		descriptionShort: 'Super extensible human gesture recognizer.',
+			'A tiny (1KB core), tree-shakable TypeScript library for robust human gesture detection. Supports mouse, touch, touchpad, and wheel events. A modern, extensible alternative to Hammer.js.',
+		descriptionShort: 'Lightweight & extensible human gesture recognizer.',
 		link: '/projects/pointeract',
+	},
+	{
+		title: 'Obsidian WebDAV Sync',
+		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
+		description:
+			'A plugin for Obsidian that syncs your vault with a WebDAV server. It excels existing solutions at reliable bidirectional syncing, better performance and the freedom from vendor lock-in.',
+		descriptionShort: 'General-purpose & bidirectional WebDAV syncing for Obsidian vaults.',
+		link: '/projects/obsidian-webdav-sync',
 	},
 	{
 		title: 'SynthKernel',
@@ -300,18 +308,10 @@ const projects = [
 		link: '/researches/synthkernel',
 	},
 	{
-		title: 'Obsidian WebDAV Sync',
-		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
-		description:
-			'A plugin for Obsidian that syncs your vault with a WebDAV server. It excels existing solutions at more robust file handling and better performance without vendor lock-in.',
-		descriptionShort: 'General-purpose & bidirectional WebDAV syncing for Obsidian vaults.',
-		link: '/projects/obsidian-webdav-sync',
-	},
-	{
 		title: 'Trito',
 		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
 		description:
-			"A theme for VitePress, the static site generator. It is modified from VitePress default theme with focus on UI/UX polishes. It's also the theme of this website.",
+			"A visually refurbished, drop-in replacement for the VitePress default theme. Enhance your static site's UI/UX with unique aesthetics, minimal API intrusion, and robust TypeScript support. Stand out from generic VitePress sites.",
 		descriptionShort: 'Visually refurbished VitePress default theme.',
 		link: '/projects/trito',
 	},

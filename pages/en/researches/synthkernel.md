@@ -1,30 +1,31 @@
 ---
 layout: project
 title: SynthKernel
+titleTemplate: Novel Modular Architecture for TypeScript
 description: SynthKernel is a novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.
-outline: deep
 logo: https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg
+links:
+  - name: GitHub Repository
+    url: https://github.com/hesprs/synthkernel
+    color: '#010409'
+  - name: Whitepaper
+    url: 'https://github.com/hesprs/synthkernel/blob/main/whitepaper.ipynb'
+    color: '#f37726'
+head:
+  - - meta
+    - name: keywords
+      content: SynthKernel, Typescript Architecture, modular monolith, type-safe architecture, inversion of control TypeScript, AI-native software architecture, agentic coding, TypeScript module orchestration, TypeScript facade pattern, scalable TypeScript backend, TypeScript dependency injection, agent skill
 ---
 
 <script setup>
 import canvas from '$/assets/synthkernel.canvas';
 import Viewer from '$/components/CanvasViewer.vue';
 import { IconBrandGithub, IconFileSpark }  from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([
-    {
-        name: 'GitHub',
-        url: 'https://github.com/hesprs/synthkernel',
-        icon: IconBrandGithub,
-        color: '#010409'
-    },
-    {
-        name: 'Whitepaper',
-        url: 'https://github.com/hesprs/synthkernel/blob/main/whitepaper.ipynb',
-        icon: IconFileSpark,
-        color: '#f37726'
-    },
-])
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({
+    'GitHub Repository': IconBrandGithub,
+    'Whitepaper': IconFileSpark,
+})
 </script>
 
 ## Abstract

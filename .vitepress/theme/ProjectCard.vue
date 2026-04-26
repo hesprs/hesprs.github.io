@@ -16,8 +16,8 @@
 					class="skills-item"
 					:style="{ '--color': item.color }"
 				>
-					<component class="skills-logo" :is="item.icon" />
-					{{ links[index].name }}
+					<component class="skills-logo" :is="linkIcons[item.name]" />
+					{{ item.name }}
 				</a>
 			</footer>
 		</div>
@@ -32,7 +32,8 @@ export type Props = {
 	title: string;
 	description: string;
 	logo?: string;
-	links: Array<{ name: string; url: string; icon: Icon; color: string }>;
+	links: Array<{ name: string; url: string; color: string }>;
+	linkIcons: Record<string, Icon>;
 };
 
 defineProps<Props>();

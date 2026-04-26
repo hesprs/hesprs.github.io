@@ -1,27 +1,29 @@
 ---
 layout: project
 title: Trito
-description: Trito is a theme for VitePress, the static site generator. It is modified from VitePress default theme with focus on UI/UX polishes. It's also the theme of this website.
+titleTemplate: VitePress Theme with Unique Aesthetics
+description: Trito is a visually refurbished, drop-in replacement for the VitePress default theme. Enhance your static site's UI/UX with unique aesthetics, minimal API intrusion, and robust TypeScript support. Stand out from generic VitePress sites.
 logo: https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg
+links:
+  - name: GitHub Repository
+    url: https://github.com/hesprs/vitepress-theme-trito
+    color: '#010409'
+  - name: npm
+    url: https://www.npmjs.com/package/vitepress-theme-trito
+    color: '#EA2039'
+head:
+  - - meta
+    - name: keywords
+      content: Trito, Vitepress Theme, vitepress-theme-trito, custom vitepress theme, UI UX, VitePress default theme alternative, TypeScript VitePress theme, Vue3 static site
 ---
 
 <script lang="ts" setup>
 import { IconBrandGithub, IconBrandNpm }  from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([
-    {
-        name: 'GitHub',
-        url: 'https://github.com/hesprs/vitepress-theme-trito',
-        icon: IconBrandGithub,
-        color: '#010409'
-    },
-    {
-        name: 'npm',
-        url: 'https://www.npmjs.com/package/vitepress-theme-trito',
-        icon: IconBrandNpm,
-        color: '#EA2039'
-    },
-]);
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({
+    'GitHub Repository': IconBrandGithub,
+    'npm': IconBrandNpm,
+});
 </script>
 
 ## Preview

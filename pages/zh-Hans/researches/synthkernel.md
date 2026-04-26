@@ -1,37 +1,38 @@
 ---
 layout: project
 title: SynthKernel
-description: SynthKerne 是一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。
-outline: deep
+titleTemplate: TypeScript 的新型模块化架构
+description: SynthKernel 是一种用于 TypeScript 模块化单体开发的新型架构。它利用类型编排与运行时动态能力，提供一种类型安全、可扩展且高度模块化的软件范式。
 logo: https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg
+links:
+  - name: GitHub 仓库
+    url: https://github.com/hesprs/synthkernel
+    color: '#010409'
+  - name: 白皮书
+    url: 'https://github.com/hesprs/synthkernel/blob/main/whitepaper.ipynb'
+    color: '#f37726'
+head:
+  - - meta
+    - name: keywords
+      content: SynthKernel, TypeScript 架构, 模块化单体, 类型安全架构, TypeScript 控制反转, AI 原生软件架构, agentic coding, TypeScript 模块编排, TypeScript 外观模式, 可扩展 TypeScript 后端, TypeScript 依赖注入, agent skill
 ---
 
 <script setup>
 import canvas from '$/assets/synthkernel.canvas';
 import Viewer from '$/components/CanvasViewer.vue';
 import { IconBrandGithub, IconFileSpark } from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([
-    {
-        name: 'GitHub',
-        url: 'https://github.com/hesprs/synthkernel',
-        icon: IconBrandGithub,
-        color: '#010409'
-    },
-    {
-        name: '白皮书',
-        url: 'https://github.com/hesprs/synthkernel/blob/main/whitepaper.ipynb',
-        icon: IconFileSpark,
-        color: '#f37726'
-    },
-]);
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({
+	'GitHub 仓库': IconBrandGithub,
+	'白皮书': IconFileSpark,
+});
 </script>
 
 ## 摘要
 
 数十年来，开发者们一直在寻求单体架构的简洁性与微服务可维护性之间的平衡，而**模块化单体（Modular Monolith）** 便是这一追求的产物。然而，该模式的实现往往因复杂的继承关系与耦合、手动注册表的维护负担以及配置漂移等问题而举步维艰。
 
-**SynthKernel** 提出了一种构建模块化单体的**新型架构范式**。通过利用先进的 TypeScript 泛型、极致的控制反转（IoC）机制以及严格的 Loader-Module 分离策略，SynthKernel 确保模块化由类型系统本身强制执行。本文将探讨该架构在类型编排上的独特方法、其原生为 AI 优化的设计理念，以及它如何消除传统模块化开发中固有的摩擦。
+**SynthKernel** 提出了一种构建模块化单体的**新型架构范式**。通过利用先进的 TypeScript 泛型、极致的控制反转（IoC）机制以及严格的 Loader-Module 分离策略，SynthKernel 确保模块化由类型系统本身强制执行。本文将探讨该架构在类型编排上的独特方法、其面向 AI 的设计理念，以及它如何消除传统模块化开发中的摩擦。
 
 **→ [探索 GitHub 仓库](https://github.com/hesprs/synthkernel)**
 
@@ -77,9 +78,9 @@ SynthKernel 的实现由一个中央 Loader 和扁平化的 Modules 组成，结
 - **`types.ts`：** 用于编排的核心工具类型（`Orchestratable`）。
 - **`[ModuleName].ts`：** 自包含的逻辑单元，用于增强 Loader。
 
-## AI 优势
+## AI 原生优势
 
-SynthKernel 不仅为人类设计，更为**AI代码（Agentic Coding）** 而生。当受到严格准则和模式约束时（类似于它们在 React 或 Vue 中的表现），AI 模型的表现最佳。SynthKernel 强制实施了严格的文件命名约定（`index.ts`, `BaseModule.ts`）、类结构和命名规则。它还强制 Loader（生命周期）与 Modules（逻辑）之间的清晰分离，降低了 AI 将自身逻辑与代码库纠缠成“意大利面条式代码”的风险。
+SynthKernel 不仅为人类设计，更为**AI 代码（Agentic Coding）** 而生。当受到严格准则与模式约束时（类似它们在 React 或 Vue 中的表现），AI 模型的表现最佳。SynthKernel 强制实施严格的文件命名约定（`index.ts`、`BaseModule.ts`）、类结构和命名规则。它还强制 Loader（生命周期）与 Modules（逻辑）之间清晰分离，从而降低 AI 将自身逻辑与代码库缠成“意大利面条式代码”的风险。
 
 ### 代理技能（Agent Skill）
 

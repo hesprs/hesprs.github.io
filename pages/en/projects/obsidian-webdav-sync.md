@@ -1,8 +1,13 @@
 ---
 layout: project
 title: Obsidian WebDAV Sync
-description: WebDAV Sync is a plugin for Obsidian that syncs your vault with a WebDAV server. It excels existing solutions at more robust file handling and better performance without vendor lock-in.
+titleTemplate: WebDAV Syncing Plugin for Obsidian
+description: WebDAV Sync is a plugin for Obsidian that syncs your vault with a WebDAV server. It excels existing solutions at reliable bidirectional syncing, better performance and the freedom from vendor lock-in.
 logo: https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg
+links:
+  - name: GitHub Repository
+    url: https://github.com/hesprs/obsidian-webdav-sync
+    color: '#010409'
 head:
   - - meta
     - name: keywords
@@ -11,32 +16,59 @@ head:
 
 <script lang="ts" setup>
 import { IconBrandGithub } from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([{
-    name: 'GitHub Repository',
-    url: 'https://github.com/hesprs/obsidian-webdav-sync',
-    icon: IconBrandGithub,
-    color: '#010409'
-}]);
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({ 'GitHub Repository': IconBrandGithub });
 </script>
 
 ## Introduction
 
-Obsidian WebDAV Sync is a general-purpose & bidirectional WebDAV syncing plugin for Obsidian. It is created due to the current landscape that no single plugin can reliably and conveniently sync your vault with a WebDAV server. It has following features:
+Obsidian WebDAV Sync is a general-purpose & bidirectional WebDAV syncing plugin for Obsidian. It is created due to the current landscape that no single plugin can reliably and conveniently sync your vault with a WebDAV server. It excels existing solutions at reliable bidirectional syncing, better performance and the freedom from vendor lock-in:
 
-- 🔄 Bidirectional syncing between local vault and remote WebDAV
-- ⚡ Fast syncing mode with cached acceleration for realtime syncing
-- 📁 WebDAV explorer for exploring remote directories
-- 🔀 Conflict handling:
+🔄 **Reliable Bidirectional Syncing**:
+
+- This plugin syncs your vault with a WebDAV storage.
+- It does three-way comparison: remote state, local state, and recorded local & remote states of last sync
+- Then it follows a decision matrix for maximum precision and data integrity, detail see [below](#technical-breakdown).
+
+🔀 **Auto Sync and Conflict Handling**:
+
+- The plugin supports automatically triggered sync as follows:
+  - **Startup sync**: trigger a sync when Obsidian starts.
+  - **Scheduled sync**: trigger syncs periodically.
+  - **Real-time sync**: trigger syncs immediately when a change is detected.
+- The plugin supports conflict handling methods:
   - Smart merge
   - Latest survive
   - Use remote
   - Use local
   - Skip
-- 🚀 Strict / loose sync modes for different vault sizes
-- 📦 Large file skipping via configurable size threshold
-- 🔁 Reliable file handling that doesn't mess up your notes
-- 📜 Lightweight local database empowers scalability and ensures performance
+
+⚡ **Maximum Performance**:
+
+- Most sync operations are performed via parallelized network requests.
+- Real-time sync uses cached remote states by default, allowing it to complete syncing within seconds.
+- **10 times** smaller size than Remotely Save, **8 times** faster startup loading time.
+
+🧰 **Detailed Config**:
+
+- The plugin allows users to adjust various parameters to adapt for various services:
+  - **Max concurrent WebDAV requests**: deal with service rate limiting.
+  - **Min time between WebDAV requests**: deal with service rate limiting.
+  - **Skip large files**: handle low storage space.
+  - **Max concurrent sync tasks**: control CPU and disk usage.
+  - **Max concurrent throughput**: control memory usage and prevent crashes.
+
+📦 **Production-Level Scalability**:
+
+- Handles vaults with more than 3000 files smoothly.
+- Load balancing and download chunking allows the plugin to handle gigabytes at once.
+- Large file downloading is resumable.
+
+🎨 **Excellent UI and Observability**:
+
+- Four ways (modals, status bar, notices, logs) to keep you aware of the syncing progress.
+- File changes are rendered as a file tree to allow granular selective syncing.
+- Log utility outputs human-readable markdown documents.
 
 ## Another Syncing Plugin?
 

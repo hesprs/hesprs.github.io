@@ -1,33 +1,33 @@
 ---
 layout: project
 title: Pointeract
-description: Pointeract is a front-end library that resolves user interactions and dispatches pan zoom events, lightweight and extensible alternative to Hammer.js.
+titleTemplate: Lightweight and Extensible Human Interaction Library
+description: Pointeract is a tiny (1KB core), tree-shakable TypeScript library for robust human gesture detection. Supports mouse, touch, touchpad, and wheel events. A modern, extensible alternative to Hammer.js.
 logo: https://pointeract.consensia.cc/logo.svg
+links:
+  - name: Documentation
+    url: https://pointeract.consensia.cc
+    color: '#425aef'
+  - name: GitHub Repository
+    url: https://github.com/hesprs/pointeract
+    color: '#010409'
+  - name: npm
+    url: https://www.npmjs.com/package/pointeract
+    color: '#EA2039'
+head:
+  - - meta
+    - name: keywords
+      content: Pointeract, JavaScript, TypeScript, JavaScript gesture library, Hammer.js alternative, pan zoom, touchpad, tree-shakable, mouse wheel, multitouch gestures, drag and drop, swipe detection
 ---
 
 <script lang="ts" setup>
-import { IconBrandGithub, IconBrandNpm, IconVocabulary }  from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([
-    {
-        name: 'Documentation',
-        url: 'https://www.npmjs.com/package/pointeract  ',
-        icon: IconVocabulary,
-        color: '#425aef'
-    },
-    {
-        name: 'GitHub',
-        url: 'https://github.com/hesprs/pointeract  ',
-        icon: IconBrandGithub,
-        color: '#010409'
-    },
-    {
-        name: 'npm',
-        url: 'https://www.npmjs.com/package/pointeract  ',
-        icon: IconBrandNpm,
-        color: '#EA2039'
-    },
-])
+import { IconBrandNpm, IconBrandGithub, IconVocabulary }  from '@tabler/icons-vue';
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({
+    'Documentation': IconVocabulary,
+    'npm': IconBrandNpm,
+    'GitHub Repository': IconBrandGithub,
+});
 </script>
 
 ## Introduction

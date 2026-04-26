@@ -1,40 +1,38 @@
 ---
 layout: project
 title: JSON Canvas Viewer
+titleTemplate: Library Suite to Render JSON Canvas in Browsers
 description: JSON Canvas Viewer is a front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.
 logo: https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg
+links:
+  - name: GitHub Repository
+    url: https://github.com/hesprs/json-canvas-viewer
+    color: '#010409'
+  - name: npm
+    url: https://www.npmjs.com/package/json-canvas-viewer
+    color: '#EA2039'
+  - name: Documentation
+    url: https://github.com/hesprs/json-canvas-viewer/wiki
+    color: '#425aef'
+  - name: JSON Canvas
+    url: https://jsoncanvas.org
+    color: '#8B0A5F'
+head:
+  - - meta
+    - name: keywords
+      content: JSON Canvas, JSON Canvas Viewer, Obsidian, Obsidian Canvas, visuallization, React component, Vue component, Preact component, npm library, JavaScript, TypeScript
 ---
 
 <script lang="ts" setup>
 import Viewer from '$/components/DemoViewer.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler/icons-vue';
-import { useLinks } from '$/composables/links';
-useLinks([
-    {
-        name: 'GitHub',
-        url: 'https://github.com/hesprs/json-canvas-viewer',
-        icon: IconBrandGithub,
-        color: '#010409'
-    },
-    {
-        name: 'npm',
-        url: 'https://www.npmjs.com/package/json-canvas-viewer',
-        icon: IconBrandNpm,
-        color: '#EA2039'
-    },
-    {
-        name: 'Documentation',
-        url: 'https://github.com/hesprs/json-canvas-viewer/wiki',
-        icon: IconVocabulary,
-        color: '#425aef'
-    },
-    {
-        name: 'JSON Canvas',
-        url: 'https://jsoncanvas.org',
-        icon: IconJson,
-        color: '#8B0A5F'
-    },
-])
+import { useLinkIcons } from '$/composables/link-icons';
+useLinkIcons({
+   'GitHub Repository': IconBrandGithub,
+   'npm': IconBrandNpm,
+   'Documentation': IconVocabulary,
+   'JSON Canvas': IconJson,
+});
 </script>
 
 ## Demo
