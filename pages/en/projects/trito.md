@@ -19,7 +19,7 @@ head:
 
 <script lang="ts" setup>
 import { IconBrandGithub, IconBrandNpm }  from '@tabler/icons-vue';
-import { useLinkIcons } from '$/composables/link-icons';
+import useLinkIcons from '$/composables/link-icons';
 useLinkIcons({
     'GitHub Repository': IconBrandGithub,
     'npm': IconBrandNpm,

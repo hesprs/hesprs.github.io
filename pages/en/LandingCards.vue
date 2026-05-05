@@ -136,184 +136,184 @@ import {
 
 const skills = [
 	{
-		name: 'JavaScript',
 		color: '#EFD81C',
 		icon: IconBrandJavascript,
 		link: 'https://developer.mozilla.org/docs/Web/JavaScript',
+		name: 'JavaScript',
 	},
 	{
-		name: 'TypeScript',
 		color: '#3178C6',
 		icon: IconBrandTypescript,
 		link: 'https://www.typescriptlang.org/',
+		name: 'TypeScript',
 	},
 	{
-		name: 'SCSS',
 		color: '#CF649A',
 		icon: IconBrandSass,
 		link: 'https://sass-lang.com/',
+		name: 'SCSS',
 	},
 	{
-		name: 'Vue',
 		color: '#41b883',
 		icon: IconBrandVue,
 		link: 'https://vuejs.org/',
+		name: 'Vue',
 	},
 	{
-		name: 'React',
 		color: '#58c4dc',
 		icon: IconBrandReact,
 		link: 'https://react.dev/',
+		name: 'React',
 	},
 	{
-		name: 'Python',
 		color: '#3776AB',
 		icon: IconBrandPython,
 		link: 'https://www.python.org/',
+		name: 'Python',
 	},
 	{
-		name: 'Git',
 		color: '#F05032',
 		icon: IconBrandGit,
 		link: 'https://git-scm.com/',
+		name: 'Git',
 	},
 	{
-		name: 'Figma',
 		color: '#0C8CE9',
 		icon: IconBrandFigma,
 		link: 'https://www.figma.com',
+		name: 'Figma',
 	},
 	{
-		name: 'Blender',
 		color: '#F4792B',
 		icon: IconBrandBlender,
 		link: 'https://www.blender.org/',
+		name: 'Blender',
 	},
 	{
-		name: 'Agent Skills',
 		color: '#000000',
 		icon: IconRobot,
 		link: 'https://agentskills.io/',
+		name: 'Agent Skills',
 	},
 	{
-		name: 'Browser Extension',
 		color: '#67d55e',
 		icon: IconPuzzle,
 		link: 'https://wxt.dev/',
+		name: 'Browser Extension',
 	},
 	{
-		name: 'Jupyter Notebook',
 		color: '#f37726',
 		icon: IconFileCode,
 		link: 'https://jupyter.org/',
+		name: 'Jupyter Notebook',
 	},
 	{
-		name: 'NixOS',
 		color: '#4d6fb7',
 		icon: IconSnowflake,
 		link: 'https://nixos.org/',
+		name: 'NixOS',
 	},
 	{
-		name: 'Node.js',
 		color: '#417e38',
 		icon: IconBrandNodejs,
 		link: 'https://nodejs.org/',
+		name: 'Node.js',
 	},
 
 	{
-		name: 'Bun',
 		color: '#f472b6',
 		icon: IconBurger,
 		link: 'https://bun.com/',
+		name: 'Bun',
 	},
 	{
-		name: 'Deno',
 		color: '#70ffaf',
 		icon: IconBrandDeno,
 		link: 'https://deno.com/',
+		name: 'Deno',
 	},
 	{
-		name: 'Turborepo',
 		color: '#ff1e56',
 		icon: IconCircleDashedLetterT,
 		link: 'https://turborepo.dev/',
+		name: 'Turborepo',
 	},
 ];
 
 const perspectives = [
 	{
-		name: 'Cosmopolitanism',
 		icon: IconWorldMap,
+		name: 'Cosmopolitanism',
 		title: 'A home world with unified goals, and the path open to the stars.',
 	},
 	{
-		name: 'Free Culture Movement',
 		icon: IconCreativeCommons,
+		name: 'Free Culture Movement',
 		title: 'Intellectual creations should not be enclosed by walls, everyone should have the autonomy to access, modify, and share.',
 	},
 	{
-		name: 'LGBT Rights',
 		icon: IconGenderTransgender,
+		name: 'LGBT Rights',
 		title: 'Nothing can be worse than seeing a person being shackled by what is "born to be".',
 	},
 	{
-		name: 'Equality of Opportunity',
 		icon: IconBlendMode,
+		name: 'Equality of Opportunity',
 		title: 'The heirs of kings, the kids from slums, all have a equal start.',
 	},
 	{
-		name: 'Anti-Racism',
 		icon: IconCell,
+		name: 'Anti-Racism',
 		title: 'All races are hallucinations, we share the same identity - the humans.',
 	},
 	{
-		name: 'Techno-Progressivism',
 		icon: IconSettingsBolt,
+		name: 'Techno-Progressivism',
 		title: 'Since the beginning of time, our universe has been destined onto an eternal odyssey of progress.',
 	},
 ];
 
 const projects = [
 	{
-		title: 'JSON Canvas Viewer',
-		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
 		description:
 			'A front-end library that ships an extensible viewer for JSON Canvas, with easy integration with any existing frameworks and paradigms.',
 		descriptionShort: 'View JSON canvas directly in your browser.',
 		link: '/projects/json-canvas-viewer',
+		logo: 'https://github.com/hesprs/json-canvas-viewer/raw/main/assets/logo.svg',
+		title: 'JSON Canvas Viewer',
 	},
 	{
-		title: 'Pointeract',
-		logo: 'https://pointeract.consensia.cc/logo.svg',
 		description:
 			'A tiny (1KB core), tree-shakable TypeScript library for robust human gesture detection. Supports mouse, touch, touchpad, and wheel events. A modern, extensible alternative to Hammer.js.',
 		descriptionShort: 'Lightweight & extensible human gesture recognizer.',
 		link: '/projects/pointeract',
+		logo: 'https://pointeract.consensia.cc/logo.svg',
+		title: 'Pointeract',
 	},
 	{
-		title: 'Obsidian WebDAV Sync',
-		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
 		description:
 			'A plugin for Obsidian that syncs your vault with a WebDAV server. It excels existing solutions at reliable bidirectional syncing, better performance and the freedom from vendor lock-in.',
 		descriptionShort: 'General-purpose & bidirectional WebDAV syncing for Obsidian vaults.',
 		link: '/projects/obsidian-webdav-sync',
+		logo: 'https://github.com/hesprs/obsidian-webdav-sync/raw/main/assets/logo.svg',
+		title: 'Obsidian WebDAV Sync',
 	},
 	{
-		title: 'SynthKernel',
-		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
 		description:
 			'A novel architecture for modular monolith development in TypeScript. It leverages the power of type orchestration and runtime dynamics to deliver a type-safe, scalable, and highly modular software paradigm.',
 		descriptionShort:
 			'A novel TypeScript software architecture that aims to redefine modularity practices.',
 		link: '/researches/synthkernel',
+		logo: 'https://github.com/hesprs/synthkernel/raw/main/assets/logo.svg',
+		title: 'SynthKernel',
 	},
 	{
-		title: 'Trito',
-		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
 		description:
 			"A visually refurbished, drop-in replacement for the VitePress default theme. Enhance your static site's UI/UX with unique aesthetics, minimal API intrusion, and robust TypeScript support. Stand out from generic VitePress sites.",
 		descriptionShort: 'Visually refurbished VitePress default theme.',
 		link: '/projects/trito',
+		logo: 'https://github.com/hesprs/vitepress-theme-trito/raw/main/assets/logo.svg',
+		title: 'Trito',
 	},
 ];
 </script>

@@ -21,11 +21,11 @@ head:
 import canvas from '$/assets/synthkernel.canvas';
 import Viewer from '$/components/CanvasViewer.vue';
 import { IconBrandGithub, IconFileSpark }  from '@tabler/icons-vue';
-import { useLinkIcons } from '$/composables/link-icons';
+import useLinkIcons from '$/composables/link-icons';
 useLinkIcons({
     'GitHub Repository': IconBrandGithub,
     'Whitepaper': IconFileSpark,
-})
+});
 </script>
 
 ## Abstract

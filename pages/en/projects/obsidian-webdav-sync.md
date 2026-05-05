@@ -16,7 +16,9 @@ head:
 
 <script lang="ts" setup>
 import { IconBrandGithub } from '@tabler/icons-vue';
-import { useLinkIcons } from '$/composables/link-icons';
+import useLinkIcons from '$/composables/link-icons';
+import canvas from '$/assets/encryption.canvas';
+import Viewer from '$/components/CanvasViewer.vue';
 useLinkIcons({ 'GitHub Repository': IconBrandGithub });
 </script>
 
@@ -42,6 +44,12 @@ Obsidian WebDAV Sync is a general-purpose & bidirectional WebDAV syncing plugin 
   - Use remote
   - Use local
   - Skip
+
+🔐 Client-side Encryption:
+
+- This plugin supports encrypting your files before uploading.
+- It prevents unauthorized file access, and detects unintended file modification and movement at remote side.
+- The encryption pipeline assumes stricter threat model, and achieves **theoretically higher security, faster performance and smaller plugin size** than similar solutions (like Remotely Save), see detail in the [encryption specification](https://github.com/hesprs/obsidian-webdav-sync/blob/main/docs/encryption.md).
 
 ⚡ **Maximum Performance**:
 
@@ -83,9 +91,11 @@ Then I discovered [Nutstore Sync](https://github.com/nutstore/obsidian-nutstore-
 
 ## Technical Breakdown
 
-To sync an Obsidian vault to a WebDAV server is a typical **decentralized coordination** problem, where each client has their own copy and changes of the vault and there's no centralized resolver between. The goal is to synchronize the vaults between clients for maximum data integrity.
+### File Handling
 
-To address this, this plugin keeps a record of the last known sync state of local and remote files. During syncing evaluates **four states (current local, current remote, recorded local, recorded remote)** for each file path and decides the sync action accordingly:
+To sync an Obsidian vault to a WebDAV server is a typical **distributed coordination** problem, where each client has their own copy and changes of the vault and there's no centralized resolver between. The goal is to synchronize the vaults between clients for maximum data integrity.
+
+To address this, this plugin keeps a record of the last known sync state of local and remote files. During syncing evaluates **three states (current local, current remote, recorded local and remote in last sync)** for each file path and decides the sync action accordingly:
 
 > ✅ = Exists, ❌ = Doesn't Exist, ✏️ = Changed Compared to Record
 
@@ -105,13 +115,25 @@ To address this, this plugin keeps a record of the last known sync state of loca
 | 12    |     ✅     |            ❌             |     ❌      | ⬆️ **Push** (new local file)             |
 | 13    |     ❌     |            ❌             |     ✅      | 🧹 **Clean Record** (database cleanup)   |
 
-Now the syncing is reliable enough, but some new issues emerged.
+### Encryption
 
-For example, comparing four states before syncing means we need a **whole WebDAV, local vault and record traversal at the start of each sync**, which is impractical for large vaults. To address this, **Fast Mode** is introduced that reuses the remote state in the record as current state. This avoids traversing the whole WebDAV, but it ignores remote changes. So **a normal sync before fast syncs is recommended**.
+Client-side encryption is the **most rigorously designed** part in the plugin. Encryption is not as simple as using a key to encode a part of file, which can be broken by attackers within minutes. The real encryption process in WebDAV Sync involves **multiple layers of confusion and diffusion**, as shown in the diagram below.
+
+<Viewer :canvas />
+
+The use of WebDAV server information in salting user's password avoids risks brought by Rclone-style universal fixed salt. By choosing `AES-GCM-SIV-256` as the deterministic algorithm for file path encryption, and directly weaving files paths and sizes into file encryption keys, the algorithm can maximally validate the integrity of downloaded files, as well as detecting malicious file movement and truncation.
+
+The resulting encryption pipeline is **theoretically more secure, fast, and Obsidian-native** than similar solutions (like Rclone Crypt), and competitor plugins (like Remotely Save, which uses Crypt under the hood).
+
+### Something More
+
+There's more things to delve into the technological aspect of this plugin.
+
+For example, comparing four states before syncing means we need a **whole WebDAV, local vault and record traversal at the start of each sync**, which is impractical for large vaults. To address this, **Fast Mode** is introduced that reuses the remote state in the record as current state, which avoids traversing the whole WebDAV each sync. Fast mode is enabled by default for real-time syncs and a normal sync (which is triggered by manual, periodic, or startup sync) is recommended before fast mode syncs.
 
 Moreover, to store the records and content of all files (to compare and decide whether a file is changed) requires a huge and active amount of storage to ensure fidelity. This plugin leverages IndexedDB to store the records and query them on-demand.
 
-Then, more issues emerged: what if the file changes between the time of traversal and execution? What if the file becomes a folder at remote? If later changes to storage are made, how to migrate users' data? There's a lot more to discuss about.
+Also, to control memory usage and prevent crashes when downloading large files, this plugin has specialized **load balancing and download chunking** mechanisms. When a file has size larger than a user-configured threshold, the plugin will split the files into chunks and download in parallel, and save them immediately in local cache when each chunk is finished. In the final pass, the plugin sorts the cache and writes the complete file incrementally. This not only ensures the memory consumption at a constant low level when handling gigabytes of file, also makes large file downloading fully resumable.
 
 ## Installation & Setup
 

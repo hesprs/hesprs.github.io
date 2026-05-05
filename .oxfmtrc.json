@@ -4,7 +4,7 @@
 	"tabWidth": 4,
 	"useTabs": true,
 	"singleQuote": true,
-	"experimentalSortImports": {
+	"sortImports": {
 		"newlinesBetween": false,
 		"groups": [
 			"type-import",
@@ -16,7 +16,12 @@
 			"unknown"
 		]
 	},
-	"ignorePatterns": ["public/googlef6d380b198d159b3.html", "yandex_86a7efad068e2d03.html"],
+	"ignorePatterns": [
+		"**/node_modules/**",
+		"**/dist/**",
+		"public/googlef6d380b198d159b3.html",
+		"yandex_86a7efad068e2d03.html"
+	],
 	"embeddedLanguageFormatting": "auto",
 	"overrides": [
 		{

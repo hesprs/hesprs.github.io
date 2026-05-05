@@ -22,7 +22,7 @@ head:
 
 <script lang="ts" setup>
 import { IconBrandGithub, IconBrandNpm, IconVocabulary } from '@tabler/icons-vue';
-import { useLinkIcons } from '$/composables/link-icons';
+import useLinkIcons from '$/composables/link-icons';
 useLinkIcons({
 	'文档': IconVocabulary,
 	'GitHub 仓库': IconBrandGithub,

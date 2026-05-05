@@ -3,9 +3,11 @@ import '@/styles.scss';
 import Theme from 'vitepress-theme-trito';
 import ProjectPage from '@/ProjectPage.vue';
 
-export default {
-	extends: Theme,
+const theme = {
 	enhanceApp({ app }: { app: App }) {
 		app.component('project', ProjectPage);
 	},
+	extends: Theme,
 };
+
+export default theme;

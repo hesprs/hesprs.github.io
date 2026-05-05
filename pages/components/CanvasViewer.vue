@@ -1,7 +1,7 @@
 <script lang="ts" setup>
+import type { JSONCanvas } from '@json-canvas-viewer/vue';
 import {
 	JSONCanvasViewerComponent as Viewer,
-	type JSONCanvas,
 	Minimap,
 	MistouchPreventer,
 	Controls,
@@ -9,9 +9,7 @@ import {
 import { useData } from 'vitepress';
 const { isDark } = useData();
 const isPrerendering = import.meta.env.SSR;
-defineProps<{
-	canvas: JSONCanvas;
-}>();
+const { canvas } = defineProps<{ canvas: JSONCanvas }>();
 </script>
 
 <template>

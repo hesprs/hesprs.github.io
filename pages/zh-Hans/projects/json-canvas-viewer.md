@@ -26,7 +26,7 @@ head:
 <script lang="ts" setup>
 import Viewer from '$/components/DemoViewer.vue';
 import { IconBrandGithub, IconBrandNpm, IconVocabulary, IconJson } from '@tabler/icons-vue';
-import { useLinkIcons } from '$/composables/link-icons';
+import useLinkIcons from '$/composables/link-icons';
 useLinkIcons({
 	'GitHub 仓库': IconBrandGithub,
 	'npm': IconBrandNpm,

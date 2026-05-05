@@ -1,3 +1,4 @@
+// oxlint-disable import/no-nodejs-modules
 import type { ThemeConfig } from 'vitepress-theme-trito';
 import { resolve } from 'node:path';
 import canvas from 'vite-plugin-json-canvas';
@@ -10,117 +11,120 @@ function p(path: string) {
 const inDev = process.env.MODE === 'dev';
 
 export default defineConfig<ThemeConfig>({
-	srcDir: p('pages'),
-	outDir: p('dist'),
 	cleanUrls: true,
-	lastUpdated: true,
-	rewrites: { 'en/:rest*': ':rest*' },
-	locales: {
-		root: {
-			title: 'HESPERI',
-			description:
-				"Hēsperus' (hesprs) portfolio, including information about Hēsperus' personalities, hobbies, and project introductions and demos.",
-			label: 'English',
-			lang: 'en',
-			themeConfig: {
-				nav: [
-					{ text: 'Home', link: '/' },
-					{
-						text: 'Projects',
-						items: [
-							{ text: 'Pointeract', link: '/projects/pointeract' },
-							{ text: 'JSON Canvas Viewer', link: '/projects/json-canvas-viewer' },
-							{ text: 'Trito', link: '/projects/trito' },
-							{
-								text: 'Obsidian WebDAV Sync',
-								link: '/projects/obsidian-webdav-sync',
-							},
-						],
-					},
-					{
-						text: 'Researches',
-						items: [{ text: 'SynthKernel', link: '/researches/synthkernel' }],
-					},
-				],
-				footer: {
-					message:
-						'All content licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> License.',
-					copyright: 'Copyright © 2025-2026 Hēsperus',
-				},
-			},
-			head: [
-				[
-					'meta',
-					{
-						name: 'keywords',
-						content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
-					},
-				],
-			],
-		},
-		'zh-Hans': {
-			title: '赫斯珀里',
-			description:
-				'Hēsperus（hesprs）的作品集，包含有关 Hēsperus 的个性、爱好以及项目介绍和演示。',
-			label: '简体中文',
-			lang: 'zh-Hans',
-			themeConfig: {
-				nav: [
-					{ text: '首页', link: '/zh-Hans/' },
-					{
-						text: '项目',
-						items: [
-							{ text: 'Pointeract', link: '/zh-Hans/projects/pointeract' },
-							{
-								text: 'JSON Canvas Viewer',
-								link: '/zh-Hans/projects/json-canvas-viewer',
-							},
-							{ text: 'Trito', link: '/zh-Hans/projects/trito' },
-							{
-								text: 'Obsidian WebDAV Sync',
-								link: '/zh-Hans/projects/obsidian-webdav-sync',
-							},
-						],
-					},
-					{
-						text: '研究',
-						items: [{ text: 'SynthKernel', link: '/zh-Hans/researches/synthkernel' }],
-					},
-				],
-				footer: {
-					message:
-						'所有内容依据 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> 许可证授权。',
-					copyright: '版权所有 © 2025-2026 Hēsperus',
-				},
-			},
-			head: [
-				[
-					'meta',
-					{
-						name: 'keywords',
-						content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
-					},
-				],
-			],
-		},
-	},
 	head: [
-		['link', { rel: 'icon', href: '/favicon.ico' }],
-		['meta', { name: 'color-scheme', content: 'dark light' }],
+		['link', { href: '/favicon.ico', rel: 'icon' }],
+		['meta', { content: 'dark light', name: 'color-scheme' }],
 		[
 			'script',
 			{
+				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
 				defer: '',
 				src: inDev ? '' : 'https://analytics.consensia.cc/script.js',
-				'data-website-id': 'c4bc0d71-e07e-4f3b-a1ac-c2665eef13ec',
 			},
 		],
 	],
+	lastUpdated: true,
+	locales: {
+		root: {
+			description:
+				"Hēsperus' (hesprs) portfolio, including information about Hēsperus' personalities, hobbies, and project introductions and demos.",
+			head: [
+				[
+					'meta',
+					{
+						content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
+						name: 'keywords',
+					},
+				],
+			],
+			label: 'English',
+			lang: 'en',
+			themeConfig: {
+				footer: {
+					copyright: 'Copyright © 2025-2026 Hēsperus',
+					message:
+						'All content licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> License.',
+				},
+				nav: [
+					{ link: '/', text: 'Home' },
+					{
+						items: [
+							{ link: '/projects/pointeract', text: 'Pointeract' },
+							{ link: '/projects/json-canvas-viewer', text: 'JSON Canvas Viewer' },
+							{ link: '/projects/trito', text: 'Trito' },
+							{
+								link: '/projects/obsidian-webdav-sync',
+								text: 'Obsidian WebDAV Sync',
+							},
+						],
+						text: 'Projects',
+					},
+					{
+						items: [{ link: '/researches/synthkernel', text: 'SynthKernel' }],
+						text: 'Researches',
+					},
+				],
+			},
+			title: 'HESPERI',
+		},
+		'zh-Hans': {
+			description:
+				'Hēsperus（hesprs）的作品集，包含有关 Hēsperus 的个性、爱好以及项目介绍和演示。',
+			head: [
+				[
+					'meta',
+					{
+						content: 'hesprs,hesperus,pointeract,projects,portfolio,json canvas viewer',
+						name: 'keywords',
+					},
+				],
+			],
+			label: '简体中文',
+			lang: 'zh-Hans',
+			themeConfig: {
+				footer: {
+					copyright: '版权所有 © 2025-2026 Hēsperus',
+					message:
+						'所有内容依据 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> 许可证授权。',
+				},
+				nav: [
+					{ link: '/zh-Hans/', text: '首页' },
+					{
+						items: [
+							{ link: '/zh-Hans/projects/pointeract', text: 'Pointeract' },
+							{
+								link: '/zh-Hans/projects/json-canvas-viewer',
+								text: 'JSON Canvas Viewer',
+							},
+							{ link: '/zh-Hans/projects/trito', text: 'Trito' },
+							{
+								link: '/zh-Hans/projects/obsidian-webdav-sync',
+								text: 'Obsidian WebDAV Sync',
+							},
+						],
+						text: '项目',
+					},
+					{
+						items: [{ link: '/zh-Hans/researches/synthkernel', text: 'SynthKernel' }],
+						text: '研究',
+					},
+				],
+			},
+			title: '赫斯珀里',
+		},
+	},
+	markdown: {
+		image: { lazyLoading: true },
+	},
+	outDir: p('dist'),
+	rewrites: { 'en/:rest*': ':rest*' },
 	sitemap: { hostname: 'https://hesprs.github.io' },
+	srcDir: p('pages'),
 	themeConfig: {
-		logo: { src: '/logo-flat.svg', alt: 'Website logo' },
-		logoLarge: { dark: '/logo-dark.svg', light: '/logo.svg', alt: 'Website large logo' },
 		aside: 'left',
+		logo: { alt: 'Website logo', src: '/logo-flat.svg' },
+		logoLarge: { alt: 'Website large logo', dark: '/logo-dark.svg', light: '/logo.svg' },
 		search: { provider: 'local' },
 		socialLinks: [
 			{ icon: 'npm', link: 'https://www.npmjs.com/~hesprs' },
@@ -128,16 +132,13 @@ export default defineConfig<ThemeConfig>({
 			{ icon: 'x', link: 'https://x.com/Hesprs' },
 		],
 	},
-	markdown: {
-		image: { lazyLoading: true },
-	},
 	vite: {
-		publicDir: p('public'),
 		plugins: [canvas()],
+		publicDir: p('public'),
 		resolve: {
 			alias: {
-				'@': p('.vitepress/theme'),
 				$: p('pages'),
+				'@': p('.vitepress/theme'),
 			},
 		},
 		ssr: {

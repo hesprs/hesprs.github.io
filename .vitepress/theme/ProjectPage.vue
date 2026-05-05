@@ -3,8 +3,9 @@ import type Theme from 'vitepress-theme-trito';
 import { useData } from 'vitepress';
 import { VPDoc } from 'vitepress-theme-trito';
 import { provide, shallowRef } from 'vue';
-import { LinkIconsKey } from '@/keys';
-import ProjectCard, { type Props } from '@/ProjectCard.vue';
+import type { Props } from '@/ProjectCard.vue';
+import LinkIconsKey from '@/keys';
+import ProjectCard from '@/ProjectCard.vue';
 
 const linkIcons = shallowRef<Props['linkIcons']>({});
 const { frontmatter } = useData<typeof Theme>();

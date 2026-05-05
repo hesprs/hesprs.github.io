@@ -10,11 +10,11 @@
 		"dev": "MODE=dev vitepress dev",
 		"build": "vitepress build",
 		"preview": "vitepress preview",
-		"lint": "oxlint --type-aware --fix && oxfmt",
-		"check": "vue-tsc && oxfmt --check && oxlint --type-aware"
+		"lint": "oxlint --fix && oxfmt",
+		"check": "vue-tsc && oxfmt --check && oxlint "
 	},
 	"dependencies": {
-		"@json-canvas-viewer/vue": "^1.0.3",
+		"@json-canvas-viewer/vue": "^1.0.5",
 		"@tabler/icons-vue": "^3.41.1",
 		"vitepress": "2.0.0-alpha.17",
 		"vitepress-theme-trito": "^1.1.1",
@@ -24,7 +24,7 @@
 	"devDependencies": {
 		"@types/node": "^25.6.0",
 		"oxfmt": "^0.46.0",
-		"oxlint": "^1.61.0",
+		"oxlint": "^1.62.0",
 		"oxlint-tsgolint": "^0.22.0",
 		"sass": "^1.99.0",
 		"typescript": "^6.0.3",
