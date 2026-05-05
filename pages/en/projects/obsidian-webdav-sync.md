@@ -45,7 +45,7 @@ Obsidian WebDAV Sync is a general-purpose & bidirectional WebDAV syncing plugin 
   - Use local
   - Skip
 
-🔐 Client-side Encryption:
+🔐 **Client-side Encryption**:
 
 - This plugin supports encrypting your files before uploading.
 - It prevents unauthorized file access, and detects unintended file modification and movement at remote side.
