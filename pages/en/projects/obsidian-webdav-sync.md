@@ -8,6 +8,9 @@ links:
   - name: GitHub Repository
     url: https://github.com/hesprs/obsidian-webdav-sync
     color: '#010409'
+  - name: Plugin Store
+    url: https://community.obsidian.md/plugins/webdav-sync
+    color: '#8b5cf6'
 head:
   - - meta
     - name: keywords
@@ -15,11 +18,14 @@ head:
 ---
 
 <script lang="ts" setup>
-import { IconBrandGithub } from '@tabler/icons-vue';
+import { IconBrandGithub, IconPackage } from '@tabler/icons-vue';
 import useLinkIcons from '$/composables/link-icons';
 import canvas from '$/assets/encryption.canvas';
 import Viewer from '$/components/CanvasViewer.vue';
-useLinkIcons({ 'GitHub Repository': IconBrandGithub });
+useLinkIcons({
+    'GitHub Repository': IconBrandGithub,
+    'Plugin Store': IconPackage,
+});
 </script>
 
 ## Introduction
@@ -137,22 +143,15 @@ Also, to control memory usage and prevent crashes when downloading large files, 
 
 ## Installation & Setup
 
-Since the plugin is currently in beta, installation requires the **BRAT** (Beta Reviewer Auto-update Tool) plugin:
+Since the plugin is currently launched in Obsidian official plugin store. You can install it from Obsidian plugin registry.
 
-### Step 1: Install BRAT
+### Step 1: Install Plugin
 
 1. Open Obsidian Settings → Community Plugins
-2. Search for and install **BRAT**
+2. Search for and install **WebDAV Sync** by `Hēsperus`
 3. Enable the plugin
 
-### Step 2: Add Obsidian WebDAV Sync
-
-1. Open BRAT settings
-2. Click **Add beta plugin**
-3. Paste repository URL: `https://github.com/hesprs/obsidian-webdav-sync`
-4. Select the latest version and click **Add plugin**
-
-### Step 3: Configure WebDAV Connection
+### Step 2: Configure WebDAV Connection
 
 1. Enter your WebDAV server URL
 2. Provide account credentials

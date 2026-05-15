@@ -8,6 +8,9 @@ links:
   - name: GitHub 仓库
     url: https://github.com/hesprs/obsidian-webdav-sync
     color: '#010409'
+  - name: 插件商店
+    url: https://community.obsidian.md/plugins/webdav-sync
+    color: '#8b5cf6'
 head:
   - - meta
     - name: keywords
@@ -15,11 +18,14 @@ head:
 ---
 
 <script lang="ts" setup>
-import { IconBrandGithub } from '@tabler/icons-vue';
+import { IconBrandGithub, IconPackage } from '@tabler/icons-vue';
 import useLinkIcons from '$/composables/link-icons';
 import canvas from '$/assets/encryption.canvas';
 import Viewer from '$/components/CanvasViewer.vue';
-useLinkIcons({ 'GitHub 仓库': IconBrandGithub });
+useLinkIcons({
+    'GitHub 仓库': IconBrandGithub,
+    '插件商店': IconPackage,
+});
 </script>
 
 ## 简介
@@ -137,22 +143,15 @@ Obsidian WebDAV Sync 是一款通用的双向 WebDAV 同步插件，专为 Obsid
 
 ## 安装与设置
 
-由于插件目前处于测试阶段，安装需要 **BRAT**（Beta Reviewer Auto-update Tool）插件：
+由于本插件已上架 Obsidian 官方插件商店，你可以直接从 Obsidian 插件库中安装。
 
-### 第一步：安装 BRAT
+### 第一步：安装插件
 
 1. 打开 Obsidian 设置 → 社区插件
-2. 搜索并安装 **BRAT**
+2. 搜索并安装由 Hēsperus 开发的 **WebDAV Sync**
 3. 启用该插件
 
-### 第二步：添加 Obsidian WebDAV Sync
-
-1. 打开 BRAT 设置
-2. 点击 **添加测试版插件**
-3. 粘贴仓库 URL：`https://github.com/hesprs/obsidian-webdav-sync`
-4. 选择最新版本并点击 **添加插件**
-
-### 第三步：配置 WebDAV 连接
+### 第二步：配置 WebDAV 连接
 
 1. 输入你的 WebDAV 服务器 URL
 2. 提供账户凭据
